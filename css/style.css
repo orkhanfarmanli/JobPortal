@@ -1,0 +1,209 @@
+/*
+	CodeAcademy Project
+	Clone boss.az
+	Group: Parviz Aliyev, Huseyn Huseynli, Imran Abdullayev, Tural Ismayilov, Ceyhun Sadiqov
+*/
+a {
+  text-decoration: underline; }
+
+ul {
+  list-style-type: none; }
+
+.clearFix {
+  clear: both; }
+
+.lang-selected {
+  display: none; }
+
+.active {
+  background: #F9D54B; }
+
+a.active:hover {
+  background: #F9D54B !important; }
+
+div.show {
+  display: block !important; }
+
+#header .container {
+  background: #555 !important;
+  padding-bottom: 5px; }
+  #header .container .headerReklam {
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px; }
+    #header .container .headerReklam .headerReklami {
+      float: left;
+      margin-left: 5px; }
+    #header .container .headerReklam .headerReklami:last-child {
+      margin-right: 0; }
+  #header .container .headerMenu {
+    padding: 0 10px; }
+    #header .container .headerMenu a {
+      float: left;
+      color: #fff;
+      display: block;
+      padding: 10px; }
+    #header .container .headerMenu a:hover {
+      background-color: #757575; }
+    #header .container .headerMenu ul li {
+      float: left;
+      cursor: pointer; }
+
+#categories .container {
+  background: #F8CB1C !important;
+  padding-bottom: 0; }
+  #categories .container .logo {
+    margin-top: 25px;
+    margin-right: 35px;
+    margin-left: 10px;
+    width: 175px;
+    height: 38px;
+    background-image: url(../images/sprite.svg);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    float: left; }
+  #categories .container .catNav {
+    float: left; }
+    #categories .container .catNav .vacancies, #categories .container .catNav .resumes {
+      float: left;
+      vertical-align: middle;
+      line-height: 28px;
+      margin-top: 15px; }
+      #categories .container .catNav .vacancies a, #categories .container .catNav .resumes a {
+        display: block;
+        font-weight: 700;
+        font-size: 1.2em;
+        color: #000;
+        margin-left: 10px;
+        padding: 20px;
+        border-radius: 4px 4px 0 0; }
+      #categories .container .catNav .vacancies a:hover, #categories .container .catNav .resumes a:hover {
+        background: #ffdf80; }
+  #categories .container .otherNav {
+    float: right;
+    margin-right: 10px; }
+    #categories .container .otherNav .about {
+      float: left;
+      vertical-align: middle;
+      line-height: 28px;
+      margin-top: 15px;
+      margin-right: 20px; }
+      #categories .container .otherNav .about a {
+        display: block;
+        font-weight: 700;
+        font-size: 1.2em;
+        color: #000;
+        padding: 20px;
+        border-radius: 4px 4px 0 0; }
+      #categories .container .otherNav .about a:hover {
+        background: #ffdf80; }
+    #categories .container .otherNav .add {
+      float: left;
+      vertical-align: middle;
+      line-height: 28px;
+      margin-top: 25px; }
+      #categories .container .otherNav .add button {
+        display: block;
+        font-weight: 700;
+        font-size: 1.2em;
+        color: #000;
+        background: #fff;
+        border: 0;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none; }
+  #categories .container .lang-select {
+    margin-top: 10px;
+    float: right;
+    display: none; }
+    #categories .container .lang-select ul li {
+      float: left;
+      border: 2px solid #000;
+      margin: 2px;
+      border-radius: 5px; }
+      #categories .container .lang-select ul li a {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;
+        cursor: pointer; }
+
+#viewVacancies .container, #viewCv .container {
+  background: #F9D54B;
+  display: none; }
+  #viewVacancies .container .row, #viewCv .container .row {
+    padding: 15px 25px; }
+    #viewVacancies .container .row .col-md-4 .row, #viewCv .container .row .col-md-4 .row {
+      padding: 5px 15px; }
+      #viewVacancies .container .row .col-md-4 .row .vacCount, #viewCv .container .row .col-md-4 .row .vacCount {
+        color: #787053;
+        font-size: 16px;
+        font-weight: 300;
+        text-align: right;
+        width: 10%;
+        float: left; }
+      #viewVacancies .container .row .col-md-4 .row .vacName, #viewCv .container .row .col-md-4 .row .vacName {
+        width: 90%;
+        float: right; }
+      #viewVacancies .container .row .col-md-4 .row a, #viewCv .container .row .col-md-4 .row a {
+        color: #555;
+        font-size: 16px;
+        padding: 5px 10px;
+        font-weight: 700; }
+      #viewVacancies .container .row .col-md-4 .row a:hover, #viewCv .container .row .col-md-4 .row a:hover {
+        background: #ffdf80;
+        border-radius: 5px; }
+
+#searchBtn .container {
+  padding: 5px;
+  background: #F8CB1C;
+  cursor: pointer;
+  text-align: center; }
+  #searchBtn .container #icon, #searchBtn .container span.searchBtn, #searchBtn .container i {
+    display: inline-block;
+    vertical-align: middle; }
+  #searchBtn .container #icon {
+    width: 20px;
+    height: 15px;
+    background-image: url(../images/sprite.svg);
+    background-repeat: no-repeat;
+    background-position: -42px -65px; }
+  #searchBtn .container span.searchBtn {
+    color: #555;
+    border-bottom: 1px dashed #787053; }
+  #searchBtn .container i {
+    padding: 5px 0px;
+    color: #555; }
+#searchBtn .container:hover {
+  background: #F9D54B; }
+
+#search .container {
+  background: #F8CB1C; }
+  #search .container .col-md-4 {
+    text-align: left; }
+    #search .container .col-md-4 span {
+      padding: 20px 10px 5px 10px;
+      display: block;
+      font-weight: 700; }
+    #search .container .col-md-4 .select {
+      width: 300px;
+      border: 1px solid #555;
+      border-radius: 5px;
+      padding: 10px;
+      outline: none;
+      margin-left: 10px; }
+    #search .container .col-md-4 select {
+      display: block; }
+  #search .container .btnSearch {
+    text-align: center;
+    padding: 20px; }
+    #search .container .btnSearch input {
+      background: #fff;
+      padding: 5px 25px;
+      font-weight: 700;
+      border-radius: 5px;
+      box-shadow: 0 1px  1px 0px #555; }
+
+/*# sourceMappingURL=style.css.map */

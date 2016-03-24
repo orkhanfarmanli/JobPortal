@@ -1,0 +1,28 @@
+@media (max-width: 1200px) {
+	#header .container .headerReklam {
+		display: none;
+	}
+}
+@media (max-width: 1000px) {
+	#header .container {
+		display: none;
+	}
+	#categories .container{
+		padding-bottom: 10px !important;
+	}
+	#categories .container .logo {
+		margin-top: 15px !important;
+		margin-left: 5px !important;
+		width: 122px !important;
+		height: 27px !important;
+	    background-image: url(../images/sprite.svg);
+	    background-repeat: no-repeat;
+	    background-position: 0px -38px !important;
+	}
+	.catNav, .otherNav {
+		display: none;
+	}
+	.lang-select {
+		display: block !important;
+	}
+}

@@ -1,0 +1,273 @@
+/*
+	CodeAcademy Project
+	Clone boss.az
+	Group: Parviz Aliyev, Huseyn Huseynli, Imran Abdullayev, Tural Ismayilov, Ceyhun Sadiqov
+*/
+$bgcolor : #555;
+
+// Əlavələar
+a {
+	text-decoration: underline;
+}
+ul{
+	list-style-type: none;
+}
+.clearFix {
+	clear: both
+}
+.lang-selected {
+	display: none;
+}
+.active{
+	background: #F9D54B;
+}
+a.active:hover{
+	background: #F9D54B !important;
+}
+div.show{
+	display: block !important;
+}
+// Header
+
+#header .container {
+	background: $bgcolor !important;
+	padding-bottom: 5px;
+	// Reklam Hissəsi
+	.headerReklam {
+		padding-top: 15px;
+		padding-left: 5px;
+		padding-right: 5px;
+
+		.headerReklami {
+			float: left;
+			margin-left: 5px;
+		}
+		.headerReklami:last-child {
+			margin-right: 0;
+		}
+	}
+	// Menu hisse  dil seçimi (sehife full olanda)
+	.headerMenu{
+		padding: 0 10px;
+		a{
+			float: left;
+			color: #fff;
+			display: block;
+			padding: 10px;
+		}
+		a:hover {
+			background-color: #757575;
+		}
+		ul{
+			li{
+				float: left;
+				cursor: pointer;
+			}
+		}
+	}
+}
+// Is Axtaran Vacansiya Hakkinda Elan yerlesdir
+#categories .container {
+	background: #F8CB1C !important;
+	padding-bottom: 0;
+	// Logo
+	.logo {
+		margin-top: 25px;
+		margin-right: 35px;
+		margin-left: 10px;
+		width: 175px;
+		height: 38px;
+		background-image: url(../images/sprite.svg);
+		background-repeat: no-repeat;
+		background-position: 0px 0px;
+		float:left;
+	}
+	// İş axtaran və Vakansiyalar
+	.catNav{
+		float: left;
+		.vacancies, .resumes {
+			float: left;
+			vertical-align: middle;
+			line-height: 28px;
+			margin-top: 15px;
+			a {
+				display: block;
+				font-weight: 700;
+				font-size: 1.2em;
+				color: #000;
+				margin-left: 10px;
+				padding: 20px;
+				border-radius: 4px 4px 0 0;
+			}
+			a:hover{
+				background: #ffdf80;
+			}
+		}
+	}
+	// Hakkinda Ve Elan Yerlesdir
+	.otherNav{
+		float: right;
+		margin-right: 10px;
+		// Haqqında
+		.about{
+			float:left;
+			vertical-align: middle;
+			line-height: 28px;
+			margin-top: 15px;
+			margin-right: 20px;
+			a {
+				display: block;
+				font-weight: 700;
+				font-size: 1.2em;
+				color: #000;
+				padding: 20px;
+				border-radius: 4px 4px 0 0;
+			}
+			a:hover{
+				background: #ffdf80;
+			}
+		}
+		// Elan yerleşdir
+		.add{
+			float: left;
+			vertical-align: middle;
+			line-height: 28px;
+			margin-top: 25px;
+			button {
+				display: block;
+				font-weight: 700;
+				font-size: 1.2em;
+				color: #000;
+				background: #fff;
+				border: 0;
+				padding: 10px;
+				border-radius: 5px;
+				cursor:pointer;
+				outline: none;
+			}
+		}
+	}
+	// Dil seçimi Tablet ve Telefonlar üçün
+	.lang-select{
+		margin-top: 10px;
+		float: right;
+		display: none;
+		ul{
+			li{
+				float:left;
+				border: 2px solid #000;
+				margin: 2px;
+				border-radius: 5px;
+				a{
+					display: block;
+					padding: 5px;
+					text-decoration: none;
+					color: #000;
+					font-weight: 700;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+// Vakansiyalara Baxmaq ve CV-lərə baxmaq
+#viewVacancies .container, #viewCv .container{
+	background: #F9D54B;
+	display: none;
+	.row {
+		padding: 15px 25px;
+		.col-md-4{
+			.row {
+				padding: 5px 15px;
+				.vacCount {
+					color: #787053;
+					font-size: 16px;
+					font-weight: 300;
+					text-align: right;
+					width: 10%;
+					float: left;
+				}
+				.vacName{
+					width: 90%;
+					float: right;
+				}
+				a {
+					color: #555;
+					font-size: 16px;
+					padding: 5px 10px;
+					font-weight: 700;
+				}
+				a:hover{
+					background: #ffdf80;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+}
+// Yuxarıdan Aşagi açılan axtarış sistemi
+#searchBtn {
+	.container {
+		padding: 5px;
+		background: #F8CB1C;
+		cursor: pointer;
+		text-align: center;
+		#icon , span.searchBtn, i {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		#icon {
+			width: 20px;
+			height: 15px;
+			background-image: url(../images/sprite.svg);
+			background-repeat: no-repeat;
+			background-position: -42px -65px;
+		}
+		span.searchBtn {
+			color: #555;
+			border-bottom: 1px dashed #787053;
+		}
+		i {
+			padding: 5px 0px;
+			color: #555;
+		}
+	}
+	.container:hover{
+		background: #F9D54B;
+	}
+}
+#search{
+	.container{
+		background: #F8CB1C; 
+		.col-md-4 {
+			text-align: left;
+			span{
+				padding: 20px 10px 5px 10px;
+				display: block;
+				font-weight: 700;
+			}
+			.select {
+				width: 300px;
+				border: 1px solid #555;
+				border-radius: 5px;
+				padding: 10px;
+				outline: none;
+				margin-left: 10px;
+			}
+			select {
+				display: block;
+			}
+		}
+		.btnSearch {
+			text-align: center;
+			padding: 20px;
+			input {
+				background: #fff;
+				padding: 5px 25px;
+				font-weight: 700;
+				border-radius: 5px;
+				box-shadow: 0 1px  1px 0px #555;
+			}
+		}
+	}
+}
