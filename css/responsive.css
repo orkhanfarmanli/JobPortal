@@ -26,3 +26,14 @@
 		display: block !important;
 	}
 }
+height = $("#search > .container").height();
+		$("#search").hide();
+      $("#searchBtn").toggle(function(){
+        var index = $("#alanim span").index(this);
+        $("#alanim div:eq("+index+")").slideDown("slow");
+        $(this).css("background-color","#800");}, 
+      function(){
+        var index = $("#alanim span").index(this);
+        $("#alanim div:eq("+index+")").slideUp("slow");
+        $(this).css("background-color","#369");
+      });
