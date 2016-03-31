@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 	CodeAcademy Project
 	Clone boss.az
@@ -24,18 +23,6 @@ a.active:hover {
 
 div.show {
   display: block !important; }
-
-.display {
-  display: inline; }
-
-.rotate {
-  transform: rotate(├╝180deg);
-  /*transform: rotate(180deg);*/
-  transition: .3s; }
-
-.rotate-reset {
-  transform: rotate(0deg);
-  transition: .3s; }
 
 #header .container {
   background: #555 !important;
@@ -218,11 +205,11 @@ div.show {
       padding: 5px 25px;
       font-weight: 700;
       border-radius: 5px;
-      box-shadow: 0 1px  1px 0px #555; }
+      box-shadow: 0 1px 1px 0px #555; }
 
 #lastVac .container {
   padding-bottom: 10px;
-  background: #F4F4F4; }
+  background: #f4f4f4; }
   #lastVac .container .headListLastVac {
     margin: 20px;
     margin-top: 40px;
@@ -366,7 +353,7 @@ div.show {
       padding: 5px 0px; }
       #footer .container .row .col-md-4 .footNav .footNavbar .footNavbarItem a {
         font-size: 16px;
-        color: #EAB121;
+        color: #eab121;
         text-decoration: none; }
       #footer .container .row .col-md-4 .footNav .footNavbar .footNavbarItem a:hover {
         text-decoration: underline; }
@@ -415,7 +402,7 @@ div.show {
     #footer .container .row .col-md-4 .copyright {
       padding-top: 15px; }
       #footer .container .row .col-md-4 .copyright span {
-        color: #909090;
+        color: #ccc;
         font-size: 13px; }
     #footer .container .row .col-md-4 a.title {
       color: #eab121;

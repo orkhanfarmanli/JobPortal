@@ -3,7 +3,20 @@
 	Clone boss.az
 	Group: Parviz Aliyev, Huseyn Huseynli, Imran Abdullayev, Tural Ismayilov, Ceyhun Sadiqov
 */
-$bgcolor : #555;
+// Color Variables
+
+$bgcolor: #555; // Header Reklamların arxa fonu
+$navbarColor: #F8CB1C; // Logo ve Navbarın arxa fonu
+$navbarLinkHover: #ffdf80; // Navbar Link Hover
+$categoriesBgColor: #F9D54B; // İş elanları kategoriyaların arxa fonu
+$countTextColor: #787053; // İş elanlarının sayı yazılarının rengi
+$mainTextColor: #000; // Esas textlerin rengi
+$textColor: #fff; // Esas textlerin rengi
+$footerTextColor: #ccc; // Footerdeki textlerin rengi
+$footerLinkColor: #eab121; // Footerdeki Linklerin rengi
+$tabCatLinkColor: #E65100; // 2ci tabdaki linklerin rengi
+$contentBgColor: #f4f4f4; // Content Containerin arxa fonu
+$contentLinkTextColor: #979797; // content linkleri ve textlerin rengi
 
 // Əlavələar
 a {
@@ -13,32 +26,21 @@ ul{
 	list-style-type: none;
 }
 .clearFix {
-	clear: both
+	clear: both;
 }
 .lang-selected {
 	display: none;
 }
 .active{
-	background: #F9D54B;
+	background: $categoriesBgColor;
 }
 a.active:hover{
-	background: #F9D54B !important;
+	background: $categoriesBgColor !important;
 }
 div.show{
 	display: block !important;
 }
-.display {
-	display: inline;
-}
-.rotate {
-    transform: rotate(ü180deg);
-    /*transform: rotate(180deg);*/
-    transition: .3s;
-}
-.rotate-reset {
-    transform: rotate(0deg);
-    transition: .3s;
-}
+
 // Header
 
 #header .container {
@@ -63,7 +65,7 @@ div.show{
 		padding: 0 10px;
 		a{
 			float: left;
-			color: #fff;
+			color: $textColor;
 			display: block;
 			padding: 10px;
 		}
@@ -80,7 +82,7 @@ div.show{
 }
 // Is Axtaran Vacansiya Hakkinda Elan yerlesdir
 #categories .container {
-	background: #F8CB1C !important;
+	background: $navbarColor !important;
 	padding-bottom: 0;
 	// Logo
 	.logo {
@@ -106,13 +108,13 @@ div.show{
 				display: block;
 				font-weight: 700;
 				font-size: 1.2em;
-				color: #000;
+				color: $mainTextColor;
 				margin-left: 10px;
 				padding: 20px;
 				border-radius: 4px 4px 0 0;
 			}
 			a:hover{
-				background: #ffdf80;
+				background: $navbarLinkHover;
 			}
 		}
 	}
@@ -131,12 +133,12 @@ div.show{
 				display: block;
 				font-weight: 700;
 				font-size: 1.2em;
-				color: #000;
+				color: $mainTextColor;
 				padding: 20px;
 				border-radius: 4px 4px 0 0;
 			}
 			a:hover{
-				background: #ffdf80;
+				background: $navbarLinkHover;
 			}
 		}
 		// Elan yerleşdir
@@ -149,8 +151,8 @@ div.show{
 				display: block;
 				font-weight: 700;
 				font-size: 1.2em;
-				color: #000;
-				background: #fff;
+				color: $mainTextColor;
+				background: $textColor;
 				border: 0;
 				padding: 10px;
 				border-radius: 5px;
@@ -167,14 +169,14 @@ div.show{
 		ul{
 			li{
 				float:left;
-				border: 2px solid #000;
+				border: 2px solid $mainTextColor;
 				margin: 2px;
 				border-radius: 5px;
 				a{
 					display: block;
 					padding: 5px;
 					text-decoration: none;
-					color: #000;
+					color: $mainTextColor;
 					font-weight: 700;
 					cursor: pointer;
 				}
@@ -184,7 +186,7 @@ div.show{
 }
 // Vakansiyalara Baxmaq ve CV-lərə baxmaq
 #viewVacancies .container, #viewCv .container{
-	background: #F9D54B;
+	background: $categoriesBgColor;
 	display: none;
 	.row {
 		padding: 15px 25px;
@@ -192,7 +194,7 @@ div.show{
 			.row {
 				padding: 5px 15px;
 				.vacCount {
-					color: #787053;
+					color: $countTextColor;
 					font-size: 16px;
 					font-weight: 300;
 					text-align: right;
@@ -204,13 +206,13 @@ div.show{
 					float: right;
 				}
 				a {
-					color: #555;
+					color: $bgcolor;
 					font-size: 16px;
 					padding: 5px 10px;
 					font-weight: 700;
 				}
 				a:hover{
-					background: #ffdf80;
+					background: $navbarLinkHover;
 					border-radius: 5px;
 				}
 			}
@@ -221,7 +223,7 @@ div.show{
 #searchBtn {
 	.container {
 		padding: 5px;
-		background: #F8CB1C;
+		background: $navbarColor;
 		cursor: pointer;
 		text-align: center;
 
@@ -237,22 +239,22 @@ div.show{
 			background-position: -42px -65px;
 		}
 		span.searchBtn {
-			color: #555;
-			border-bottom: 1px dashed #787053;     
+			color: $bgcolor;
+			border-bottom: 1px dashed $countTextColor;     
 		}
 		i {
 			padding: 5px 0px;
-			color: #555;
+			color: $bgcolor;
 			transition: 3.0s;
 		}
 	}
 	.container:hover{
-		background: #F9D54B;
+		background: $categoriesBgColor;
 	}
 }
 #search{
 	.container{
-		background: #F8CB1C; 
+		background: $navbarColor; 
 		.col-md-4 {
 			text-align: left;
 			span{
@@ -262,7 +264,7 @@ div.show{
 			}
 			.select {
 				width: 300px;
-				border: 1px solid #555;
+				border: 1px solid $bgcolor;
 				border-radius: 5px;
 				padding: 10px;
 				outline: none;
@@ -276,11 +278,11 @@ div.show{
 			text-align: center;
 			padding: 20px;
 			input {
-				background: #fff;
+				background: $textColor;
 				padding: 5px 25px;
 				font-weight: 700;
 				border-radius: 5px;
-				box-shadow: 0 1px  1px 0px #555;
+				box-shadow: 0 1px  1px 0px $bgcolor;
 			}
 		}
 	}
@@ -290,7 +292,7 @@ div.show{
 #lastVac {
 	.container{
 		padding-bottom: 10px;
-		background: #F4F4F4;
+		background: $contentBgColor;
 		.headListLastVac{
 			margin: 20px;
 			margin-top: 40px;
@@ -307,27 +309,27 @@ div.show{
 				}
 				a {	
 					display: inline-block;
-					color: #979797;
+					color: $contentLinkTextColor;
 					font-size: 19px;
 					padding: 0 15px;
 					font-weight: 700;
 				}
 				a:hover {
-					color: #F9D54B;
+					color: $categoriesBgColor;
 				}
 			}
 			.rightHead {
 				span {
-					color: #979797;
+					color: $contentLinkTextColor;
 					font-size: 19px;
 					font-weight: 700;
 					a {
-						color: #979797;
+						color: $contentLinkTextColor;
 						font-size: 19px;
 						font-weight: 700;
 					}
 					a:hover {
-					color: #F9D54B;
+					color: $categoriesBgColor;
 					}
 				}
 
@@ -335,7 +337,7 @@ div.show{
 		}
 		.listLastVac{
 			border-radius: 5px;
-			background: #fff;
+			background: $textColor;
 			margin: 20px;
 			box-shadow: 0 2px 3px rgba(0,0,0,0.2);
 			.row{
@@ -347,22 +349,22 @@ div.show{
 					border-left-width: 0;
 					.nameVac {
 						font-size: 16px;
-						color: #000;
+						color: $mainTextColor;
 						font-weight: 700;
 						text-decoration: underline;
 						display: block;
 					}
 					.nameVac:hover, .companyName:hover {
-						color: #F9D54B;
+						color: $categoriesBgColor;
 					}
 					.companyName {
 						font-size: 12px;
-						color: #979797;
+						color: $contentLinkTextColor;
 						display: block;
 					}
 					.priceVac {
 						display: inline-block;
-						background: #F8CB1C;
+						background: $navbarColor;
 						margin: 5px 0;
 						border-radius: 5px;
 						padding: 5px 12px;
@@ -414,11 +416,11 @@ div.show{
 			padding: 20px;
 			ul.nav{
 				li{
-					background-color: #f4f4f4;
+					background-color: $contentBgColor;
 					a{
 						font-size: 26px;
 						font-weight: 700;
-						color: #000;
+						color: $mainTextColor;
 						text-decoration: underline;
 						text-transform: uppercase;
 					}
@@ -433,7 +435,7 @@ div.show{
 				}
 			}
 			.active{
-				background: #fff;
+				background: $textColor;
 			}
 			.tab-pane{
 				.cat {
@@ -446,10 +448,10 @@ div.show{
 						a{
 							text-decoration: none;
 							font-size: 15px;
-							color: #555;
+							color: $bgcolor;
 						}
 						a:hover{
-							color: #E65100 !important;
+							color: $tabCatLinkColor !important;
 						}
 						padding: 10px 0px 0px 40px;
 						ul.catList{
@@ -458,7 +460,7 @@ div.show{
 								margin: 0;
 								padding: 3px;
 								a:hover{
-									color: #E65100 !important;
+									color: $tabCatLinkColor !important;
 								}
 							}
 							li.catListItem:first-child{
@@ -475,11 +477,14 @@ div.show{
 		}
 	}
 }
+
+// Footer
+
 #footer{
 	.container{
 		padding-bottom: 30px;
 		background: $bgcolor;
-		border-top: 3px solid #F8CB1C;
+		border-top: 3px solid $navbarColor;
 		.row {
 			padding: 20px;
 			.col-md-4{
@@ -490,7 +495,7 @@ div.show{
 							padding: 5px 0px;
 							a{
 								font-size: 16px;
-								color: #EAB121;
+								color: $footerLinkColor;
 								text-decoration: none;
 							}
 							a:hover{
@@ -499,7 +504,7 @@ div.show{
 						}
 						li.mobile{
 							a{
-								color: #ccc;
+								color: $footerTextColor;
 							}
 						}
 					}
@@ -509,12 +514,12 @@ div.show{
 						li{
 							padding: 5px 0;
 							span {
-								color: #ccc;
+								color: $footerTextColor;
 								padding-left: 10px;
 								font-size: 16px;
 							}
 							a{
-								color: #ccc;
+								color: $footerTextColor;
 								text-decoration: none;
 								padding-left: 10px;
 								font-size: 16px;
@@ -558,12 +563,12 @@ div.show{
 				.copyright {
 					padding-top: 15px;
 					span{
-						color: #909090;
+						color: $footerTextColor;
 						font-size: 13px;
 					}
 				}
 				a.title{
-					color: #eab121;
+					color: $footerLinkColor;
 					font-size: 18px;
 					font-weight: 700;
 					text-decoration: none;
@@ -579,7 +584,7 @@ div.show{
 						padding: 5px 0;
 						a {
 							font-size: 16px;
-							color: #ccc;
+							color: $footerTextColor;
 							text-decoration: none;
 						}
 						a:hover{
