@@ -26,14 +26,32 @@
 		display: block !important;
 	}
 }
-height = $("#search > .container").height();
-		$("#search").hide();
-      $("#searchBtn").toggle(function(){
-        var index = $("#alanim span").index(this);
-        $("#alanim div:eq("+index+")").slideDown("slow");
-        $(this).css("background-color","#800");}, 
-      function(){
-        var index = $("#alanim span").index(this);
-        $("#alanim div:eq("+index+")").slideUp("slow");
-        $(this).css("background-color","#369");
-      });
+@media (max-width: 780px){
+	#lastVac .container .headListLastVac .rightHead ,#lastVac .container .headListLastVac .leftHead a {
+		display: none;
+		visibility: hidden;	
+	}
+	#lastVac .container .headListLastVac .leftHead {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.mobile, .widgets, .quote, .tabCategoriesCompanies {
+		display: none;
+	}
+	#lastVac .container .headListLastVac .leftHead h1 {
+		font-size: 25px !important;
+	}
+	#footer .container .row .col-md-4 .footNav {
+		float: left;
+	}
+	#footer .container .row .col-md-4 .footInfo{
+		float: right;
+	}
+	#footer .container .row .col-md-4 .copyright {
+		clear: both;
+	}
+	#footer .container .row .col-md-4 .footCatList , #footer .container .row .col-md-4 a.title{
+		display: none;
+		visibility: hidden;
+	}
+}
