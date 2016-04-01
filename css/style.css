@@ -51,7 +51,7 @@ div.show {
 
 #categories .container {
   background: #F8CB1C !important;
-  padding-bottom: 0; }
+  padding-bottom: 20px; }
   #categories .container .logo {
     margin-top: 25px;
     margin-right: 35px;
@@ -79,6 +79,21 @@ div.show {
         border-radius: 4px 4px 0 0; }
       #categories .container .catNav .vacancies a:hover, #categories .container .catNav .resumes a:hover {
         background: #ffdf80; }
+    #categories .container .catNav .pageVacancies, #categories .container .catNav .pageResumes {
+      float: left;
+      vertical-align: middle;
+      line-height: 28px;
+      margin-top: 25px; }
+      #categories .container .catNav .pageVacancies a, #categories .container .catNav .pageResumes a {
+        display: block;
+        font-weight: 700;
+        font-size: 1.2em;
+        color: #000;
+        margin-left: 10px;
+        padding: 10px;
+        border-radius: 5px; }
+      #categories .container .catNav .pageVacancies a:hover, #categories .container .catNav .pageResumes a:hover {
+        background: #ffdf80; }
   #categories .container .otherNav {
     float: right;
     margin-right: 10px; }
@@ -96,6 +111,21 @@ div.show {
         padding: 20px;
         border-radius: 4px 4px 0 0; }
       #categories .container .otherNav .about a:hover {
+        background: #ffdf80; }
+    #categories .container .otherNav .pageAbout {
+      float: left;
+      vertical-align: middle;
+      line-height: 28px;
+      margin-top: 25px;
+      margin-right: 20px; }
+      #categories .container .otherNav .pageAbout a {
+        display: block;
+        font-weight: 700;
+        font-size: 1.2em;
+        color: #000;
+        padding: 10px;
+        border-radius: 4px; }
+      #categories .container .otherNav .pageAbout a:hover {
         background: #ffdf80; }
     #categories .container .otherNav .add {
       float: left;
