@@ -581,4 +581,61 @@ div.show {
             font-size: 16px;
             list-style-type: circle; }
 
+#about .container {
+  background: #f4f4f4; }
+  #about .container .row {
+    padding-top: 10px; }
+    #about .container .row .col-md-12 {
+      padding-top: 20px; }
+      #about .container .row .col-md-12 ul li {
+        float: left; }
+        #about .container .row .col-md-12 ul li a {
+          border-radius: 5px 5px 0 0;
+          padding: 10px 20px;
+          font-size: 20px;
+          font-weight: 700;
+          display: block;
+          color: #000;
+          position: relative;
+          z-index: 999;
+          top: 1px; }
+        #about .container .row .col-md-12 ul li a.tactive {
+          border: 1px solid #e8e8e8;
+          border-bottom-width: 0;
+          background: #fff;
+          text-decoration: none; }
+        #about .container .row .col-md-12 ul li a:hover {
+          background: #fff; }
+      #about .container .row .col-md-12 .tabReklam {
+        margin-left: 10px; }
+
+#aboutP .bgCol, #aboutA .bgCol {
+  display: none;
+  background: #f4f4f4; }
+  #aboutP .bgCol .borderCol, #aboutA .bgCol .borderCol {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #e8e8e8; }
+    #aboutP .bgCol .borderCol .container, #aboutA .bgCol .borderCol .container {
+      padding: 30px 0;
+      width: 75%;
+      background: #fff; }
+      #aboutP .bgCol .borderCol .container h1, #aboutA .bgCol .borderCol .container h1 {
+        margin: 0;
+        font-size: 40px;
+        font-weight: 700;
+        color: #eab121; }
+      #aboutP .bgCol .borderCol .container .contentTab, #aboutA .bgCol .borderCol .container .contentTab {
+        padding-top: 20px;
+        font-size: 16px; }
+        #aboutP .bgCol .borderCol .container .contentTab a, #aboutA .bgCol .borderCol .container .contentTab a {
+          color: #daaf07; }
+        #aboutP .bgCol .borderCol .container .contentTab span.green, #aboutA .bgCol .borderCol .container .contentTab span.green {
+          color: #739e5b; }
+        #aboutP .bgCol .borderCol .container .contentTab span.red, #aboutA .bgCol .borderCol .container .contentTab span.red {
+          color: #db7443; }
+        #aboutP .bgCol .borderCol .container .contentTab .green, #aboutA .bgCol .borderCol .container .contentTab .green {
+          color: #739e5b; }
+
 /*# sourceMappingURL=style.css.map */
