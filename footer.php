@@ -104,8 +104,8 @@
     	thisAttr = $(this).attr("href");
     	$(".show").removeClass("show");
     	$(thisAttr+"> .container").addClass("show");
+    	return false;
     });
-		
 	});
 
 	// Yuxarıdan aşağı açılan Axtarış sistemi
@@ -121,5 +121,15 @@
 	    	$("#upDown").toggleClass("fa-caret-up");
     	});
 	});
+
+	// Elan yerləşdir input yaratma
+	var fieldset = document.getElementsByName("#addInput");
+	function yarat(){
+		var input = document.createElement("input");
+		input.type="text";
+		input.className="form-control";
+		fieldset.appendChild(input);
+	}
+
 
 </script>

@@ -3,6 +3,9 @@
 	Clone boss.az
 	Group: Parviz Aliyev, Huseyn Huseynli, Imran Abdullayev, Tural Ismayilov, Ceyhun Sadiqov
 */
+html, body {
+  font-family: Tahoma; }
+
 a {
   text-decoration: underline; }
 
@@ -23,6 +26,12 @@ a.active:hover {
 
 div.show {
   display: block !important; }
+
+.pBottom {
+  padding-bottom: 20px !important; }
+
+.box-sh {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); }
 
 #header .container {
   background: #555 !important;
@@ -51,7 +60,7 @@ div.show {
 
 #categories .container {
   background: #F8CB1C !important;
-  padding-bottom: 20px; }
+  padding-bottom: 0px; }
   #categories .container .logo {
     margin-top: 25px;
     margin-right: 35px;
@@ -143,6 +152,9 @@ div.show {
         border-radius: 5px;
         cursor: pointer;
         outline: none; }
+        #categories .container .otherNav .add button a {
+          color: #000;
+          text-decoration: none; }
   #categories .container .lang-select {
     margin-top: 10px;
     float: right;
@@ -452,5 +464,121 @@ div.show {
         text-decoration: none; }
       #footer .container .row .col-md-4 .footCatList .cat a:hover {
         text-decoration: underline; }
+
+#addVac .container {
+  background: #f4f4f4; }
+  #addVac .container .row {
+    padding: 10px 0; }
+    #addVac .container .row .col-md-7 .row h1 {
+      font-size: 24px;
+      font-weight: 700; }
+    #addVac .container .row .col-md-7 .row button {
+      float: right;
+      margin-top: 10px;
+      font-size: 15px;
+      text-decoration: underline;
+      color: #555;
+      background: #F9D54B;
+      border: 0;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      outline: none; }
+      #addVac .container .row .col-md-7 .row button a {
+        color: #555; }
+    #addVac .container .row .vacForm .row {
+      padding: 10px 15px; }
+      #addVac .container .row .vacForm .row .col-md-12 {
+        background: #fff;
+        border-radius: 5px; }
+        #addVac .container .row .vacForm .row .col-md-12 .row .col-md-8 h4 {
+          font-size: 24px;
+          font-weight: 700;
+          color: #eab121; }
+        #addVac .container .row .vacForm .row .col-md-12 .phoneForm .col-md-8 a {
+          color: #000;
+          border-bottom: 1px dashed #000;
+          text-decoration: none; }
+        #addVac .container .row .vacForm .row .col-md-12 .phoneForm .col-md-8 input {
+          border-bottom-width: 0;
+          border-radius: 0;
+          outline: none; }
+        #addVac .container .row .vacForm .row .col-md-12 .phoneForm .col-md-8 input:last-child {
+          border-radius: 0 0 5px 5px;
+          border-bottom: 1px solid #ccc; }
+        #addVac .container .row .vacForm .row .col-md-12 .phoneForm .col-md-8 .phoneNum {
+          border-radius: 5px 5px 0 0 !important; }
+        #addVac .container .row .vacForm .row .col-md-12 .phoneForm .col-md-4 .row {
+          padding: 0;
+          margin-top: 30px;
+          font-size: 12.6px;
+          font-style: italic; }
+    #addVac .container .row .vacForm .rowBtn {
+      text-align: center; }
+      #addVac .container .row .vacForm .rowBtn .col-md-12 {
+        padding: 10px 0;
+        padding-bottom: 20px; }
+        #addVac .container .row .vacForm .rowBtn .col-md-12 button {
+          font-size: 15px;
+          color: #000;
+          font-weight: 700;
+          background: #fff;
+          text-align: center;
+          padding: 10px 25px;
+          cursor: pointer;
+          outline: none;
+          border: 0;
+          border-radius: 5px; }
+    #addVac .container .row .vacForm .addBtn {
+      text-align: center; }
+      #addVac .container .row .vacForm .addBtn .col-md-12 {
+        padding: 10px 0;
+        padding-bottom: 20px; }
+        #addVac .container .row .vacForm .addBtn .col-md-12 button {
+          font-size: 15px;
+          color: #555;
+          font-weight: 700;
+          background: #F8CB1C;
+          text-align: center;
+          padding: 5px 25px;
+          cursor: pointer;
+          outline: none;
+          border: 0;
+          border-radius: 5px; }
+    #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 h4 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #eab121;
+      padding-bottom: 10px; }
+    #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 .maasForm, #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 .yasForm {
+      padding-left: 5px;
+      padding-right: 20px; }
+      #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 .maasForm label, #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 .yasForm label {
+        padding-top: 5px; }
+      #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 .maasForm *, #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 .yasForm * {
+        padding: 0 5px; }
+    #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 .eduForm .col-md-7 {
+      padding-left: 0; }
+    #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 .eduForm .col-md-5 {
+      padding-right: 0; }
+    #addVac .container .row .vacForm .row .col-md-12 .row .col-md-12 textarea {
+      resize: none; }
+    #addVac .container .row .rules .headerRow {
+      padding: 5px 20px; }
+      #addVac .container .row .rules .headerRow .col-md-12 h1 {
+        font-size: 24px;
+        font-weight: 700;
+        font-color: #000; }
+    #addVac .container .row .rules .rulesRow {
+      padding: 15px 0; }
+      #addVac .container .row .rules .rulesRow ol li {
+        font-size: 16px;
+        padding: 5px 0px; }
+        #addVac .container .row .rules .rulesRow ol li ul {
+          padding: 0 15px; }
+          #addVac .container .row .rules .rulesRow ol li ul li {
+            padding: 5px 0;
+            font-size: 16px;
+            list-style-type: circle; }
 
 /*# sourceMappingURL=style.css.map */

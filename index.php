@@ -19,7 +19,7 @@
 					<a href="#resumes">Haqqımızda</a>
 				</div>
 				<div class="add">
-					<button>Elan yerləşdirin</button>
+					<button><a href="addvac.php">Elan yerləşdirin</a></button>
 				</div>
 			</div>
 			<div class="lang-select">
@@ -610,56 +610,7 @@
 			    					<li class="catListItem"><a href="">Maliyyə</a></li>
 			    				</ul>
 			    			</div>
-			    			<div class="col-md-4">
-			    				<ul class="catList">
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    				</ul>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<ul class="catList">
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    				</ul>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<ul class="catList">
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    				</ul>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<ul class="catList">
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    				</ul>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<ul class="catList">
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    				</ul>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<ul class="catList">
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    				</ul>
-			    			</div>
-			    		</div>
+			    		</div><!-- Row -->
 			    	</div>
 			    	<div role="tabpanel" class="tab-pane" id="profile">
 			    		<div class="row">
@@ -701,7 +652,7 @@
 			    			</div>
 			    		</div>
 			    	</div>
-			  	</div>
+			  	</div> <!--row-->
 			</div>
 
 	<!-- List All categories and All company End -->
