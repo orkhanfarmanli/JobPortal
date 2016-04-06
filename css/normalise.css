@@ -8,8 +8,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700');
 
 html {
-  font-family: 'Lato', Arial, sans-serif; /* 1 */
-  font-weight: 400;
+  font-family: 'Lato','Raleway', sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }

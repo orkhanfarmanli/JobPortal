@@ -17,8 +17,9 @@ $footerLinkColor: #eab121; // Footerdeki Linklerin rengi
 $tabCatLinkColor: #E65100; // 2ci tabdaki linklerin rengi
 $contentBgColor: #f4f4f4; // Content Containerin arxa fonu
 $contentLinkTextColor: #979797; // content linkleri ve textlerin rengi
+$secondTextColor:#333;
 
-// Əlavələr
+// Əlavələar
 html, body {
 	font-family: Tahoma;
 }
@@ -50,6 +51,9 @@ div.show{
 	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
 }
 
+.all {
+	background: $categoriesBgColor !important;
+}
 // Header
 
 #header .container {
@@ -92,7 +96,7 @@ div.show{
 // Is Axtaran Vacansiya Hakkinda Elan yerlesdir
 #categories .container {
 	background: $navbarColor !important;
-	padding-bottom: 0px;
+	padding-bottom: 0;
 	// Logo
 	.logo {
 		margin-top: 25px;
@@ -127,6 +131,7 @@ div.show{
 			}
 		}
 		// Diger sehifeler üçün
+
 		.pageVacancies, .pageResumes {
 			float: left;
 			vertical-align: middle;
@@ -170,6 +175,7 @@ div.show{
 			}
 		}
 		// Diger sehifeler üçün
+
 		.pageAbout{
 			float:left;
 			vertical-align: middle;
@@ -205,6 +211,7 @@ div.show{
 				border-radius: 5px;
 				cursor:pointer;
 				outline: none;
+
 				a{
 					color: $mainTextColor;
 					text-decoration: none;
@@ -530,6 +537,423 @@ div.show{
 	}
 }
 
+
+// all vacancies Page
+#allVac {
+	.container{
+		.row{
+			padding:  10px 20px;
+			.allVacHeader{
+				h3{
+					color: secondTextColor;
+					font-weight: 700;
+					font-size: 26px;
+				}
+				span{
+					color: $contentLinkTextColor;
+					font-weight: 700;
+					font-size: 26px;
+					font-family: sans-serif;
+				}
+
+			}
+		}
+
+	.row{
+		.col-md-6{
+			.card-lar{
+				.card-block{
+
+					background-color: $textColor;
+					h3{
+						font-size: 24px;
+						font-weight: 700;
+						color:$footerLinkColor;
+					}
+
+					a{
+						font-size: 15px;
+						font-weight: 700;
+						color: #666;
+						text-decoration: none;
+					}
+
+					a:hover{
+						color: #a98705;
+					}
+
+					.imqiymet{
+						height: 50px;
+						margin-top: 10px;
+
+						.qiymet{
+							width: 110px;
+							height: 37px;
+							background: #f8cb1c;
+							border-radius: 6px;
+							line-height: 37px;
+							margin-top: -0.5px;
+							color: #333;
+							border: 1px solid #f8cb1c;
+							text-align: center;
+							float: left;
+							position: relative;
+							z-index: 1;
+						}
+
+						.qiymetLink{
+							box-sizing: border-box;
+							width: 90px;
+							height: 36px;
+							float: left;
+							text-align: center;
+							margin-left: -14px;
+							border-radius: 6px;
+							border: 1px solid #d8d8d8;
+							border-left: none;
+							position: relative;
+							z-index: 0;
+							line-height: 36px;
+
+							a{
+								text-decoration: underline;
+								color: #555;
+								font-size: 18px;
+								padding: 5px;
+								line-height: 36px;
+								margin-left: 14px;
+							}
+
+							i{
+								font-size: 20px;
+							}
+
+						}
+
+						.qiymetLink:hover{
+							background: #f9f3d9;
+						}
+					}
+
+					p{
+						height: 200px;
+						font-size: 15px;
+					}
+
+					.cardFooter{
+						color: $contentLinkTextColor;
+
+						span{
+							font-weight: normal;
+							color: $contentLinkTextColor;
+							font-size: 14px;
+
+						}
+						i{
+							color: #f8cb1c;
+							font-size: 8px;
+							margin: 0 8px;
+
+						}
+
+						a{
+							
+							color: $contentLinkTextColor;
+							font-weight: normal;
+							font-size: 14px;
+							text-decoration: underline;
+						}
+						a:hover{
+							color: #a98705;
+						}
+					}
+
+				}
+
+				.card-block:hover{
+					box-shadow: 0 2px 30px rgba(0,0,0,0.2);
+					cursor: pointer;
+					transition: all 0.2s;
+				}
+			}
+		}
+		nav {
+			padding: 0 15px;
+			clear: both;
+			display: flex;
+			justify-content: center;
+			ul{
+				font-size: 15px;
+				font-weight: 700;
+				li.active{
+					a{
+					background: $navbarColor !important;
+					} 
+				}
+				li{
+
+					a{
+						padding: 12px 14px;
+						color: $mainTextColor;
+
+					}
+					a:hover{
+						background: #f9f3d9;
+					}
+				}
+				
+			}
+		}
+	}
+  }
+}
+
+// all vacancies page end
+
+// single page
+#singlePage{
+	.container{
+		.row{
+			background: #f4f4f4;
+			//border-top-right-radius: 6px;
+			 .col-md-12{
+						padding: 20px 40px;
+						 
+				.row{
+					background-color: #fff;
+					border-top-left-radius: 6px;
+					border-top-right-radius: 6px;  
+					border-bottom-left-radius: 6px;
+					border-bottom-right-radius: 6px;
+					.card-i-header{
+							 
+						 	padding: 15px 30px;
+							.card-i-header-link{
+							a{
+								font-size: 18px;
+								text-decoration: none;
+								color: $secondTextColor;
+							}
+							a:hover{
+								color: #a98705;
+							}
+						}
+
+						.card-i-header-post{
+							padding: 10px 15px;
+
+							
+							.div-i-header-post-title{
+							float: left;
+							h2{
+								color: $footerLinkColor;
+								margin: 0;
+								padding-bottom: 10px;
+							}
+
+							span{
+								
+								border-radius: 3px;
+								background-color: $navbarColor;
+								padding: 5px 12px;
+								color: $secondTextColor;
+								font-weight: 700;
+								margin-right: 10px;
+							
+							}
+
+							a{
+								color: #3c3939;
+								font-size: 15px;
+								font-weight: normal;
+							}
+							a:hover{
+								color: #a98705;
+							}
+
+							}
+
+							.div-i-header-post-baxis{
+								float: right;
+							}
+						}
+
+					}
+
+					.card-i-info{
+						.info{
+							.col-md-12 {
+								padding: 0;
+								padding-top: 10px;
+								background-color: #fffae9;
+								.col-md-6{
+
+									.col-md-4,.col-md-6{
+										ul{
+
+											li{
+												font-size: 15px;
+												font-weight: 700;
+												color: $secondTextColor;
+											}
+										}
+
+
+									}
+								}
+
+								.col-md-6{
+									
+									.col-md-3{
+									font-size: 15px;
+									font-weight: 700;
+									color: $secondTextColor;
+											
+									}
+
+									.col-md-9{
+										ul{
+											li{
+												
+
+												a{
+												font-size: 15px;
+												color: $secondTextColor;				
+												}
+
+												a:hover{
+													color: #a98705;
+												}
+
+												
+											}
+											li:first-child {
+												a {
+													text-decoration: none;
+												}
+											}
+										}
+
+									}
+								}
+							}
+						}
+					}
+
+					.card-i-content{
+
+						
+							 .col-md-12{
+
+								padding:0;
+								.col-md-6{
+
+									 padding: 15px 30px;
+											 h1{
+													font-size: 15px;
+													font-weight: 700;
+													color: $secondTextColor;
+												}
+												  p{
+														font-size: 15px;
+														color: $secondTextColor;
+													}
+													
+												
+											}
+
+
+										}
+									}
+									
+
+								 .elanlar{
+								 	border-bottom-right-radius: 20px;
+								 	background-color: red;
+									.col-md-12{
+										border-top: 1px solid #e8e8e8;
+										border-bottom: 2px solid #e8e8e8;
+
+										padding-top:30px; 
+										padding-bottom:30px;
+										background-color: #fff;
+
+										border-bottom-right-radius: 6px;
+										border-bottom-left-radius: 6px;
+										
+
+										
+
+										.col-md-12-elan{
+
+											a{	
+												
+												border:1px solid #f8cb1c;
+												padding:12px 7px;
+												border-radius: 4px;
+												text-decoration: none;
+												margin-right: 30px;
+
+												.fa-arrow-up{
+													color: #f8cb1c;
+													margin-right: 5px;
+												}
+												span{
+													color: $bgcolor;
+													font-weight: 700;
+													text-decoration: underline;
+												}
+
+												.a-qiymet,.a-premium{
+													
+												   display: inline-block;
+													position: absolute;
+													left:152px;
+													top: 10px;
+													background-color:$navbarColor;
+													padding:3px 9px;
+													font-weight: 700;  
+													border-radius: 4px;
+													color: #333;
+													font-size: 11px;
+	
+													
+												}
+											}
+
+											a:hover{
+												background-color: #f5efdc;
+											}
+
+											a:nth-child(2){
+												span:nth-child(1){
+													color: #f8cb1c;
+													margin-right: 5px;
+													text-decoration: none;
+													font-size: 18px;
+												}
+
+												.a-premium{
+													
+													left:333px !important;
+													top: 10px !important;
+													
+												}
+											}
+											
+										}
+									}
+								  }	
+				}
+			}
+		}
+	}
+
+}
+
+
+// single page end
+
 // Footer
 
 #footer{
@@ -833,5 +1257,89 @@ div.show{
 			}
 		}
 		
+	}
+}
+
+// About Page 
+
+#about {
+	.container{
+		background: #f4f4f4;
+		.row {
+			padding-top: 10px;
+			.col-md-12{
+				padding-top:20px;
+				ul{
+					li{
+						float: left;
+						a{
+							border-radius: 5px 5px 0 0;
+							padding: 10px 20px;
+							font-size: 20px;
+							font-weight: 700;
+							display: block;
+							color: #000;
+							position: relative;
+							z-index: 999;
+							top: 1px;
+						}
+						a.tactive{
+							border:1px solid #e8e8e8;
+							border-bottom-width: 0;
+							background: #fff;
+							text-decoration: none;
+						}
+						a:hover {
+							background:#fff;
+						}
+					}
+
+				}
+				.tabReklam {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+// About Page Tab
+#aboutP, #aboutA {
+	.bgCol{ 
+		display: none;
+		background: #f4f4f4;
+		.borderCol{
+			border-radius: 5px;
+			margin-bottom: 20px;
+			background: #fff;
+			border:1px solid #e8e8e8;
+			.container{
+				padding: 30px 0;
+				width: 75%;
+				background: #fff;
+				h1{
+					margin: 0;
+					font-size: 40px;
+					font-weight: 700;
+					color: #eab121;
+				}
+				.contentTab{
+					padding-top: 20px;
+					font-size: 16px;
+
+					a{
+						color: #daaf07;
+					}
+					span.green{
+						color:#739e5b;
+					}
+					span.red {
+						color:#db7443;
+					}
+					.green{
+						color:#739e5b;
+					}
+				}
+			}
+		}
 	}
 }

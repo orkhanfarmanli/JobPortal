@@ -106,7 +106,10 @@
     	$(thisAttr+"> .container").addClass("show");
     	return false;
     });
-	});
+
+    });
+		
+
 
 	// Yuxarıdan aşağı açılan Axtarış sistemi
 	var height;
@@ -120,6 +123,7 @@
     	$("#searchBtn").click(function(){
 	    	$("#upDown").toggleClass("fa-caret-up");
     	});
+
 	});
 
 	// Elan yerləşdir input yaratma
@@ -131,5 +135,29 @@
 		fieldset.appendChild(input);
 	}
 
+
+
+
+	// tab menu about
+	var aboutAttr; 
+
+	$(document).ready(function() {
+
+    $("ul#aboutNav li a").click(function(){
+    	$(".tactive").removeClass("tactive");
+    	$(this).addClass("tactive");
+    	aboutAttr = $(this).attr("href");
+    	$(".show").removeClass("show");
+    	$(aboutAttr+" > .bgCol").addClass("show");
+    	return false;
+    });
+	});
+
+		// seyfeleme pagination
+
+	$(document).ready(function() {
+		$(".pagination").bootstrapPaginator();
+	});
+	// seyfeleme pagination end
 
 </script>

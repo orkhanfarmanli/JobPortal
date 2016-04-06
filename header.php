@@ -11,7 +11,9 @@
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<!-- Style css -->
 	<link rel="stylesheet" href="css/responsive.css">
+
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
 	<link rel="stylesheet" href="css/style.css">
 
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
