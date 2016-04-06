@@ -134,7 +134,20 @@
 		input.className="form-control";
 		fieldset.appendChild(input);
 	}
+	// tab menu about
+	var aboutAttr; 
 
+	$(document).ready(function() {
+
+    $("ul#aboutNav li a").click(function(){
+    	$(".tactive").removeClass("tactive");
+    	$(this).addClass("tactive");
+    	aboutAttr = $(this).attr("href");
+    	$(".show").removeClass("show");
+    	$(aboutAttr+" > .bgCol").addClass("show");
+    	return false;
+    });
+	});
 
 
 
