@@ -1,6 +1,6 @@
 
 	<section id="footer">
-		<div class="container">
+		<div class="container clearFix">
 			<div class="row">
 				<div class="col-md-4">
 					<div class="footNav">

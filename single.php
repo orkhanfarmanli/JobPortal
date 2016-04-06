@@ -170,15 +170,127 @@
 							</div>
 						  </div>
 							<div class="card-i-footer">
-
-						    </div>
-							</div>
+								<div class="comments-container">
+								    <div class="comments">
+								      <div class="fb-comments fb_iframe_widget" data-href="http://boss.az/vacancies/93174" data-numposts="10" data-width="900" fb-xfbml-state="rendered"><span style="height: 239px; width: 900px;"><iframe id="f10c0cc4fa86b64" name="f31bbdf564d22fc" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="https://www.facebook.com/plugins/comments.php?api_key=168601233177656&amp;channel_url=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df2d726881e90d28%26domain%3Dboss.az%26origin%3Dhttp%253A%252F%252Fboss.az%252Ffb0b71e143a444%26relation%3Dparent.parent&amp;href=http%3A%2F%2Fboss.az%2Fvacancies%2F93174&amp;locale=az_AZ&amp;numposts=10&amp;sdk=joey&amp;version=v2.2&amp;width=900" style="border: none; overflow: hidden; height: 239px; width: 900px;"></iframe></span></div>
+								    </div>
+								    <div class="comments-hide">
+									    <a href="#">
+									      <span class="translation_missing" title="translation missing: az.application.social.hide">Hide</span>
+									    </a>
+									</div>
+								</div>
+   							</div>
 						</div> <!-- row-->
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- single php end -->
+		
+		<section id="allVac">
 
+		<div class="container">
+			<div class="row">
+				<!-- vacancies header -->
+				<div class="allVacHeader">
+					<h3>Digər iş elanları</h3>
+
+				</div>
+				<!-- vacancies header end-->
+			</div>
+
+
+			<div class="row">
+
+			  <div class="col-md-6">
+					<div class="card-lar">
+					   	<div class="card card-block">
+					      <h3 class="card-title">TƏLİMLƏRİN TƏŞKİLİ ÜZRƏ KİÇİK MÜTƏXƏSSİS</h3>
+					      <a href="#">ALSA GROUP</a>
+						   <div class="imqiymet">
+					              <div class="qiymet"><span>700-1000 AZN</span></div>
+					              <div class="qiymetLink">
+						               <a href="#">Ətraflı</a>
+						               <i class="fa fa-angle-right"></i>
+					              </div>
+
+           				     </div>
+
+
+					              <p >
+					              - Şirkət istehsalatla məşğuldur
+					              <br>
+					              - Şirkətin məhsullarının korporativ və pərakəndə satışı
+					              <br>
+					              - 6 günlük iş rejimi
+					              <br>
+					              - Yemək və avtomobilin xərcləri şirkət tərəfindən ödəniləcək
+					              <br>
+					              - Əmək haqqı satış həcminə görə daha çox ola bilər
+
+					              </p>
+
+					              <div class="cardFooter">
+						            <span>Bakı</span>
+						              <i class="fa fa-circle"></i>
+						              <a href="#" >Satış </a>
+						                /
+						              <a href="#" > Satış üzrə mütəxəssis</a>
+		            			</div>
+														
+					   	</div>
+						
+						 
+
+					</div>
+			    </div>
+
+
+			    
+			  <div class="col-md-6">
+					<div class="card-lar">
+					   	<div class="card card-block">
+					      <h3 class="card-title">TƏLİMLƏRİN TƏŞKİLİ ÜZRƏ KİÇİK MÜTƏXƏSSİS</h3>
+					      <a href="#">ALSA GROUP</a>
+						   <div class="imqiymet">
+					              <div class="qiymet"><span>700-1000 AZN</span></div>
+					              <div class="qiymetLink">
+						               <a href="#">Ətraflı</a>
+						               <i class="fa fa-angle-right"></i>
+					              </div>
+
+           				     </div>
+
+
+					              <p >
+					              - Şirkət istehsalatla məşğuldur
+					              <br>
+					              - Şirkətin məhsullarının korporativ və pərakəndə satışı
+					              <br>
+					              - 6 günlük iş rejimi
+					              <br>
+					              - Yemək və avtomobilin xərcləri şirkət tərəfindən ödəniləcək
+					              <br>
+					              - Əmək haqqı satış həcminə görə daha çox ola bilər
+
+					              </p>
+
+					              <div class="cardFooter">
+						            <span>Bakı</span>
+						              <i class="fa fa-circle"></i>
+						              <a href="#" >Satış </a>
+						                /
+						              <a href="#" > Satış üzrə mütəxəssis</a>
+		            			</div>
+														
+					   	</div>
+						
+						 
+
+					</div>
+			  	</div>
+			</div>
+		</section>
 
 	<?php include "footer.php"; ?>

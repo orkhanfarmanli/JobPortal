@@ -16,6 +16,8 @@
 
 	<link rel="stylesheet" href="css/style.css">
 
+	<script id="facebook-jssdk" src="https://connect.facebook.net/az_AZ/sdk.js" async=""></script>
+
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 </head>
 <body>

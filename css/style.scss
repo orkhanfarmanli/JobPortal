@@ -541,13 +541,16 @@ div.show{
 // all vacancies Page
 #allVac {
 	.container{
+		background: #f4f4f4;
 		.row{
-			padding:  10px 20px;
+			padding:  5px 10px;
+			padding-bottom: 20px;
 			.allVacHeader{
 				h3{
 					color: secondTextColor;
 					font-weight: 700;
-					font-size: 26px;
+					font-size: 20px;
+					padding-left: 15px;
 				}
 				span{
 					color: $contentLinkTextColor;
@@ -563,10 +566,11 @@ div.show{
 		.col-md-6{
 			.card-lar{
 				.card-block{
-
+					padding: 0 20px;
+					padding-bottom: 20px;
 					background-color: $textColor;
 					h3{
-						font-size: 24px;
+						font-size: 20px;
 						font-weight: 700;
 						color:$footerLinkColor;
 					}
@@ -614,18 +618,22 @@ div.show{
 							position: relative;
 							z-index: 0;
 							line-height: 36px;
+							display: flex;
+							justify-content: center;
+							align-items: center;
 
 							a{
 								text-decoration: underline;
 								color: #555;
-								font-size: 18px;
-								padding: 5px;
-								line-height: 36px;
+								font-size: 16px;
 								margin-left: 14px;
+								padding: 0 5px;
+								font-weight: 400;
 							}
 
 							i{
-								font-size: 20px;
+								font-size: 26px;
+								padding-right: 5px;
 							}
 
 						}
@@ -693,7 +701,7 @@ div.show{
 				li{
 
 					a{
-						padding: 12px 14px;
+						padding: 10px 16px;
 						color: $mainTextColor;
 
 					}
@@ -943,7 +951,19 @@ div.show{
 											
 										}
 									}
-								  }	
+								  }
+					.comments-container {
+						border-radius: 0 0 5px 5px !important;
+					}
+					.comments-hide {
+						background: blue;
+						text-align: center;
+						border-radius: 0 0 5px 5px;
+						padding: 5px;
+						a{
+							color: $textColor;
+						}
+					}
 				}
 			}
 		}
