@@ -11,5 +11,3 @@ Route::get('vacancies', 'PageController@showAllVac'); // hamısını göstər va
 Route::get('resumes', 'PageController@showAllCv'); // hamısını göstər cvlər
 
 //Formlar
-
-Route::post('resumes/{cv}', 'formController@store'); // Cv elave etme 
