@@ -4,7 +4,6 @@
 	Group: Parviz Aliyev, Huseyn Huseynli, Imran Abdullayev, Tural Ismayilov, Ceyhun Sadiqov
 */
 // Color Variables
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 $bgcolor: #555; // Header Reklamların arxa fonu
 $navbarColor: #F8CB1C; // Logo ve Navbarın arxa fonu
@@ -20,6 +19,8 @@ $contentBgColor: #f4f4f4; // Content Containerin arxa fonu
 $contentLinkTextColor: #979797; // content linkleri ve textlerin rengi
 $secondTextColor:#333;
 // Font
+@import "resources/assets/vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+
 @font-face {
 font-family: Gill Sans Light;
 font-weight: 300;

@@ -4,17 +4,21 @@
 	<meta charset="UTF-8">
 	<title>JobPortal</title>
 	<!-- Normalise css -->
-	<link rel="stylesheet" href="{{ asset('css/normalise.css') }}">
+	<link rel="stylesheet" href="{{asset('css/normalise.css')}}">
 	<!-- Bootstrap css -->
-	<link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
 	<!-- FornAwesome css -->
-	<link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+	<link rel="stylesheet" href="css/font-awesome.css">
 	<!-- Style css -->
-	<!--<link rel="stylesheet" href="css/responsive.css">-->
+	<link rel="stylesheet" href="css/responsive.css">
 
-	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,700,500' rel='stylesheet' type='text/css'>
-	
-	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+	<script id="facebook-jssdk" src="https://connect.facebook.net/az_AZ/sdk.js" async=""></script>
+
+	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 </head>
 <body>
 
@@ -50,10 +54,8 @@
 			</div>
 		</div>
 	</header>
-<!-- #Header end -->
+<!-- Header End -->
 
-<!--- ################CONTENT LAYOUT######################## -->
-	
 	@yield('navbar')
 	@yield('form')
 	@yield('view')
@@ -63,8 +65,6 @@
 	@yield('facebookVidget')
 	@yield('listCompanies')
 	@yield('footer')
-
-<!--- ################CONTENT LAYOUT######################## -->
 
 <!-- Footer -->
 	<section id="footer">
@@ -127,72 +127,7 @@
 </body>
 </html>
 <script type="text/javascript">
-	// Dil seçimi
-	$(document).ready(function(){
-		$("#az").addClass("lang-selected");
-		$("#az").click(function(){
-			$(".lang-selected").removeClass("lang-selected");
-			$(this).addClass("lang-selected");
-		})
-		$("#ru").click(function(){
-			$(".lang-selected").removeClass("lang-selected");
-			$(this).addClass("lang-selected");
-		})
-		$("#en").click(function(){
-			$(".lang-selected").removeClass("lang-selected");
-			$(this).addClass("lang-selected");
-		})
-	});
 
-	// Mobil ucun
-
-	$(document).ready(function(){
-		$("li#az").addClass("lang-selected");
-		$("li#az").click(function(){
-			$(".lang-selected").removeClass("lang-selected");
-			$(this).addClass("lang-selected");
-		})
-		$("li#ru").click(function(){
-			$(".lang-selected").removeClass("lang-selected");
-			$(this).addClass("lang-selected");
-		})
-		$("li#en").click(function(){
-			$(".lang-selected").removeClass("lang-selected");
-			$(this).addClass("lang-selected");
-		})
-	});
-	// Tab menu (Vakansiyalar və CV-lər)
-	var thisAttr; 
-
-	$(document).ready(function() {
-
-    $(".catNav div a").click(function(){
-    	$(".active").removeClass("active");
-    	$(this).addClass("active");
-    	thisAttr = $(this).attr("href");
-    	$(".show").removeClass("show");
-    	$(thisAttr+"> .container").addClass("show");
-    	return false;
-    });
-
-    });
-		
-
-
-	// Yuxarıdan aşağı açılan Axtarış sistemi
-	var height;
-	$(document).ready(function() {
-		height = $("#search > .container").height();
-		$("#search").hide();
-
-		$("#searchBtn").on('click', function(event){ 
-         	$('#search').slideToggle(100);
-    	});
-    	$("#searchBtn").click(function(){
-	    	$("#upDown").toggleClass("fa-caret-up");
-    	});
-
-	});
 
 	// Elan yerləşdir input yaratma
 	var fieldset = document.getElementsByName("#addInput");

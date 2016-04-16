@@ -49,6 +49,7 @@
 							<button><a href="addvac.php">İş elanı yerləşdirin</a></button>
 						</div>
 					</div>
+					{{ Form::open(array('url' => '/resumes/new/')) }}
 					<div class="vacForm">
 						<div class="row">
 							<div class="col-md-12 box-sh">
@@ -56,7 +57,7 @@
 									<div class="col-md-4">
 									<fieldset class="form-group">
 										<label for="exampleInputEmail1">Ad *</label>
-										<input type="text" class="phoneNum form-control" id="formGroupExampleInput">
+										<input type="text" class="phoneNum form-control" id="formGroupExampleInput" name="cv_name">
 									</fieldset>
 									</div>
 									<div class="col-md-4">
@@ -404,6 +405,7 @@
 						</div>
 					</div>
 				</div>
+				{{ Form::close() }}
 				<div class="col-md-5 rules">
 					<div class="row headerRow">
 						<div class="col-md-12">

@@ -1,6 +1,6 @@
 <?php
 
-namespace boostrap\Providers;
+namespace App\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'boostrap\Events\SomeEvent' => [
-            'boostrap\Listeners\EventListener',
+        'App\Events\SomeEvent' => [
+            'App\Listeners\EventListener',
         ],
     ];
 

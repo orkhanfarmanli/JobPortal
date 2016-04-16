@@ -1,10 +1,10 @@
 <?php
 
-namespace boostrap\Http\Controllers;
+namespace App\Http\Controllers;
 
 class PageController extends Controller
 {
-	// Əsas Səhifə
+    	// Əsas Səhifə
     public function home(){
     	return view('welcome');
     }
