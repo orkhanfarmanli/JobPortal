@@ -1,0 +1,81 @@
+#about{
+	.container{
+		background: #f4f4f4;
+		.row {
+			padding-top: 10px;
+			.col-md-12{
+				padding-top:20px;
+				ul{
+					li{
+						float: left;
+						a{
+							border-radius: 5px 5px 0 0;
+							padding: 10px 20px;
+							font-size: 20px;
+							font-weight: 700;
+							display: block;
+							color: #000;
+							position: relative;
+							z-index: 999;
+							top: 1px;
+						}
+						a.tactive{
+							border:1px solid #e8e8e8;
+							border-bottom-width: 0;
+							background: #fff;
+							text-decoration: none;
+						}
+						a:hover {
+							background:#fff;
+						}
+					}
+
+				}
+				.tabReklam {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+// About Page Tab
+#aboutP, #aboutA{
+	.bgCol{ 
+		display: none;
+		background: #f4f4f4;
+		.borderCol{
+			border-radius: 5px;
+			margin-bottom: 20px;
+			background: #fff;
+			border:1px solid #e8e8e8;
+			.container{
+				padding: 30px 0;
+				width: 75%;
+				background: #fff;
+				h1{
+					margin: 0;
+					font-size: 40px;
+					font-weight: 700;
+					color: #eab121;
+				}
+				.contentTab{
+					padding-top: 20px;
+					font-size: 16px;
+
+					a{
+						color: #daaf07;
+					}
+					span.green{
+						color:#739e5b;
+					}
+					span.red {
+						color:#db7443;
+					}
+					.green{
+						color:#739e5b;
+					}
+				}
+			}
+		}
+	}
+}

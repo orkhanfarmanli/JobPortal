@@ -1,0 +1,149 @@
+#categories .container {
+	background: $navbarColor !important;
+	padding-bottom: 0;
+	// Logo
+	.logo {
+		margin-top: 25px;
+		margin-right: 35px;
+		margin-left: 10px;
+		width: 175px;
+		height: 38px;
+		background-image: url(../images/sprite.svg);
+		background-repeat: no-repeat;
+		background-position: 0px 0px;
+		float:left;
+	}
+	// İş axtaran və Vakansiyalar
+	.catNav{
+		float: left;
+		.vacancies, .resumes {
+			float: left;
+			vertical-align: middle;
+			line-height: 28px;
+			margin-top: 15px;
+			a {
+				display: block;
+				font-weight: 700;
+				font-size: 1.2em;
+				color: $mainTextColor;
+				margin-left: 10px;
+				padding: 20px;
+				border-radius: 4px 4px 0 0;
+			}
+			a:hover{
+				background: $navbarLinkHover;
+			}
+		}
+		// Diger sehifeler üçün
+
+		.pageVacancies, .pageResumes {
+			float: left;
+			vertical-align: middle;
+			line-height: 28px;
+			margin-top: 25px;
+			a {
+				display: block;
+				font-weight: 700;
+				font-size: 1.2em;
+				color: $mainTextColor;
+				margin-left: 10px;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			a:hover{
+				background: $navbarLinkHover;
+			}
+		}
+	}
+	// Hakkinda Ve Elan Yerlesdir
+	.otherNav{
+		float: right;
+		margin-right: 10px;
+		// Haqqında
+		.about{
+			float:left;
+			vertical-align: middle;
+			line-height: 28px;
+			margin-top: 15px;
+			margin-right: 20px;
+			a {
+				display: block;
+				font-weight: 700;
+				font-size: 1.2em;
+				color: $mainTextColor;
+				padding: 20px;
+				border-radius: 4px 4px 0 0;
+			}
+			a:hover{
+				background: $navbarLinkHover;
+			}
+		}
+		// Diger sehifeler üçün
+
+		.pageAbout{
+			float:left;
+			vertical-align: middle;
+			line-height: 28px;
+			margin-top: 25px;
+			margin-right: 20px;
+			a {
+				display: block;
+				font-weight: 700;
+				font-size: 1.2em;
+				color: $mainTextColor;
+				padding: 10px;
+				border-radius: 4px;
+			}
+			a:hover{
+				background: $navbarLinkHover;
+			}
+		}
+		// Elan yerleşdir
+		.add{
+			float: left;
+			vertical-align: middle;
+			line-height: 28px;
+			margin-top: 25px;
+			button {
+				display: block;
+				font-weight: 700;
+				font-size: 1.2em;
+				color: $mainTextColor;
+				background: $textColor;
+				border: 0;
+				padding: 10px;
+				border-radius: 5px;
+				cursor:pointer;
+				outline: none;
+
+				a{
+					color: $mainTextColor;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	// Dil seçimi Tablet ve Telefonlar üçün
+	.lang-select{
+		margin-top: 10px;
+		float: right;
+		display: none;
+		ul{
+			li{
+				float:left;
+				border: 2px solid $mainTextColor;
+				margin: 2px;
+				border-radius: 5px;
+				a{
+					display: block;
+					padding: 5px;
+					text-decoration: none;
+					color: $mainTextColor;
+					font-weight: 700;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

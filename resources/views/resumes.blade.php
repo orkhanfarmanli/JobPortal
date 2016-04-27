@@ -269,7 +269,7 @@
 			<div class="row">
 				<!-- vacancies header -->
 				<div class="allVacHeader">
-					<h3>AXTARIŞ NƏTİCƏLƏRİ :<span>161 İŞ ELANI</span></h3>
+					<h3>AXTARIŞ NƏTİCƏLƏRİ :<span>161 CV</span></h3>
 
 				</div>
 				<!-- vacancies header end-->
@@ -277,14 +277,13 @@
 
 
 			<div class="row">
-
+			@foreach ($resumes as $cv)
 			  <div class="col-md-6">
 					<div class="card-lar">
 					   	<div class="card card-block">
-					      <h3 class="card-title">TƏLİMLƏRİN TƏŞKİLİ ÜZRƏ KİÇİK MÜTƏXƏSSİS</h3>
-					      <a href="#">ALSA GROUP</a>
+					      <h3 class="card-title">{{$cv->cv_position_name}}</h3>
 						   <div class="imqiymet">
-					              <div class="qiymet"><span>700-1000 AZN</span></div>
+					              <div class="qiymet"><span>{{$cv->cv_min_salary}}</span></div>
 					              <div class="qiymetLink">
 						               <a href="#">Ətraflı</a>
 						               <i class="fa fa-angle-right"></i>
@@ -293,18 +292,7 @@
            				     </div>
 
 
-					              <p >
-					              - Şirkət istehsalatla məşğuldur
-					              <br>
-					              - Şirkətin məhsullarının korporativ və pərakəndə satışı
-					              <br>
-					              - 6 günlük iş rejimi
-					              <br>
-					              - Yemək və avtomobilin xərcləri şirkət tərəfindən ödəniləcək
-					              <br>
-					              - Əmək haqqı satış həcminə görə daha çox ola bilər
-
-					              </p>
+					             <p>{{$cv->cv_name}} {{$cv->cv_surname}}, {{$cv->cv_age}} yaş, təhsil {{$cv->cv_education_id}}, iş təcrübəsi {{$cv->cv_experience_id}}, yaşadığım şəhər - {{$cv->cv_city_id}}, {{$cv->cv_min_salary}} məbləğdən az olmayan maaşa iddialıyam</p>
 
 					              <div class="cardFooter">
 						            <span>Bakı</span>
@@ -321,50 +309,8 @@
 					</div>
 			    </div>
 
-
+			@endforeach
 			    
-			  <div class="col-md-6">
-					<div class="card-lar">
-					   	<div class="card card-block">
-					      <h3 class="card-title">TƏLİMLƏRİN TƏŞKİLİ ÜZRƏ KİÇİK MÜTƏXƏSSİS</h3>
-					      <a href="#">ALSA GROUP</a>
-						   <div class="imqiymet">
-					              <div class="qiymet"><span>700-1000 AZN</span></div>
-					              <div class="qiymetLink">
-						               <a href="#">Ətraflı</a>
-						               <i class="fa fa-angle-right"></i>
-					              </div>
-
-           				     </div>
-
-
-					              <p >
-					              - Şirkət istehsalatla məşğuldur
-					              <br>
-					              - Şirkətin məhsullarının korporativ və pərakəndə satışı
-					              <br>
-					              - 6 günlük iş rejimi
-					              <br>
-					              - Yemək və avtomobilin xərcləri şirkət tərəfindən ödəniləcək
-					              <br>
-					              - Əmək haqqı satış həcminə görə daha çox ola bilər
-
-					              </p>
-
-					              <div class="cardFooter">
-						            <span>Bakı</span>
-						              <i class="fa fa-circle"></i>
-						              <a href="#" >Satış </a>
-						                /
-						              <a href="#" > Satış üzrə mütəxəssis</a>
-		            			</div>
-														
-					   	</div>
-						
-						 
-
-					</div>
-			  	</div>
 
 					<nav>
 					  <ul class="pagination">

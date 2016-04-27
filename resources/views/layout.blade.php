@@ -5,19 +5,13 @@
 	<title>JobPortal</title>
 	<!-- Normalise css -->
 	<link rel="stylesheet" href="{{asset('css/normalise.css')}}">
-	<!-- Bootstrap css -->
-	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
 	<!-- FornAwesome css -->
-	<link rel="stylesheet" href="css/font-awesome.css">
-	<!-- Style css -->
-	<link rel="stylesheet" href="css/responsive.css">
-
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-
-	<link rel="stylesheet" href="{{asset('css/style.css')}}">
-
-	<script id="facebook-jssdk" src="https://connect.facebook.net/az_AZ/sdk.js" async=""></script>
-
+	<link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
+	<!-- Custom css -->
+	<link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+	<link rel="stylesheet" href="{{asset('css/app.css')}}">
+	<!-- Jquery -->
+	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 </head>
 <body>
@@ -120,21 +114,19 @@
 	</section>
 
 	<!-- Footer End -->
-
-	<!-- Jquery -->
-	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 </body>
 </html>
 <script type="text/javascript">
 
 
 	// Elan yerləşdir input yaratma
-	var fieldset = document.getElementsByName("#addInput");
+	var fieldset = document.getElementById("addInput");
 	function yarat(){
 		var input = document.createElement("input");
 		input.type="text";
 		input.className="form-control";
+		input.name="vac_phone";
+		input.id="vac_phone";
 		fieldset.appendChild(input);
 	}
 	// tab menu about
@@ -175,5 +167,11 @@
 		$(".pagination").bootstrapPaginator();
 	});
 	// seyfeleme pagination end
+
+	//disabled div 
+
+	$(document).ready(function(){
+		$("#disabledDiv").addClass('disabledDiv');
+	});
 
 </script>

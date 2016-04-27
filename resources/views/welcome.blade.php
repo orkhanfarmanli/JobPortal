@@ -581,91 +581,89 @@
 @section('listCompanies')
 	<!-- List All categories and All company -->
 	
+			
 			<div class="tabCategoriesCompanies clearFix">
-			  <!-- Nav tabs -->
-			  	<ul class="nav nav-tabs" role="tablist">
-			    	<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Bölmələr</a></li>
-			    	<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Şirkətlər</a></li>
-			  	</ul>
-
-			  <!-- Tab panes -->
-			  	<div class="tab-content">
-			    	<div role="tabpanel" class="tab-pane active" id="home">
-			    		<div class="row cat">
-			    			<div class="col-md-4">
-			    				<ul class="catList">
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    				</ul>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<ul class="catList">
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    				</ul>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<ul class="catList">
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    					<li class="catListItem"><a href="">Maliyyə</a></li>
-			    				</ul>
-			    			</div>
-			    		</div><!-- Row -->
+					<div class="row">
+						<ul id="tabNav">
+							<li><a class="tab-aktiv" href="#tab-categories">BÖLMƏLƏR</a></li>
+							<li><a href="#tab-companies">ŞİRKƏTLƏR</a></li>
+						</ul>
+					</div>
+				 <div id="tab-categories" class="show">
+					<div class="row">
+		    			<div class="col-md-4">
+		    				<ul class="catList">
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    				</ul>
+		    			</div>
+		    			<div class="col-md-4">
+		    				<ul class="catList">
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    				</ul>
+		    			</div>
+		    			<div class="col-md-4">
+		    				<ul class="catList last">
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    					<li class="catListItem"><a href="">Maliyyə</a></li>
+		    				</ul>
+		    			</div>
+			    	</div><!-- Row -->
+				</div>
+				<!-- tab companies-->
+				<div id="tab-companies">
+					<div class="row">
+		    			<div class="col-md-4">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4 last">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4 last">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4 last">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
+		    			<div class="col-md-4 last">
+		    				<a href="#company">CompanyName</a>
+		    			</div>
 			    	</div>
-			    	<div role="tabpanel" class="tab-pane" id="profile">
-			    		<div class="row">
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    			<div class="col-md-4">
-			    				<a href="#company">CompanyName</a>
-			    			</div>
-			    		</div>
-			    	</div>
-			  	</div> <!--row-->
+				</div>
 			</div>
-
 	<!-- List All categories and All company End -->
 		</div>
 	</section>
@@ -738,6 +736,21 @@
 	    	$("#upDown").toggleClass("fa-caret-up");
     	});
 
+	});
+
+	// tab menu all vacancies
+	var catlistAttr; 
+
+	$(document).ready(function() {
+
+    $("ul#tabNav li a").click(function(){
+    	$(".tab-aktiv").removeClass("tab-aktiv");
+    	$(this).addClass("tab-aktiv");
+    	catlistAttr = $(this).attr("href");
+    	$(".show").removeClass("show");
+    	$(catlistAttr).addClass("show");
+    	return false;
+    });
 	});
 	</script>
 @stop

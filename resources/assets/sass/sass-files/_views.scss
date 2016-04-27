@@ -1,0 +1,36 @@
+// count list (Vakansiyalara Baxmaq ve CV-lərə baxmaq)
+
+#viewVacancies .container, #viewCv .container{
+	background: $categoriesBgColor;
+	display: none;
+	.row {
+		padding: 15px 25px;
+		.col-md-4{
+			.row {
+				padding: 5px 15px;
+				.vacCount {
+					color: $countTextColor;
+					font-size: 16px;
+					font-weight: 300;
+					text-align: right;
+					width: 10%;
+					float: left;
+				}
+				.vacName{
+					width: 90%;
+					float: right;
+				}
+				a {
+					color: $bgcolor;
+					font-size: 16px;
+					padding: 5px 10px;
+					font-weight: 700;
+				}
+				a:hover{
+					background: $navbarLinkHover;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+}

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 class PageController extends Controller
 {
-    	// Əsas Səhifə
+    // Əsas Səhifə
     public function home(){
     	return view('welcome');
     }
@@ -16,20 +16,8 @@ class PageController extends Controller
      public function advertising(){
     	return view('pages.advertising');
     }
-    // cv əlavə etmə səhifəsi
-    public function addCv(){
-    	return view('resumes.new');
-    }
-    // Vacansiya əlavə et səhifəsi
-    public function addVac(){
-    	return view('vacancies.new');
-    }
-    // Hamısını göstər vakansiyalar
-    public function showAllVac(){
-    	return view('vacancies');
-    }
-    // Hamısını göstər cvlər
-    public function showAllCv(){
-    	return view('resumes');
+    //Admin Page
+    public function admin(){
+        return view('admin.dash');
     }
 }

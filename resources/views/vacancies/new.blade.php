@@ -56,19 +56,25 @@
 									<div class="col-md-8">
 										<h4 class="card-title">Əlaqə</h4>
 										<fieldset class="form-group">
-										    <label for="exampleInputEmail1">E-mail</label>
-										    <input type="email" class="form-control" id="exampleInputEmail1">
+										    {!! Form::open(array('url' => 'vacancies')) !!}
+											{!!Form::label('vac_email', 'E-mail');!!}	
+						{!! Form::email('vac_email',null, array_merge(['class' => 'form-control'])) !!}
+										    
 										</fieldset>
 									</div>
 									<div class="col-md-4"></div>
 								</div>
 								<div class="row phoneForm">
 									<div class="col-md-8">
-										<fieldset class="form-group addInput">
-										    <label for="exampleInputEmail1">Telefonlar</label>
-										    <input type="text" class="phoneNum form-control" id="formGroupExampleInput" placeholder="Məsələn: (011) 222-33-44">
-										    <input type="text" class="form-control" id="formGroupExampleInput">
-										    <input type="text" class="form-control" id="formGroupExampleInput">
+										<fieldset id="addInput" class="form-group">
+										   
+					{!!Form::label('vac_phone', 'Telefonlar')!!}
+					
+					{!! Form::text('vac_phone',null, array_merge(['class' => 'phoneNum form-control','placeholder'=>'Məsələn: (011) 222-33-44'])) !!}
+					
+					{!! Form::text('vac_phone',null, array_merge(['class' => 'form-control'])) !!}					    
+					{!! Form::text('vac_phone',null, array_merge(['class' => 'form-control'])) !!}	
+
 										</fieldset>
 										<a onclick="yarat()">Nömrə əlavə etmək</a>
 									</div>
@@ -80,19 +86,21 @@
 								</div>
 							</div>
 						</div>
-						<div class="rowBtn">
+						<!-- Disabled btn -->
+						<div class="rowBtn" id="disabledBtn">
 							<div class="col-md-12">
-								<button type="submit" class="btn box-sh"><i class="fa fa-chevron-down"></i> Davam etmək</button>
+								<button type="submit" class="btn box-sh" name="submit"><i class="fa fa-chevron-down" ></i> Davam etmək</button>
 							</div>
 						</div>
-						<div class="row">
+						<!-- Disabled btn -->
+						<div class="row" id="disabledDiv">
 							<div class="col-md-12 box-sh">
 								<div class="row">
 									<div class="col-md-12">
 										<h4 class="card-title">ELAN</h4>
 										<fieldset class="form-group">
-										    <label for="exampleInputEmail1">Kategoriyalar</label>
-										    <select class="grouped_collection optional form-control" id="ad_category_id" name="ad[category_id]">
+										    <label for="vac_category_id">Kategoriyalar</label>
+										    <select class="grouped_collection optional form-control" id="ad_category_id" name="vac_category_id">
 											    <option value=""></option>
 												<optgroup label="Maliyyə">
 													<option value="48">Kredit mütəxəssisi</option>
@@ -183,12 +191,12 @@
 											</select>
 										</fieldset>
 										<fieldset class="form-group">
-										    <label for="exampleInputEmail1">Vəzifə</label>
-										    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-										</fieldset>
+					{!!Form::label('vac_position', 'Vəzifə')!!}
+					{!! Form::text('vac_position',null, array_merge(['class' => ' form-control'])) !!}
+										 </fieldset>
 										<fieldset class="form-group">
-										    <label for="exampleInputEmail1">Şəhər</label>
-										    <select class="select optional form-control" id="ad_region_id" name="ad[region_id]">
+										    <label for="vac_city_id">Şəhər</label>
+										    <select class="select optional form-control" id="vac_city_id" name="vac_city_id">
 										    	<option value=""></option>
 												<option value="28">Ağcabədi</option>
 												<option value="12">Ağdam</option>
@@ -245,14 +253,14 @@
 										<fieldset class="form-group">
 											<div class="row maasForm">
 												<div class="col-md-3">
-													<label for="exampleInputEmail1">Maaş *</label>
+													<label for="vac_min_salary">Maaş *</label>
 												</div>
 												<div class="col-md-4">
 													<div class="col-md-6">
-														<label for="exampleInputEmail1" class="control-label">minimum </label>
+														<label for="vac_min_salary" class="control-label">minimum </label>
 													</div>
 													<div class="col-md-6">
-														<select class="select optional form-control" id="ad_salary_from" name="ad[salary_from]">
+														<select class="select optional form-control" id="ad_salary_from" name="vac_min_salary">
 															<option value=""></option>
 															<option value="100">100</option>
 															<option value="200">200</option>
@@ -307,10 +315,10 @@
 													</div>
 												<div class="col-md-4">
 													<div class="col-md-6">
-														<label for="exampleInputEmail1" class="control-label">maks. </label>
+														<label for="vac_mak_salary" class="control-label">maks. </label>
 													</div>
 													<div class="col-md-6">
-														<select class="select optional form-control salary_to" id="ad_salary_to" name="ad[salary_to]">    <option value=""></option>
+														<select class="select optional form-control salary_to" id="ad_salary_to" name="vac_max_salary">    <option value=""></option>
 															<option value="100">100</option>
 															<option value="200">200</option>
 															<option value="300">300</option>
@@ -374,10 +382,10 @@
 												</div>
 												<div class="col-md-4">
 													<div class="col-md-6">
-														<label for="exampleInputEmail1" class="control-label">minimum </label>
+														<label for="vac_min_age" class="control-label">minimum </label>
 													</div>
 													<div class="col-md-6">
-														<select class="select optional form-control" id="ad_salary_from" name="ad[salary_from]">
+														<select class="select optional form-control" id="ad_salary_from" name="vac_min_age">
 															<option value=""></option>
 															<option value="18">18</option>
 															<option value="19">19</option>
@@ -432,10 +440,10 @@
 													</div>
 												<div class="col-md-4">
 													<div class="col-md-6">
-														<label for="exampleInputEmail1" class="control-label">maks. </label>
+														<label for="vac_max_age" class="control-label">maks. </label>
 													</div>
 													<div class="col-md-6">
-														<select class="select optional form-control salary_to" id="ad_salary_to" name="ad[salary_to]">    <option value=""></option>
+														<select class="select optional form-control salary_to" id="ad_salary_to" name="vac_max_age">    <option value=""></option>
 															<option value="18">18</option>
 															<option value="19">19</option>
 															<option value="20">20</option>
@@ -495,8 +503,8 @@
 										<fieldset class="form-group">
 											<div class="row eduForm">
 												<div class="col-md-7">
-													<label for="exampleInputEmail1">Təhsil</label>
-													<select class="select optional form-control" id="ad_education_id" name="ad[education_id]">
+													<label for="vac_education_id">Təhsil</label>
+													<select class="select optional form-control" id="ad_education_id" name="vac_education_id">
 														<option value=""></option>
 														<option value="1">Elmi dərəcə</option>
 														<option value="2">Ali</option>
@@ -508,8 +516,8 @@
 													</select>
 												</div>
 												<div class="col-md-5">
-													<label for="exampleInputEmail1">İş təcrübəsi</label>
-													<select class="select optional form-control" id="ad_experience_id" name="ad[experience_id]">
+													<label for="vac_experience_id">İş təcrübəsi</label>
+													<select class="select optional form-control" id="ad_experience_id" name="vac_experience_id">
 														<option value=""></option>
 														<option value="1">1 ildən aşağı</option>
 														<option value="2">1 ildən 3 ilə qədər</option>
@@ -520,20 +528,24 @@
 											</div>
 										</fieldset>
 										<fieldset class="form-group">
-											<label for="exampleInputEmail1">Namizədə tələblər</label>
-											<textarea class="form-control" id="ad_requirements" name="ad[requirements]" rows="7" cols="50"></textarea>
+					
+			{!!Form::label('vac_requirements', 'Namizədə tələblər')!!}
+			{!! Form::textarea('vac_requirements',null, array_merge(['class' => ' form-control'])) !!}								
 										</fieldset>
 										<fieldset class="form-group">
-											<label for="exampleInputEmail1">İş barədə məlumat</label>
-											<textarea class="form-control" id="ad_requirements" name="ad[requirements]" rows="7" cols="50"></textarea>
+
+		{!!Form::label('vac_job_description', 'İş barədə məlumat')!!}
+		{!! Form::textarea('vac_job_description',null, array_merge(['class' => ' form-control'])) !!}							
 										</fieldset>
 										<fieldset class="form-group">
-										    <label for="exampleInputEmail1">Şirkətin adı</label>
-										    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+
+		{!!Form::label('vac_company_name', 'Şirkətin adı')!!}
+		{!! Form::text('vac_company_name',null, array_merge(['class' => ' form-control'])) !!}
+
 										</fieldset>
 										<fieldset class="form-group">
-										    <label for="exampleInputEmail1">Əlaqədar şəxs</label>
-										    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+		{!!Form::label('vac_contact', 'Əlaqədar şəxs')!!}
+		{!! Form::text('vac_contact',null, array_merge(['class' => ' form-control'])) !!}							
 										</fieldset>
 									</div>
 								</div>
@@ -541,7 +553,10 @@
 						</div>
 						<div class="addBtn">
 							<div class="col-md-12">
-								<button type="submit" class="btn box-sh">Yerləşdirin</button>
+							<input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
+								<button type="submit" class="btn box-sh" name="submit">Yerləşdirin</button >
+							
+							{!! Form::close() !!}
 							</div>
 						</div>
 					</div>
@@ -577,6 +592,8 @@
 				</div>
 			</div>
 		</div>
+		
+		
 	</section>
 	<!-- Add Vacancies and Add CV End-->
 @stop

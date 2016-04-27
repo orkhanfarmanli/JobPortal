@@ -1,0 +1,37 @@
+#header .container {
+	background: $bgcolor !important;
+	padding-bottom: 5px;
+	// Reklam Hissəsi
+	.headerReklam {
+		padding-top: 15px;
+		padding-left: 5px;
+		padding-right: 5px;
+
+		.headerReklami {
+			float: left;
+			margin-left: 5px;
+		}
+		.headerReklami:last-child {
+			margin-right: 0;
+		}
+	}
+	// Menu hisse  dil seçimi (sehife full olanda)
+	.headerMenu{
+		padding: 0 10px;
+		a{
+			float: left;
+			color: $textColor;
+			display: block;
+			padding: 10px;
+		}
+		a:hover {
+			background-color: #757575;
+		}
+		ul{
+			li{
+				float: left;
+				cursor: pointer;
+			}
+		}
+	}
+}

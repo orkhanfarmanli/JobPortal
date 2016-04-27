@@ -1,0 +1,116 @@
+#footer{
+	.container{
+		padding-bottom: 30px;
+		background: $bgcolor;
+		border-top: 3px solid $navbarColor;
+		.row {
+			padding: 20px;
+			.col-md-4{
+				.footNav {
+					.footNavbar{
+						.footNavbarItem{
+							display: block;
+							padding: 5px 0px;
+							a{
+								font-size: 16px;
+								color: $footerLinkColor;
+								text-decoration: none;
+							}
+							a:hover{
+								text-decoration: underline;
+							}
+						}
+						li.mobile{
+							a{
+								color: $footerTextColor;
+							}
+						}
+					}
+				}
+				.footInfo{
+					.info{
+						li{
+							padding: 5px 0;
+							span {
+								color: $footerTextColor;
+								padding-left: 10px;
+								font-size: 16px;
+							}
+							a{
+								color: $footerTextColor;
+								text-decoration: none;
+								padding-left: 10px;
+								font-size: 16px;
+							}
+							a:hover{
+								text-decoration: underline;
+							}
+						}
+						.footCopy:before{
+							content: "";
+							width: 13px;
+							height: 13px;
+							display: inline-block;
+							background-image: url(../images/sprite.svg);
+							background-repeat: no-repeat;
+							background-position: 96.8944099378882% 52.17391304347826%;
+							vertical-align: middle;
+						}
+						.footPhone:before{
+							content: "";
+							width: 14px;
+							height: 16px;
+							display: inline-block;
+							background-image: url(../images/sprite.svg);
+							background-repeat: no-repeat;
+							background-position: 88.75% 53.93258426966292%;
+							vertical-align: middle;
+						}
+						.footEmail:before{
+							content: "";
+							width: 14px;
+							height: 10px;
+							display: inline-block;
+							background-image: url(../images/sprite.svg);
+							background-repeat: no-repeat;
+							background-position: 86.25% 40%;
+							vertical-align: middle;
+						}
+					}
+				}
+				.copyright {
+					padding-top: 15px;
+					span{
+						color: $footerTextColor;
+						font-size: 13px;
+					}
+				}
+				a.title{
+					color: $footerLinkColor;
+					font-size: 18px;
+					font-weight: 700;
+					text-decoration: none;
+					display: block;
+					padding-bottom: 5px;
+				}
+				a.title:hover{
+					text-decoration: underline;
+				}
+				.footCatList{
+					.cat{
+						display: block;
+						padding: 5px 0;
+						a {
+							font-size: 16px;
+							color: $footerTextColor;
+							text-decoration: none;
+						}
+						a:hover{
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+}

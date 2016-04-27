@@ -1,0 +1,186 @@
+#addVac {
+	.container{
+		background: $contentBgColor;
+		.row {
+			padding: 10px 0;
+			.col-md-7{
+				.row {
+					h1{
+						font-size: 24px;
+						font-weight: 700;
+					}
+					button {
+						float: right;
+						margin-top: 10px;
+						font-size: 15px;
+						text-decoration: underline;
+						color: $bgcolor;
+						background: $categoriesBgColor;
+						border: 0;
+						padding: 10px 20px;
+						border-radius: 5px;
+						cursor:pointer;
+						outline: none;
+						a {
+							color: $bgcolor;
+						}
+					}
+				}
+			}
+			// inputlar
+			.vacForm {
+				.row {
+					padding: 10px 15px;
+					.col-md-12 {
+						background: #fff;
+						border-radius: 5px;
+						.row{
+							.col-md-8 {
+								h4 {
+									font-size: 24px;
+									font-weight: 700;
+									color: #eab121;
+								}
+							}
+						}
+						.phoneForm {
+							.col-md-8 {
+								a {
+									color: $mainTextColor;
+									border-bottom: 1px dashed $mainTextColor;
+									text-decoration: none;
+								}
+								input {
+									border-bottom-width: 0;
+									border-radius: 0;
+									outline: none;
+								}
+								input:last-child{
+									border-radius: 0 0 5px 5px;
+									border-bottom: 1px solid #ccc;
+								}
+								.phoneNum {
+									border-radius: 5px 5px 0 0 !important;
+								}
+							}
+							.col-md-4 {
+								.row {
+									padding: 0;
+									margin-top: 30px;
+									font-size: 12.6px;
+									font-style: italic;
+								}
+							}
+						}
+					}
+				}
+				// Button submit
+				.rowBtn{
+					text-align: center;
+						.col-md-12 {
+							padding: 10px 0;
+							padding-bottom: 20px;
+							button {
+							font-size: 15px;
+							color: $mainTextColor;
+							font-weight: 700;
+							background: #fff;
+							text-align: center;
+							padding: 10px 25px;
+							cursor:pointer;
+							outline: none;
+							border: 0;
+							border-radius: 5px;
+						}
+					}
+				}
+				.addBtn {
+					text-align: center;
+						.col-md-12 {
+							padding: 10px 0;
+							padding-bottom: 20px;
+							button {
+							font-size: 15px;
+							color: $bgcolor;
+							font-weight: 700;
+							background: $navbarColor;
+							text-align: center;
+							padding: 5px 25px;
+							cursor:pointer;
+							outline: none;
+							border: 0;
+							border-radius: 5px;
+						}
+					}
+				}
+				// ikinci form
+				.row {
+					.col-md-12 {
+						.row {
+							.col-md-12 {
+								h4 {
+									font-size: 24px;
+									font-weight: 700;
+									color: #eab121;
+									padding-bottom: 10px;
+								}
+								.maasForm, .yasForm {
+									padding-left: 5px;
+									padding-right: 20px;
+									label {
+										padding-top: 5px;
+									}
+									* {
+										padding: 0 5px;
+									}
+								}
+								.eduForm {
+									.col-md-7 {
+										padding-left: 0;
+									}
+									.col-md-5 {
+										padding-right: 0;
+									}
+								}
+								textarea {
+									resize: none;
+								}
+							}
+						}
+					}
+				}
+			}
+			//inputlar end
+			.rules {
+				.headerRow {
+					padding: 5px 20px;
+					.col-md-12 {
+						h1 {
+							font-size: 24px;
+							font-weight: 700;
+							font-color: $mainTextColor;
+						}
+					}
+				}
+				.rulesRow {
+					padding: 15px 0;
+					ol {
+						li {
+							font-size: 16px;
+							padding: 5px 0px;
+							ul {
+								padding: 0 15px;
+								li {
+									padding: 5px 0;
+									font-size: 16px;
+									list-style-type: circle;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}

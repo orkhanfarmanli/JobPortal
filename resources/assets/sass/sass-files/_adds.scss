@@ -1,0 +1,34 @@
+html, body {
+	font-family: Tahoma;
+}
+a {
+	text-decoration: underline;
+}
+ul{
+	list-style-type: none;
+}
+.clearFix {
+	clear: both;
+}
+.lang-selected {
+	display: none;
+}
+.active{
+	background: $categoriesBgColor;
+}
+a.active:hover{
+	background: $categoriesBgColor !important;
+}
+div.show{
+	display: block !important;
+}
+.pBottom {
+	padding-bottom: 20px !important;
+}
+.box-sh {
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+.all {
+	background: $categoriesBgColor !important;
+}

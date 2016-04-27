@@ -46,48 +46,49 @@
 							<h1>İŞ ELANI YERLƏŞDİRİN</h1>
 						</div>
 						<div class="col-md-4">
-							<button><a href="addvac.php">İş elanı yerləşdirin</a></button>
+							<button><a href="">İş elanı yerləşdirin</a></button>
 						</div>
 					</div>
-					{{ Form::open(array('url' => '/resumes/new/')) }}
-					<div class="vacForm">
+					{!! Form::open(array('url'=>'resumes')) !!} <!-- FORM START -->
+					<div class="vacForm"> 
 						<div class="row">
 							<div class="col-md-12 box-sh">
 								<div class="row">
 									<div class="col-md-4">
 									<fieldset class="form-group">
-										<label for="exampleInputEmail1">Ad *</label>
-										<input type="text" class="phoneNum form-control" id="formGroupExampleInput" name="cv_name">
+										{!!Form::label('cv_name','Ad *')!!}
+										{!!Form::text('cv_name',null, ['class'=> 'phoneNum form-control'])!!}
 									</fieldset>
 									</div>
 									<div class="col-md-4">
 									<fieldset class="form-group">
-										<label for="exampleInputEmail1">Soyad *</label>
-										<input type="text" class="phoneNum form-control" id="formGroupExampleInput">
+										{!!Form::label('cv_surname','Soyad *')!!}
+										{!!Form::text('cv_surname',null, ['class'=> 'phoneNum form-control'])!!}
 									</fieldset>
 									</div>
 									<div class="col-md-4">
 									<fieldset class="form-group">
-										<label for="exampleInputEmail1">Ata adı *</label>
-										<input type="text" class="phoneNum form-control" id="formGroupExampleInput">
+										{!!Form::label('cv_surname','Ata adı *')!!}
+										{!!Form::text('cv_midname',null, ['class'=> 'phoneNum form-control'])!!}
 									</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-6">
 									<fieldset class="form-group">
-										<label for="exampleInputEmail1">Cins *</label>
-										<select class="select required form-control" id="ad_male" name="ad[male]">
+										{!!Form::label('cv_male','Cins *')!!}
+										<!-- <select class="select required form-control" id="ad_male" name="ad[male]">
 											<option value=""></option>
 											<option value="true">Kişi</option>
 											<option value="false">Qadın</option>
-										</select>
+										</select> -->
+										{!!Form::select('cv_male', array_merge(array('' => '', 'true'=> 'Kişi', 'false'=>'Qadın') ), null, array('class' => 'select required form-control')) !!}
 									</fieldset>
 									</div>
 									<div class="col-md-6">
 									<fieldset class="form-group">
-										<label for="exampleInputEmail1">Yaş</label>
-										<select class="select optional form-control" id="ad_age" name="ad[age]">
+										{!!Form::label('cv_male','Yaş *')!!}
+										<!-- <select class="select optional form-control" id="ad_age" name="ad[age]">
 											<option value=""></option>
 											<option value="18">18</option>
 											<option value="19">19</option>
@@ -137,171 +138,90 @@
 											<option value="63">63</option>
 											<option value="64">64</option>
 											<option value="65">65</option>
-										</select>
+										</select> -->
+										{!!Form::select('cv_age', array_merge(array('' => '', '18'=> '18') ), null, array('class' => 'select required form-control')) !!}
 									</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group addInput">
-											<label for="exampleInputEmail1">Şəkil</label>
-											 <input type="file" id="exampleInputFile">
+											{!!Form::label('cv_avatar','Şəkil')!!}
+											{!!Form::file('cv_avatar',['class', 'form-control'])!!}
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group addInput">
-											<label for="exampleInputEmail1">Təhsil</label>
-											<select class="select optional form-control" id="ad_education_id" name="ad[education_id]">
-												<option value=""></option>
-												<option value="1">Elmi dərəcə</option>
-												<option value="2">Ali</option>
-												<option value="3">Natamam ali</option>
-												<option value="4">Orta texniki</option>
-												<option value="5">Orta xüsusi</option>
-												<option value="6">Orta</option>
-												<option value="7">-</option>
-											</select>
+											{!!Form::label('cv_education_id','Təhsil')!!}
+											<select class='form-control' name="cv_education_id">
+											<option value="0"></option>
+											@foreach($education as $edu)
+												<option value="{{$edu->id}}">{{$edu->edu_name}}</option>
+											@endforeach
+										</select>
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group">
-											<label for="exampleInputEmail1">Ətraflı</label>
-											<textarea class="form-control" id="ad_requirements" name="ad[requirements]" rows="7" cols="50"></textarea>
+											{!!Form::label('cv_edu_detail','Ətraflı')!!}
+											<!-- <textarea class="form-control" id="ad_requirements" name="ad[requirements]" rows="10" cols="50"></textarea> -->
+											{!!Form::textarea('cv_edu_detail',null,['class'=>'form-control'])!!}
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<label for="exampleInputEmail1">İş təcrübəsi</label>
-										<select class="select optional form-control" id="ad_experience_id" name="ad[experience_id]">
-											<option value=""></option>
-											<option value="1">1 ildən aşağı</option>
-											<option value="2">1 ildən 3 ilə qədər</option>
-											<option value="3">3 ildən 5 ilə qədər</option>
-											<option value="4">5 ildən artıq</option>
+										{!!Form::label('cv_edu_detail','İş təcrübəsi')!!}
+										<select class='form-control' name="cv_experience_id">
+											<option value="0"></option>
+											@foreach($experience as $exp)
+												<option value="{{$exp->id}}">{{$exp->exp_name}}</option>
+											@endforeach
 										</select>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group">
-											<label for="exampleInputEmail1">Ətraflı</label>
-											<textarea class="form-control" id="ad_requirements" name="ad[requirements]" rows="7" cols="50"></textarea>
+											{!!Form::label('cv_exp_detail','Ətraflı')!!}
+											{!!Form::textarea('cv_exp_detail',null,['class'=>'form-control'])!!}
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group">
-											<label for="exampleInputEmail1">Kateqoriya</label>
-											<select class="grouped_collection optional form-control" id="ad_category_id" name="ad[category_id]">
-											    <option value=""></option>
-												<optgroup label="Maliyyə">
-													<option value="48">Kredit mütəxəssisi</option>
-													<option value="49">Sığorta</option>
-													<option value="51">Audit</option>
-													<option value="52">Mühasibat</option>
-													<option value="57">Maliyyə analiz</option>
-													<option value="150">Bank xidməti</option>
-													<option value="154">Kassir</option>
-													<option value="155">İqtisadçı</option>
-													<option value="129">Digər</option>
+										{!!Form::label('cv_category_id','Kateqoriya')!!}
+										<select name="cv_category_id" class="form-control">
+											<option value="0">Bütün kateqoriyalar</option>
+											@foreach($categories as $category)
+												<optgroup label="{{$category->cat_name}}">
+													@foreach($category->subcategories as $subcategory)
+														<option value="{{$subcategory->id}}">{{$subcategory->subcat_name}}</option>
+													@endforeach
 												</optgroup>
-												<optgroup label="Marketinq"><option value="64">Marketinq menecment</option>
-													<option value="61">İctimayətlə əlaqələr</option>
-													<option value="62">Reklam</option>
-													<option value="60">Kopiraytinq</option>
-												</optgroup>
-												<optgroup label="İnformasiya texnologiyaları">
-													<option value="66">Sistem idarəetməsi</option>
-													<option value="67">Məlumat bazasının idarə edilməsi və inkişafı</option>
-													<option value="68">İT mütəxəssisi / məsləhətçi</option>
-													<option value="69">Proqramlaşdırma</option>
-													<option value="70">İT layihələrin idarə edilməsi</option>
-													<option value="71">Texniki avadanlıq mütəxəssisi</option>
-													<option value="72">Digər</option>
-												</optgroup>
-												<optgroup label="İnzibati">
-													<option value="105">İnzibati dəstək</option>
-													<option value="108">Menecment</option>
-													<option value="110">Ofis menecmenti</option>
-													<option value="112">Katibə / Resepşn</option>
-													<option value="143">Heyətin idarəolunması</option>
-													<option value="113">Digər</option>
-												</optgroup>
-												<optgroup label="Satış">
-													<option value="83">Daşınmaz əmlak agenti / makler</option>
-													<option value="86">Satış üzrə mütəxəssis</option></optgroup>
-													<optgroup label="Dizayn"><option value="159">Veb-dizayn</option>
-													<option value="97">Memar / İnteryer dizaynı</option>
-													<option value="99">Geyim dizaynı</option>
-													<option value="101">Rəssam</option>
-													<option value="104">Digər</option>
-												</optgroup>
-												<optgroup label="Hüquqşünaslıq">
-													<option value="73">Vəkil</option>
-													<option value="74">Cinayət hüququ</option>
-													<option value="79">Hüquqşünas</option>
-													<option value="151">Digər</option>
-												</optgroup>
-												<optgroup label="Təhsil və elm">
-													<option value="119">Məktəb tədrisi</option>
-													<option value="120">Universitet tədrisi</option>
-													<option value="121">Repetitor</option>
-													<option value="122">Xüsusi təhsil/ Təlim</option>
-													<option value="145">Digər</option>
-												</optgroup>
-												<optgroup label="Sənaye və kənd təsərrüfatı">
-													<option value="91">Avtomatlaşdırılmış idarəetmə</option>
-													<option value="92">Tikinti</option>
-													<option value="95">Kənd təsərrüfatı</option>
-													<option value="93">Mühəndis</option>
-													<option value="94">Geologiya və ətraf mühit</option>
-													<option value="96">Digər</option>
-												</optgroup>
-												<optgroup label="Xidmət">
-													<option value="157">Xadimə</option>
-													<option value="158">Anbardar</option>
-													<option value="134">Restoran işi</option>
-													<option value="135">Sürücü</option>
-													<option value="136">Dayə</option>
-													<option value="137">Fəhlə</option>
-													<option value="142">Turizm və mehmanxana işi</option>
-													<option value="144">Tərcüməçi</option>
-													<option value="153">Mühafizə xidməti</option>
-													<option value="149">Digər</option>
-													<option value="193">SPA və gözəllik</option>
-													<option value="156">Kuryer</option>
-												</optgroup>
-												<optgroup label="Tibb və əczaçılıq">
-													<option value="139">Həkim</option>
-													<option value="140">Tibbi personal</option>
-													<option value="141">Tibb təmsilçisi</option>
-												</optgroup>
-												<optgroup label="Müxtəlif">
-													<option value="148">Jurnalistika</option>
-													<option value="160">Tələbələr üçün</option>
-												</optgroup>
-											</select>
+											@endforeach
+										</select>
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group">
-										    <label for="exampleInputEmail1">Vəzifə</label>
-										    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+										    {!!Form::label('cv_position_name','Vəzifə *')!!}
+											{!!Form::text('cv_position_name',null, ['class'=> 'phoneNum form-control'])!!}
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<label for="exampleInputEmail1">Minimum əmək haqqı (AZN)</label>
-										<select class="select optional form-control" id="ad_salary_from" name="ad[salary_from]">
+										<label for="cv_min_salary">Minimum əmək haqqı (AZN)</label>
+										{!!Form::label('cv_min_salary','Minimum əmək haqqı (AZN)')!!}
+										<select class="select optional form-control" id="cv_min_salary" name="cv_min_salary">
 											<option value=""></option>
 											<option value="100">100</option>
 											<option value="200">200</option>
@@ -405,7 +325,7 @@
 						</div>
 					</div>
 				</div>
-				{{ Form::close() }}
+				{!! Form::close() !!} <!-- FORM END -->
 				<div class="col-md-5 rules">
 					<div class="row headerRow">
 						<div class="col-md-12">
