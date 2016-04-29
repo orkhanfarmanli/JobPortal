@@ -77,18 +77,17 @@
 									<div class="col-md-6">
 									<fieldset class="form-group">
 										{!!Form::label('cv_male','Cins *')!!}
-										<!-- <select class="select required form-control" id="ad_male" name="ad[male]">
+										<select class="select required form-control" id="cv_male" name="cv_male">
 											<option value=""></option>
-											<option value="true">Kişi</option>
-											<option value="false">Qadın</option>
-										</select> -->
-										{!!Form::select('cv_male', array_merge(array('' => '', 'true'=> 'Kişi', 'false'=>'Qadın') ), null, array('class' => 'select required form-control')) !!}
+											<option value="0">Kişi</option>
+											<option value="1">Qadın</option>
+										</select>
 									</fieldset>
 									</div>
 									<div class="col-md-6">
 									<fieldset class="form-group">
 										{!!Form::label('cv_male','Yaş *')!!}
-										<!-- <select class="select optional form-control" id="ad_age" name="ad[age]">
+										<select class="select optional form-control" id="cv_age" name="cv_age">
 											<option value=""></option>
 											<option value="18">18</option>
 											<option value="19">19</option>
@@ -138,8 +137,7 @@
 											<option value="63">63</option>
 											<option value="64">64</option>
 											<option value="65">65</option>
-										</select> -->
-										{!!Form::select('cv_age', array_merge(array('' => '', '18'=> '18') ), null, array('class' => 'select required form-control')) !!}
+										</select>
 									</fieldset>
 									</div>
 								</div>
@@ -156,11 +154,11 @@
 										<fieldset class="form-group addInput">
 											{!!Form::label('cv_education_id','Təhsil')!!}
 											<select class='form-control' name="cv_education_id">
-											<option value="0"></option>
-											@foreach($education as $edu)
-												<option value="{{$edu->id}}">{{$edu->edu_name}}</option>
-											@endforeach
-										</select>
+												<option value=""></option>
+												@foreach($education as $edu)
+													<option value="{{$edu->id}}">{{$edu->edu_name}}</option>
+												@endforeach
+											</select>
 										</fieldset>
 									</div>
 								</div>
@@ -168,16 +166,15 @@
 									<div class="col-md-12">
 										<fieldset class="form-group">
 											{!!Form::label('cv_edu_detail','Ətraflı')!!}
-											<!-- <textarea class="form-control" id="ad_requirements" name="ad[requirements]" rows="10" cols="50"></textarea> -->
 											{!!Form::textarea('cv_edu_detail',null,['class'=>'form-control'])!!}
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										{!!Form::label('cv_edu_detail','İş təcrübəsi')!!}
+										{!!Form::label('cv_experience_id','İş təcrübəsi')!!}
 										<select class='form-control' name="cv_experience_id">
-											<option value="0"></option>
+											<option value=""></option>
 											@foreach($experience as $exp)
 												<option value="{{$exp->id}}">{{$exp->exp_name}}</option>
 											@endforeach
@@ -214,6 +211,19 @@
 										<fieldset class="form-group">
 										    {!!Form::label('cv_position_name','Vəzifə *')!!}
 											{!!Form::text('cv_position_name',null, ['class'=> 'phoneNum form-control'])!!}
+										</fieldset>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<fieldset class="form-group">
+											{!!Form::label('cv_city_id','Şəhər')!!}
+											<select class='form-control' name="cv_city_id">
+												<option value=""></option>
+												@foreach($city as $cities)
+													<option value="{{$cities->id}}">{{$cities->city_name}}</option>
+												@endforeach
+											</select>
 										</fieldset>
 									</div>
 								</div>
@@ -277,40 +287,41 @@
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group">
-											<label for="exampleInputEmail1">Bacarıqlar</label>
-											<textarea class="form-control" id="ad_requirements" name="ad[requirements]" rows="7" cols="50"></textarea>
+											{!!Form::label('cv_skills_detail','Bacarıqlar')!!}
+											{!!Form::textarea('cv_skills_detail',null,['class'=>'form-control'])!!}
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group">
-											<label for="exampleInputEmail1">Əlavə məlumat</label>
-											<textarea class="form-control" id="ad_requirements" name="ad[requirements]" rows="7" cols="50"></textarea>
+											{!!Form::label('cv_personal_info','Əlavə məlumat')!!}
+											{!!Form::textarea('cv_personal_info',null,['class'=>'form-control'])!!}
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group">
-										    <label for="exampleInputEmail1">E-mail</label>
-										    <input type="email" class="form-control" id="exampleInputEmail1">
+										   {!!Form::label('cv_email','Email')!!}
+											{!!Form::email('cv_email',null,['class'=>'form-control'])!!}
 										</fieldset>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<fieldset class="form-group addInput">
-										    <label for="exampleInputEmail1">Telefonlar</label>
-										    <input type="text" class="phoneNum form-control" id="formGroupExampleInput" placeholder="Məsələn: (011) 222-33-44">
+										    {!!Form::label('cv_phone','Telefonlar')!!}
+											{!!Form::text('phone[]',null,['placeholder' => 'Məsələn: (011) 222-33-44','class'=>'form-control'])!!}
 										</fieldset>
 										<fieldset class="form-group addInput">
-										    <input type="text" class="phoneNum form-control" id="formGroupExampleInput">
+										   {!!Form::text('phone[]',null,['class'=>'form-control'])!!}
 										</fieldset>
 										<fieldset class="form-group addInput">
-										    <input type="text" class="phoneNum form-control" id="formGroupExampleInput">
+										    {!!Form::text('phone[]',null,['class'=>'form-control'])!!}
 										</fieldset>
 										<span>Bir nömrə kifayətdir.</span>
+										{{var_dump('phone[]')}}
 									</div>
 								</div>
 								<div class="row">

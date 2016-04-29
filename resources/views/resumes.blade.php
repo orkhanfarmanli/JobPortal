@@ -270,7 +270,6 @@
 				<!-- vacancies header -->
 				<div class="allVacHeader">
 					<h3>AXTARIŞ NƏTİCƏLƏRİ :<span>161 CV</span></h3>
-
 				</div>
 				<!-- vacancies header end-->
 			</div>

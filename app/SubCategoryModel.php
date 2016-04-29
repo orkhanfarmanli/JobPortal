@@ -9,7 +9,7 @@ class SubCategoryModel extends Model
     protected $table = 'subcategories';
 
     protected $fillable = [
-    	'name'
+    	'subcat_name'
     ];
 
         public function categories(){
@@ -17,11 +17,11 @@ class SubCategoryModel extends Model
     }
 
     public function cv(){
-    	return $this->hasMany('App\AddCv');
+    	return $this->hasMany('App\AddCv','cv_category_id');
     }
     
     public function vacancy(){
-    	return $this->hasMany('App\AddVac');
+    	return $this->hasMany('App\AddVac','vac_category_id');
     }
 
 }

@@ -9,7 +9,7 @@ class CategoryModel extends Model
     protected $table = 'categories';
 
     protected $fillable = [
-    	'name'
+    	'cat_name'
     ];
 
     public function subcategories(){

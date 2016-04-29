@@ -13,9 +13,9 @@ class ExperienceModel extends Model
     ];
 
    	public function cv(){
-    	return $this->hasMany('App\AddCv');
+    	return $this->hasMany('App\AddCv','cv_experience_id');
     }
 	public function vacancy(){
-	    return $this->hasMany('App\AddVac');
+	    return $this->hasMany('App\AddVac','vac_experience_id');
     }
 }

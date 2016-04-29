@@ -813,11 +813,18 @@ div.show{
 								
 								border-radius: 3px;
 								background-color: $navbarColor;
-								padding: 5px 12px;
+								padding: 7px 14px;
+								font-size: 18px;
 								color: $secondTextColor;
 								font-weight: 700;
 								margin-right: 10px;
 							
+							}
+							span.cvName {
+								background: none;
+								font-size: 20px;
+								font-weight: 400;
+								padding-left: 0;
 							}
 
 							a{
@@ -841,6 +848,21 @@ div.show{
 					.card-i-info{
 
 						.info{
+							.col-md-4 {
+								ul {
+									li{
+										padding: 3px 0;
+										font-weight: 700;
+									}
+								}
+							}
+							.col-md-6 {
+								ul {
+									li{
+										padding: 3px 0;
+									}
+								}
+							}
 							.col-md-12 {
 								
 								padding: 0;
@@ -888,7 +910,7 @@ div.show{
 								.col-md-6{
 
 									 padding: 15px 30px;
-											 h1{
+											 h4{
 													font-size: 15px;
 													font-weight: 700;
 													color: $secondTextColor;
@@ -1397,4 +1419,28 @@ div.show{
 	}
 }
 
+// error 404 page
 
+#error {
+	.container{
+		h2{
+			a{
+				margin: 10px 0;
+				font-size: 24px;
+				color: #C63229;
+				font-weight: 700;
+			}
+		}
+		h1{
+			margin: 20px 0;
+			font-size: 30px;
+			color: #636363;
+			font-weight: 700;
+		}
+		.error {
+			p {
+				font-size: 14px;
+			}
+		}
+	}
+}

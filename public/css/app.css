@@ -6337,10 +6337,16 @@ div.show {
             #singlePage .container .row .col-md-12 .row .card-i-header .card-i-header-post .div-i-header-post-title span {
               border-radius: 3px;
               background-color: #F8CB1C;
-              padding: 5px 12px;
+              padding: 7px 14px;
+              font-size: 18px;
               color: #333;
               font-weight: 700;
               margin-right: 10px; }
+            #singlePage .container .row .col-md-12 .row .card-i-header .card-i-header-post .div-i-header-post-title span.cvName {
+              background: none;
+              font-size: 20px;
+              font-weight: 400;
+              padding-left: 0; }
             #singlePage .container .row .col-md-12 .row .card-i-header .card-i-header-post .div-i-header-post-title a {
               color: #3c3939;
               font-size: 15px;
@@ -6349,6 +6355,11 @@ div.show {
               color: #a98705; }
           #singlePage .container .row .col-md-12 .row .card-i-header .card-i-header-post .div-i-header-post-baxis {
             float: right; }
+      #singlePage .container .row .col-md-12 .row .card-i-info .info .col-md-4 ul li {
+        padding: 3px 0;
+        font-weight: 700; }
+      #singlePage .container .row .col-md-12 .row .card-i-info .info .col-md-6 ul li {
+        padding: 3px 0; }
       #singlePage .container .row .col-md-12 .row .card-i-info .info .col-md-12 {
         padding: 0;
         padding-top: 10px;
@@ -6371,7 +6382,7 @@ div.show {
         padding: 0; }
         #singlePage .container .row .col-md-12 .row .card-i-content .col-md-12 .col-md-6 {
           padding: 15px 30px; }
-          #singlePage .container .row .col-md-12 .row .card-i-content .col-md-12 .col-md-6 h1 {
+          #singlePage .container .row .col-md-12 .row .card-i-content .col-md-12 .col-md-6 h4 {
             font-size: 15px;
             font-weight: 700;
             color: #333; }
@@ -6685,5 +6696,20 @@ div.show {
           color: #db7443; }
         #aboutP .bgCol .borderCol .container .contentTab .green, #aboutA .bgCol .borderCol .container .contentTab .green {
           color: #739e5b; }
+
+#error .container h2 a {
+  margin: 10px 0;
+  font-size: 24px;
+  color: #C63229;
+  font-weight: 700; }
+
+#error .container h1 {
+  margin: 20px 0;
+  font-size: 30px;
+  color: #636363;
+  font-weight: 700; }
+
+#error .container .error p {
+  font-size: 14px; }
 
 /*# sourceMappingURL=app.css.map */

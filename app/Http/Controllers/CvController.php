@@ -3,11 +3,6 @@
 namespace App\Http\Controllers;
 // Default Modeller
 use Request;
-use App\CategoryModel;
-use App\SubCategoryModel;
-use App\ExperienceModel;
-use App\EducationModel;
-use View;
 use Carbon\Carbon;
 use App\Http\Requests;
 use Illuminate\Support\Facedes\Input;
@@ -15,6 +10,11 @@ Use App\Http\Controllers\Controller;
 
 // Bizim Modeller
 use App\AddCv;
+use App\CityModel;
+use App\CategoryModel;
+use App\SubCategoryModel;
+use App\ExperienceModel;
+use App\EducationModel;
 
 class CvController extends Controller
 {
@@ -39,7 +39,8 @@ class CvController extends Controller
         $categories = CategoryModel::with('subcategories')->get();
         $experience = ExperienceModel::all();
         $education = EducationModel::all();
-        return view('resumes/new',compact('categories', 'experience','education'));
+        $city = CityModel::all();
+        return view('resumes/new',compact('categories', 'experience','education','subcategories','city'));
     }
 
     /**
@@ -62,8 +63,8 @@ class CvController extends Controller
      */
     public function show($id)
     {
-        $cv = AddCv::find($id);
-        return view('resumes/show'); 
+        $resumes = AddCv::findOrFail($id)->with('subcategories','education','experience','city')->get();
+        return view('resumes/show', compact('resumes')); 
 
     }
 

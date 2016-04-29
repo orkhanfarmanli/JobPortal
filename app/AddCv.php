@@ -21,6 +21,7 @@ class AddCv extends Model
     	'cv_edu_detail',
     	'cv_exp_detail',
     	'cv_skills_detail',
+        'vac_personal_info',
     	'cv_category_id',
     	'cv_experience_id',
     	'cv_city_id',
@@ -28,6 +29,15 @@ class AddCv extends Model
     ]; 
 
     public function subcategories(){
-        return $this->belongsTo('App\SubCategoryModel');
+        return $this->belongsTo('App\SubCategoryModel','cv_category_id');
+    }
+    public function city(){
+        return $this->belongsTo('App\CityModel','cv_city_id');
+    }
+    public function education(){
+        return $this->belongsTo('App\EducationModel','cv_education_id');
+    }
+    public function experience(){
+        return $this->belongsTo('App\ExperienceModel','cv_experience_id');
     }
 }

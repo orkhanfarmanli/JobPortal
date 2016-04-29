@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Addcvphone' => $baseDir . '/database/migrations/2016_04_29_104017_addcvphone.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2016_04_18_193614_create_categories_table.php',
     'CreateCityTable' => $baseDir . '/database/migrations/2016_04_18_193651_create_city_table.php',
     'CreateCvEditTable' => $baseDir . '/database/migrations/2016_04_26_124326_create_cv_edit_table.php',
