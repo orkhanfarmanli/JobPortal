@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCvTable extends Migration
+class Cv extends Migration
 {
     /**
      * Run the migrations.
@@ -28,15 +28,34 @@ class CreateCvTable extends Migration
             $table->text('cv_skills_detail');
             $table->text('cv_personal_info');
             $table->string('cv_position_name', 255);
+            $table->string('cv_phone1', 100);
+            $table->string('cv_phone2', 100);
+            $table->tinyInteger('cv_premium');
             $table->integer('cv_min_salary');
-            $table->integer('cv_experience_id')->unsigned()->index();  
-            $table->integer('cv_education_id')->unsigned()->index();
-            $table->integer('cv_category_id')->unsigned()->index();
-            $table->integer('cv_city_id')->unsigned()->index();
+            $table->integer('cv_experience_id')->unsigned();  
+            $table->integer('cv_education_id')->unsigned();
+            $table->integer('cv_category_id')->unsigned();
+            $table->integer('cv_city_id')->unsigned();
             $table->timestamps();
-        });    
-    }
 
+            $table->foreign('cv_experience_id')
+                ->references('id')
+                ->on('experience')
+                ->onDelete('cascade');  
+            $table->foreign('cv_education_id')
+                ->references('id')
+                ->on('education')
+                ->onDelete('cascade');
+                $table->foreign('cv_category_id')
+                ->references('id')
+                ->on('subcategories')
+                ->onDelete('cascade');
+            $table->foreign('cv_city_id')
+                ->references('id')
+                ->on('city')
+                ->onDelete('cascade');
+        });
+    }
 
     /**
      * Reverse the migrations.

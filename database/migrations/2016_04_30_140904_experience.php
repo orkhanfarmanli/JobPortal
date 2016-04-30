@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCityTable extends Migration
+class Experience extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class CreateCityTable extends Migration
      */
     public function up()
     {
-        Schema::create('city', function (Blueprint $table) {
+        Schema::create('experience', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('city_name', 100);
+            $table->string('exp_name');
         });
     }
 
@@ -25,6 +25,6 @@ class CreateCityTable extends Migration
      */
     public function down()
     {
-        Schema::drop('city');
+        Schema::drop('experience');
     }
 }

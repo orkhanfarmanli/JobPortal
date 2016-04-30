@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVacancyTable extends Migration
+class Vacancy extends Migration
 {
     /**
      * Run the migrations.
@@ -27,13 +27,31 @@ class CreateVacancyTable extends Migration
             $table->text('cv_personal_info');
             $table->string('vac_company_name', 255);
             $table->string('vac_contact', 255);
-            $table->integer('vac_experience_id')->unsigned()->index();
-            $table->integer('vac_education_id')->unsigned()->index();
-            $table->integer('vac_category_id')->unsigned()->index();
-            $table->integer('vac_city_id')->unsigned()->index();
+            $table->integer('vac_experience_id')->unsigned();
+            $table->integer('vac_education_id')->unsigned();
+            $table->integer('vac_category_id')->unsigned();
+            $table->integer('vac_city_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('vac_experience_id')
+                  ->references('id')
+                  ->on('experience')
+                  ->onDelete('cascade');
+            $table->foreign('vac_education_id')
+                  ->references('id')
+                  ->on('education')
+                  ->onDelete('cascade');
+            $table->foreign('vac_category_id')
+                  ->references('id')
+                  ->on('subcategories')
+                  ->onDelete('cascade');
+            $table->foreign('vac_city_id')
+                  ->references('id')
+                  ->on('city')
+                  ->onDelete('cascade');
         });
     }
+
     /**
      * Reverse the migrations.
      *

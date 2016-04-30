@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubcategoriesTable extends Migration
+class Education extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateSubcategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('subcategories', function (Blueprint $table) {
+        Schema::create('education', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('subcat_name', 255);
-            $table->integer('cat_id')->unsigned()->index();
+            $table->string('edu_name');
         });
     }
 
@@ -26,6 +25,6 @@ class CreateSubcategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('subcategories');
+        Schema::drop('education');
     }
 }
