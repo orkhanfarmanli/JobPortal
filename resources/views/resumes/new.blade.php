@@ -1,80 +1,89 @@
 @extends('layout')
 
 @section('navbar')
-	<!-- Categories -->
-	<section id="categories">
-		<div class="container pBottom">
-			<div class="logo">
+		<!-- Categories -->
+<section id="categories">
+	<div class="container pBottom">
+		<div class="logo">
+		</div>
+		<div class="catNav">
+			<div class="pageVacancies">
+				<a class="active" href="/">İş elanları</a>
 			</div>
-			<div class="catNav">
-				<div class="pageVacancies">
-					<a class="active" href="#viewVacancies">İş elanları</a>
-				</div>
-				<div class="pageResumes">
-					<a href="#viewCv">İş axtaranlar</a>
-				</div>
-			</div>
-			<div class="otherNav">
-				<div class="pageAbout">
-					<a href="#resumes">Haqqımızda</a>
-				</div>
-				<div class="add">
-					<button>Elan yerləşdirin</button>
-				</div>
-			</div>
-			<div class="lang-select">
-				<ul>
-					<li id="az"><a>AZ</a></li>
-					<li id="ru"><a>RU</a></li>
-					<li id="en"><a>EN</a></li>
-				</ul>
+			<div class="pageResumes">
+				<a href="/categories/resumes">İş axtaranlar</a>
 			</div>
 		</div>
-	</section>
+		<div class="otherNav">
+			<div class="pageAbout">
+				<a href="/pages/about">Haqqımızda</a>
+			</div>
+			<div class="add">
+				<button><a href="/vacancies/new">Elan yerləşdirin</a></button>
+			</div>
+		</div>
+		<div class="lang-select">
+			<ul>
+				<li id="az"><a>AZ</a></li>
+				<li id="ru"><a>RU</a></li>
+				<li id="en"><a>EN</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
 
-	<!-- # Categories End -->
+<!-- # Categories End -->
 @stop
 
 @section('form')
-	<!-- Add Vacancies and Add CV -->
-	<section id="addVac">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-7">
-					<div class="row">
-						<div class="col-md-8">
-							<h1>İŞ ELANI YERLƏŞDİRİN</h1>
-						</div>
-						<div class="col-md-4">
-							<button><a href="">İş elanı yerləşdirin</a></button>
-						</div>
+		<!-- Add Vacancies and Add CV -->
+<section id="addVac">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<div class="row">
+					<div class="col-md-7">
+						<h1>İŞ ELANI YERLƏŞDİRİN</h1>
 					</div>
-					{!! Form::open(array('url'=>'resumes')) !!} <!-- FORM START -->
-					<div class="vacForm"> 
-						<div class="row">
-							<div class="col-md-12 box-sh">
-								<div class="row">
-									<div class="col-md-4">
+					<div class="col-md-5">
+						<button><a href="/vacancies/new">İş elanı yerləşdirin</a></button>
+					</div>
+				</div>
+				{!! Form::open(array('url'=>'resumes','name'=> 'cvform')) !!} <!-- FORM START -->
+				<div class="vacForm">
+					<div class="row">
+						<div class="col-md-12 box-sh">
+							<div class="row">
+								<div class="col-md-4">
 									<fieldset class="form-group">
 										{!!Form::label('cv_name','Ad *')!!}
 										{!!Form::text('cv_name',null, ['class'=> 'phoneNum form-control'])!!}
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[0]}}</p>
+										@endif
 									</fieldset>
-									</div>
-									<div class="col-md-4">
+								</div>
+								<div class="col-md-4">
 									<fieldset class="form-group">
 										{!!Form::label('cv_surname','Soyad *')!!}
 										{!!Form::text('cv_surname',null, ['class'=> 'phoneNum form-control'])!!}
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[0]}}</p>
+										@endif
 									</fieldset>
-									</div>
-									<div class="col-md-4">
-									<fieldset class="form-group">
-										{!!Form::label('cv_surname','Ata adı *')!!}
-										{!!Form::text('cv_midname',null, ['class'=> 'phoneNum form-control'])!!}
-									</fieldset>
-									</div>
 								</div>
-								<div class="row">
-									<div class="col-md-6">
+								<div class="col-md-4">
+									<fieldset class="form-group">
+										{!!Form::label('cv_midname','Ata adı *')!!}
+										{!!Form::text('cv_midname',null, ['class'=> 'phoneNum form-control'])!!}
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[1]}}</p>
+										@endif
+									</fieldset>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
 									<fieldset class="form-group">
 										{!!Form::label('cv_male','Cins *')!!}
 										<select class="select required form-control" id="cv_male" name="cv_male">
@@ -82,11 +91,14 @@
 											<option value="0">Kişi</option>
 											<option value="1">Qadın</option>
 										</select>
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[2]}}</p>
+										@endif
 									</fieldset>
-									</div>
-									<div class="col-md-6">
+								</div>
+								<div class="col-md-6">
 									<fieldset class="form-group">
-										{!!Form::label('cv_male','Yaş *')!!}
+										{!!Form::label('cv_age','Yaş *')!!}
 										<select class="select optional form-control" id="cv_age" name="cv_age">
 											<option value=""></option>
 											<option value="18">18</option>
@@ -138,60 +150,69 @@
 											<option value="64">64</option>
 											<option value="65">65</option>
 										</select>
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[3]}}</p>
+										@endif
 									</fieldset>
-									</div>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group addInput">
-											{!!Form::label('cv_avatar','Şəkil')!!}
-											{!!Form::file('cv_avatar',['class', 'form-control'])!!}
-										</fieldset>
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group addInput">
+										{!!Form::label('cv_avatar','Şəkil')!!}
+										{!!Form::file('cv_avatar',['class', 'form-control'])!!}
+									</fieldset>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group addInput">
-											{!!Form::label('cv_education_id','Təhsil')!!}
-											<select class='form-control' name="cv_education_id">
-												<option value=""></option>
-												@foreach($education as $edu)
-													<option value="{{$edu->id}}">{{$edu->edu_name}}</option>
-												@endforeach
-											</select>
-										</fieldset>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group">
-											{!!Form::label('cv_edu_detail','Ətraflı')!!}
-											{!!Form::textarea('cv_edu_detail',null,['class'=>'form-control'])!!}
-										</fieldset>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{!!Form::label('cv_experience_id','İş təcrübəsi')!!}
-										<select class='form-control' name="cv_experience_id">
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group addInput">
+										{!!Form::label('cv_education_id','Təhsil')!!}
+										<select class='form-control' name="cv_education_id">
 											<option value=""></option>
-											@foreach($experience as $exp)
-												<option value="{{$exp->id}}">{{$exp->exp_name}}</option>
+											@foreach($education as $edu)
+												<option value="{{$edu->id}}">{{$edu->edu_name}}</option>
 											@endforeach
 										</select>
-									</div>
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[4]}}</p>
+										@endif
+									</fieldset>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group">
-											{!!Form::label('cv_exp_detail','Ətraflı')!!}
-											{!!Form::textarea('cv_exp_detail',null,['class'=>'form-control'])!!}
-										</fieldset>
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group">
+										{!!Form::label('cv_edu_detail','Ətraflı')!!}
+										{!!Form::textarea('cv_edu_detail',null,['class'=>'form-control'])!!}
+									</fieldset>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group">
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									{!!Form::label('cv_experience_id','İş təcrübəsi')!!}
+									<select class='form-control' name="cv_experience_id">
+										<option value=""></option>
+										@foreach($experience as $exp)
+											<option value="{{$exp->id}}">{{$exp->exp_name}}</option>
+										@endforeach
+									</select>
+									@if($errors->any())
+										<p class="text-danger">{{$errors->all()[5]}}</p>
+									@endif
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group">
+										{!!Form::label('cv_exp_detail','Ətraflı')!!}
+										{!!Form::textarea('cv_exp_detail',null,['class'=>'form-control'])!!}
+									</fieldset>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group">
 										{!!Form::label('cv_category_id','Kateqoriya')!!}
 										<select name="cv_category_id" class="form-control">
 											<option value="0">Bütün kateqoriyalar</option>
@@ -203,176 +224,206 @@
 												</optgroup>
 											@endforeach
 										</select>
-										</fieldset>
-									</div>
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[6]}}</p>
+										@endif
+									</fieldset>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group">
-										    {!!Form::label('cv_position_name','Vəzifə *')!!}
-											{!!Form::text('cv_position_name',null, ['class'=> 'phoneNum form-control'])!!}
-										</fieldset>
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group">
+										{!!Form::label('cv_position_name','Vəzifə *')!!}
+										{!!Form::text('cv_position_name',null, ['class'=> 'phoneNum form-control'])!!}
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[7]}}</p>
+										@endif
+									</fieldset>
+
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group">
-											{!!Form::label('cv_city_id','Şəhər')!!}
-											<select class='form-control' name="cv_city_id">
-												<option value=""></option>
-												@foreach($city as $cities)
-													<option value="{{$cities->id}}">{{$cities->city_name}}</option>
-												@endforeach
-											</select>
-										</fieldset>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<label for="cv_min_salary">Minimum əmək haqqı (AZN)</label>
-										{!!Form::label('cv_min_salary','Minimum əmək haqqı (AZN)')!!}
-										<select class="select optional form-control" id="cv_min_salary" name="cv_min_salary">
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group">
+										{!!Form::label('cv_city_id','Şəhər')!!}
+										<select class='form-control' name="cv_city_id">
 											<option value=""></option>
-											<option value="100">100</option>
-											<option value="200">200</option>
-											<option value="300">300</option>
-											<option value="400">400</option>
-											<option value="500">500</option>
-											<option value="600">600</option>
-											<option value="700">700</option>
-											<option value="800">800</option>
-											<option value="900">900</option>
-											<option value="1000">1000</option>
-											<option value="1100">1100</option>
-											<option value="1200">1200</option>
-											<option value="1300">1300</option>
-											<option value="1400">1400</option>
-											<option value="1500">1500</option>
-											<option value="1600">1600</option>
-											<option value="1700">1700</option>
-											<option value="1800">1800</option>
-											<option value="1900">1900</option>
-											<option value="2000">2000</option>
-											<option value="2100">2100</option>
-											<option value="2200">2200</option>
-											<option value="2300">2300</option>
-											<option value="2400">2400</option>
-											<option value="2500">2500</option>
-											<option value="2600">2600</option>
-											<option value="2700">2700</option>
-											<option value="2800">2800</option>
-											<option value="2900">2900</option>
-											<option value="3000">3000</option>
-											<option value="3100">3100</option>
-											<option value="3200">3200</option>
-											<option value="3300">3300</option>
-											<option value="3400">3400</option>
-											<option value="3500">3500</option>
-											<option value="3600">3600</option>
-											<option value="3700">3700</option>
-											<option value="3800">3800</option>
-											<option value="3900">3900</option>
-											<option value="4000">4000</option>
-											<option value="5000">5000</option>
-											<option value="6000">6000</option>
-											<option value="7000">7000</option>
-											<option value="8000">8000</option>
-											<option value="9000">9000</option>
-											<option value="10000">10000</option>
-											<option value="11000">11000</option>
-											<option value="12000">12000</option>
+											@foreach($city as $cities)
+												<option value="{{$cities->id}}">{{$cities->city_name}}</option>
+											@endforeach
 										</select>
-									</div>
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[8]}}</p>
+										@endif
+									</fieldset>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group">
-											{!!Form::label('cv_skills_detail','Bacarıqlar')!!}
-											{!!Form::textarea('cv_skills_detail',null,['class'=>'form-control'])!!}
-										</fieldset>
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label for="cv_min_salary">Minimum əmək haqqı (AZN)</label>
+									{!!Form::label('cv_min_salary','Minimum əmək haqqı (AZN)')!!}
+									<select class="select optional form-control" id="cv_min_salary" name="cv_min_salary">
+										<option value=""></option>
+										<option value="100">100</option>
+										<option value="200">200</option>
+										<option value="300">300</option>
+										<option value="400">400</option>
+										<option value="500">500</option>
+										<option value="600">600</option>
+										<option value="700">700</option>
+										<option value="800">800</option>
+										<option value="900">900</option>
+										<option value="1000">1000</option>
+										<option value="1100">1100</option>
+										<option value="1200">1200</option>
+										<option value="1300">1300</option>
+										<option value="1400">1400</option>
+										<option value="1500">1500</option>
+										<option value="1600">1600</option>
+										<option value="1700">1700</option>
+										<option value="1800">1800</option>
+										<option value="1900">1900</option>
+										<option value="2000">2000</option>
+										<option value="2100">2100</option>
+										<option value="2200">2200</option>
+										<option value="2300">2300</option>
+										<option value="2400">2400</option>
+										<option value="2500">2500</option>
+										<option value="2600">2600</option>
+										<option value="2700">2700</option>
+										<option value="2800">2800</option>
+										<option value="2900">2900</option>
+										<option value="3000">3000</option>
+										<option value="3100">3100</option>
+										<option value="3200">3200</option>
+										<option value="3300">3300</option>
+										<option value="3400">3400</option>
+										<option value="3500">3500</option>
+										<option value="3600">3600</option>
+										<option value="3700">3700</option>
+										<option value="3800">3800</option>
+										<option value="3900">3900</option>
+										<option value="4000">4000</option>
+										<option value="5000">5000</option>
+										<option value="6000">6000</option>
+										<option value="7000">7000</option>
+										<option value="8000">8000</option>
+										<option value="9000">9000</option>
+										<option value="10000">10000</option>
+										<option value="11000">11000</option>
+										<option value="12000">12000</option>
+									</select>
+									@if($errors->any())
+										<p class="text-danger">{{$errors->all()[9]}}</p>
+									@endif
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group">
-											{!!Form::label('cv_personal_info','Əlavə məlumat')!!}
-											{!!Form::textarea('cv_personal_info',null,['class'=>'form-control'])!!}
-										</fieldset>
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group">
+										{!!Form::label('cv_skills_detail','Bacarıqlar')!!}
+										{!!Form::textarea('cv_skills_detail',null,['class'=>'form-control'])!!}
+									</fieldset>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group">
-										   {!!Form::label('cv_email','Email')!!}
-											{!!Form::email('cv_email',null,['class'=>'form-control'])!!}
-										</fieldset>
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group">
+										{!!Form::label('cv_personal_info','Əlavə məlumat')!!}
+										{!!Form::textarea('cv_personal_info',null,['class'=>'form-control'])!!}
+									</fieldset>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<fieldset class="form-group addInput">
-										    {!!Form::label('cv_phone','Telefonlar')!!}
-											{!!Form::text('phone[]',null,['placeholder' => 'Məsələn: (011) 222-33-44','class'=>'form-control'])!!}
-										</fieldset>
-										<fieldset class="form-group addInput">
-										   {!!Form::text('phone[]',null,['class'=>'form-control'])!!}
-										</fieldset>
-										<fieldset class="form-group addInput">
-										    {!!Form::text('phone[]',null,['class'=>'form-control'])!!}
-										</fieldset>
-										<span>Bir nömrə kifayətdir.</span>
-										{{var_dump('phone[]')}}
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group">
+										{!!Form::label('cv_email','Email')!!}
+										{!!Form::email('cv_email',null,['class'=>'form-control'])!!}
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[10]}}</p>
+										@endif
+									</fieldset>
 								</div>
-								<div class="row">
-									<div class="col-md-12"></div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<fieldset class="form-group addInput">
+										{!!Form::label('cv_phone','Telefonlar')!!}
+										{!!Form::text('cv_phone',null,['placeholder' => 'Məsələn: (011) 222-33-44','class'=>'form-control'])!!}
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[11]}}</p>
+										@endif
+									</fieldset>
+									<fieldset class="form-group addInput">
+										{!!Form::text('cv_phone1',null,['class'=>'form-control'])!!}
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[11]}}</p>
+										@endif
+									</fieldset>
+									<fieldset class="form-group addInput">
+										{!!Form::text('cv_phone2',null,['class'=>'form-control'])!!}
+										@if($errors->any())
+											<p class="text-danger">{{$errors->all()[11]}}</p>
+										@endif
+									</fieldset>
+									<span>Bir nömrə kifayətdir.</span>
+
+									
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+
 								</div>
 							</div>
 						</div>
-						<div class="addBtn">
-							<div class="col-md-12">
-								<button type="submit" class="btn box-sh">Yerləşdirin</button>
-							</div>
+					</div>
+					<div class="addBtn">
+						<div class="col-md-12">
+							<button type="submit" class="btn box-sh">Yerləşdirin</button>
 						</div>
+
+					</div>
+
+				</div>
+			</div>
+			{!! Form::close() !!} <!-- FORM END -->
+			<div class="col-md-5 rules">
+				<div class="row headerRow">
+					<div class="col-md-12">
+						<h1>QAYDALAR</h1>
 					</div>
 				</div>
-				{!! Form::close() !!} <!-- FORM END -->
-				<div class="col-md-5 rules">
-					<div class="row headerRow">
-						<div class="col-md-12">
-							<h1>QAYDALAR</h1>
-						</div>
-					</div>
-					<div class="row rulesRow">
-						<div class="col-md-12">
-							<ol start="1">
-								<li>Bütün CV-lərin yerləşdirilməsi ödənişsizdir. Hər bir şəxs 30 gün ərzində yalnız 1 CV yerləşdirə bilər.</li>
-								<li>CV-nizin qısa müddətdə sayta dərc edilməsi üçün, təlimatları diqqətli şəkildə yerinə yetirin. Düzgün doldurulmayan elanlar redaktə olunacaq və dərhal saytda dərc olunmayacaq.</li>
-								<li>BÖYÜK HƏRFLƏRLƏ yazmaq qadağandır, həmçinin транслитля. Elanın mətni tam olaraq bir dildə yazılmalıdır.</li>
-								<li>Tərkibində aşağıdakı məzmunları daşıyan CV-lərin yerləşdirilməsi qadağandır
-									<ul>
-										<li>Şəxsin özü haqda yalan məlumat yerləşdirməsi</li>
-										<li>CV-nin tərkibində nalayiq və təhqiredici sözlər və ifadələrin istifadəsi</li>
-										<li>Reklam</li>
-									</ul>
-								</li>
-								<li>Əgər CV-də şəkil varsa onda aşağıdakı tələblərə cavab verməlidir
-									<ul>
-										<li>Yalnız bir şəxsin şəkli çəkilməlidir;</li>
-										<li>Namizədin sifəti aydın görsənməlidir;</li>
-									</ul>
-								</li>
-								<li>CV yerləşdirərkən “Vəzifə” bölməsində müvafiq kateqoriyaya uyğun bir vəzifə göstərilməlidir.</li>
-								<li>“Təhsil” bölməsində təhsil müəssisəsinin, ixtisasın adı həmçinin təhsil aldığı müddət göstərilməlidir.</li>
-								<li>“İş təcrübəsi” bölməsində işlədiyi yer, tutduğu vəzifə, və işləmə müddəti göstərilməlidir.</li>
-								<li>“Bacarıqlar” bölməsində peşə, dil, kompyuter və başqa bacarıqlar göstərilməsi məsləhət görülür.</li>
-								<li>“Özün barədə” bölməsində şəxsi keyfiyyətlər, hobbilər, maraqlar və başqa xüsusiyyətlər qeyd oluna bilər.</li>
-							</ol>
-						</div>
+				<div class="row rulesRow">
+					<div class="col-md-12">
+						<ol start="1">
+							<li>Bütün CV-lərin yerləşdirilməsi ödənişsizdir. Hər bir şəxs 30 gün ərzində yalnız 1 CV yerləşdirə bilər.</li>
+							<li>CV-nizin qısa müddətdə sayta dərc edilməsi üçün, təlimatları diqqətli şəkildə yerinə yetirin. Düzgün doldurulmayan elanlar redaktə olunacaq və dərhal saytda dərc olunmayacaq.</li>
+							<li>BÖYÜK HƏRFLƏRLƏ yazmaq qadağandır, həmçinin транслитля. Elanın mətni tam olaraq bir dildə yazılmalıdır.</li>
+							<li>Tərkibində aşağıdakı məzmunları daşıyan CV-lərin yerləşdirilməsi qadağandır
+								<ul>
+									<li>Şəxsin özü haqda yalan məlumat yerləşdirməsi</li>
+									<li>CV-nin tərkibində nalayiq və təhqiredici sözlər və ifadələrin istifadəsi</li>
+									<li>Reklam</li>
+								</ul>
+							</li>
+							<li>Əgər CV-də şəkil varsa onda aşağıdakı tələblərə cavab verməlidir
+								<ul>
+									<li>Yalnız bir şəxsin şəkli çəkilməlidir;</li>
+									<li>Namizədin sifəti aydın görsənməlidir;</li>
+								</ul>
+							</li>
+							<li>CV yerləşdirərkən “Vəzifə” bölməsində müvafiq kateqoriyaya uyğun bir vəzifə göstərilməlidir.</li>
+							<li>“Təhsil” bölməsində təhsil müəssisəsinin, ixtisasın adı həmçinin təhsil aldığı müddət göstərilməlidir.</li>
+							<li>“İş təcrübəsi” bölməsində işlədiyi yer, tutduğu vəzifə, və işləmə müddəti göstərilməlidir.</li>
+							<li>“Bacarıqlar” bölməsində peşə, dil, kompyuter və başqa bacarıqlar göstərilməsi məsləhət görülür.</li>
+							<li>“Özün barədə” bölməsində şəxsi keyfiyyətlər, hobbilər, maraqlar və başqa xüsusiyyətlər qeyd oluna bilər.</li>
+						</ol>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<!-- Add Vacancies and Add CV End-->
+	</div>
+</section>
+<!-- Add Vacancies and Add CV End-->
 @stop

@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 // Default Modeller
 use Request;
 use Carbon\Carbon;
-use Illuminate\Support\Facedes\Input;
 use App\Http\Requests;
 
 // Bizim Modeller
 use App\AddVac;
+use App\CityModel;
+use App\CategoryModel;
+use App\SubCategoryModel;
+use App\ExperienceModel;
+use App\EducationModel;
+use DB;
 
 
 class VacController extends Controller
@@ -20,8 +25,11 @@ class VacController extends Controller
      */
     public function index()
     {
-        $vacancies = AddVac::all();
-        return view('vacancies', compact('vacancies'));
+        $categories = CategoryModel::with('subcategories')->get();
+        $vacancies = AddVac::with('subcategories','education','experience','city')->get();
+        $roles = DB::table('vacancy')->pluck('id');
+        return view('vacancies', compact('vacancies','roles','categories'));
+
     }
 
     /**
@@ -31,7 +39,11 @@ class VacController extends Controller
      */
     public function create()
     {
-        return view('vacancies/new');
+        $categories = CategoryModel::with('subcategories')->get();
+        $experience = ExperienceModel::all();
+        $education = EducationModel::all();
+        $city = CityModel::all();
+        return view('vacancies/new', compact('categories', 'experience','education','subcategories','city'));
     }
 
     /**
@@ -42,6 +54,7 @@ class VacController extends Controller
      */
     public function store(Request $request)
     {
+
         AddVac::create(Request::all());
         $request->updated_at = Carbon::now();
         return redirect('vacancies');
@@ -55,7 +68,10 @@ class VacController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $vac = AddVac::findOrFail($id);
+        return view('vacancies/show', compact('vac','subcategories','education','experience','city'));
+
     }
 
     /**

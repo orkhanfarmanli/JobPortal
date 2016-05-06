@@ -8,18 +8,18 @@
 			</div>
 			<div class="catNav">
 				<div class="pageVacancies">
-					<a class="active" href="#viewVacancies">İş elanları</a>
+					<a href="/">İş elanları</a>
 				</div>
 				<div class="pageResumes">
-					<a href="#viewCv">İş axtaranlar</a>
+					<a href="/categories/resumes">İş axtaranlar</a>
 				</div>
 			</div>
 			<div class="otherNav">
 				<div class="pageAbout">
-					<a href="#resumes">Haqqımızda</a>
+					<a class="active" href="/pages/about">Haqqımızda</a>
 				</div>
 				<div class="add">
-					<button>Elan yerləşdirin</button>
+					<button><a href="/vacancies/new">Elan yerləşdirin</a></button>
 				</div>
 			</div>
 			<div class="lang-select">
@@ -41,8 +41,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<ul id="aboutNav">
-						<li><a class="tactive" href="#aboutP">Haqqımızda</a></li>
-						<li class="tabReklam"><a href="#aboutA">Saytda reklam</a></li>
+						<li><a class="tactive" href="/pages/about">Haqqımızda</a></li>
+						<li class="tabReklam"><a href="/pages/advertising">Saytda reklam</a></li>
 					</ul>
 				</div>
 			</div>
@@ -51,7 +51,7 @@
 
 	<!-- haqqında səhifəsi 1ci tab-->
 	<section id="aboutP">
-		<div class="container bgCol show">
+		<div class="container bgCol">
 			<div class="col-md-12 borderCol">
 				<div class="container">
 					<div class="col-md-12">
@@ -74,31 +74,5 @@
 		</div>
 	</section>
 	<!-- haqqında səhifəsi 2ci tab reklam-->
-	<section id="aboutA">
-		<div class="container bgCol">
-			<div class="col-md-12 borderCol">
-				<div class="container">
-					<div class="col-md-12">
-						<div class="col-md-offset-3 col-md-6">
-							<h1>Saytda Reklam</h1>
-						</div>
-					</div>
-					<div class="col-md-12 contentTab">
-						<p><span class="green">BOSS.AZ - Azərbaycanın ən məşhur və stabil artan internet resurslarından biridir. Hər gün bu saytı minlərlə insan ziyarət edir.</span></p>
-						<p><span class="red">BOSS.AZ saytında reklam sizin brendləriniz, məhsullarınız, xidmətləriniz, aksiyalarınız və əhəmiyyətli hadisələriniz barədə məlumatı çox geniş auditoriyaya çatdırmaq üçün ən gözəl üsüllarından biridir!</span></p>
-						<p><span class="green">
-							BOSS.AZ saytında reklam sizin brendləriniz, məhsullarınız, xidmətləriniz, aksiyalarınız və əhəmiyyətli hadisələriniz barədə məlumatı çox geniş auditoriyaya çatdırmaq üçün ən gözəl üsüllarından biridir!
-						</span></p>
-						<p><span class="green">Sizinlə əməkdaşlığa şad olardıq!</span></p>
-						<p><span class="green">GAP</span> <span class="red">MEDIA</span> <span class="green">— Sizin</span> <span class="red">media reklam agentliyiniz</span></p>
-						<p>
-						<span class="red">+99412 594 12 34</span><br>
-						<span class="red">99477 271 44 00</span><br>
-						<a href="mailto:info@gapmedia.az" class="green">info@gapmedia.az</a><br>
-						<a href="http://www.gapmedia.az" class="green">www.gapmedia.az</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+
 @stop

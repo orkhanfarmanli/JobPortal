@@ -13,6 +13,7 @@
 	<!-- Jquery -->
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/validate.min.js')}}"></script>
 </head>
 <body>
 
@@ -38,13 +39,13 @@
 
 			<!-- Header Menu (Dil seçimi və partnor saytlar) -->
 			<div class="headerMenu clearFix">
-				<a href="">bash sehife</a>
+				<a href="/">bash sehife</a>
 				<ul>
 					<li id="az"><a>azerbaycanca</a></li>
 					<li id="ru"><a>по-русски</a></li>
 					<li id="en"><a>in english</a></li>
 				</ul>
-				<a href="">saytda reklam</a>
+				<a href="/pages/advertising">saytda reklam</a>
 			</div>
 		</div>
 	</header>
@@ -68,8 +69,8 @@
 					<div class="footNav">
 						<ul class="footNavbar">
 							<li class="footNavbarItem mobile"><a href="">Mobil Versiyası</a></li>
-							<li class="footNavbarItem"><a href="">Haqqımızda</a></li>
-							<li class="footNavbarItem"><a href="">Saytda reklam</a></li>
+							<li class="footNavbarItem"><a href="/pages/about">Haqqımızda</a></li>
+							<li class="footNavbarItem"><a href="/pages/advertising">Saytda reklam</a></li>
 						</ul>
 					</div>
 					<div class="footInfo">
@@ -88,25 +89,17 @@
 				<div class="col-md-4">
 					<a class="title" href="">İş elanları</a>
 					<ul class="footCatList">
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
+						@foreach($categories as $cat)
+							<li class="cat"><a href="">{{$cat->cat_name}}</a></li>
+							@endforeach
 					</ul>
 				</div>
 				<div class="col-md-4">
 					<a class="title" href="">İş axtaranlar</a>
 					<ul class="footCatList">
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
-						<li class="cat"><a href="">Category Name</a></li>
+						@foreach($categories as $cat)
+							<li class="cat"><a href="">{{$cat->cat_name}}</a></li>
+						@endforeach
 					</ul>
 				</div>
 			</div>
@@ -117,49 +110,51 @@
 </body>
 </html>
 <script type="text/javascript">
+			// Dil seçimi
+			$(document).ready(function(){
+				$("#az").addClass("lang-selected");
+				$("#az").click(function(){
+					$(".lang-selected").removeClass("lang-selected");
+					$(this).addClass("lang-selected");
+				})
+				$("#ru").click(function(){
+					$(".lang-selected").removeClass("lang-selected");
+					$(this).addClass("lang-selected");
+				})
+				$("#en").click(function(){
+					$(".lang-selected").removeClass("lang-selected");
+					$(this).addClass("lang-selected");
+				})
+			});
 
+	// Mobil ucun
+
+	$(document).ready(function(){
+		$("li#az").addClass("lang-selected");
+		$("li#az").click(function(){
+			$(".lang-selected").removeClass("lang-selected");
+			$(this).addClass("lang-selected");
+		})
+		$("li#ru").click(function(){
+			$(".lang-selected").removeClass("lang-selected");
+			$(this).addClass("lang-selected");
+		})
+		$("li#en").click(function(){
+			$(".lang-selected").removeClass("lang-selected");
+			$(this).addClass("lang-selected");
+		})
+	});
 
 	// Elan yerləşdir input yaratma
-	var fieldset = document.getElementById("addInput");
-	function yarat(){
-		var input = document.createElement("input");
-		input.type="text";
-		input.className="form-control";
-		input.name="vac_phone";
-		input.id="vac_phone";
-		fieldset.appendChild(input);
-	}
-	// tab menu about
-	var aboutAttr; 
-
-	$(document).ready(function() {
-
-    $("ul#aboutNav li a").click(function(){
-    	$(".tactive").removeClass("tactive");
-    	$(this).addClass("tactive");
-    	aboutAttr = $(this).attr("href");
-    	$(".show").removeClass("show");
-    	$(aboutAttr+" > .bgCol").addClass("show");
-    	return false;
-    });
-	});
-
-
-
-	// tab menu about
-	var aboutAttr; 
-
-	$(document).ready(function() {
-
-    $("ul#aboutNav li a").click(function(){
-    	$(".tactive").removeClass("tactive");
-    	$(this).addClass("tactive");
-    	aboutAttr = $(this).attr("href");
-    	$(".show").removeClass("show");
-    	$(aboutAttr+" > .bgCol").addClass("show");
-    	return false;
-    });
-	});
+//	var fieldset = document.getElementById("addInput");
+//	function yarat(){
+//		var input = document.createElement("input");
+//		input.type="text";
+//		input.className="form-control";
+//		input.name="vac_phone";
+//		input.id="vac_phone";
+//		fieldset.appendChild(input);
+//	}
 
 		// seyfeleme pagination
 
@@ -167,11 +162,5 @@
 		$(".pagination").bootstrapPaginator();
 	});
 	// seyfeleme pagination end
-
-	//disabled div 
-
-	$(document).ready(function(){
-		$("#disabledDiv").addClass('disabledDiv');
-	});
 
 </script>

@@ -8,18 +8,18 @@
 			</div>
 			<div class="catNav">
 				<div class="pageVacancies">
-					<a class="active" href="#viewVacancies">İş elanları</a>
+					<a class="active" href="/">İş elanları</a>
 				</div>
 				<div class="pageResumes">
-					<a href="#viewCv">İş axtaranlar</a>
+					<a href="/categories/resumes">İş axtaranlar</a>
 				</div>
 			</div>
 			<div class="otherNav">
 				<div class="pageAbout">
-					<a href="#resumes">Haqqımızda</a>
+					<a href="/pages/about">Haqqımızda</a>
 				</div>
 				<div class="add">
-					<button>Elan yerləşdirin</button>
+					<button><a href="/vacancies/new">Elan yerləşdirin</a></button>
 				</div>
 			</div>
 			<div class="lang-select">
@@ -42,83 +42,12 @@
 						<span>Kategoriya</span>
 						<select class="select" id="category" name="category">
 							<option value="">Bütün kateqoriyalar</option>
-							<option value="36">Maliyyə</option>
-							<option value="48">— Kredit mütəxəssisi</option>
-							<option value="49">— Sığorta</option>
-							<option value="51">— Audit</option>
-							<option value="52">— Mühasibat</option>
-							<option value="57">— Maliyyə analiz</option>
-							<option value="150">— Bank xidməti</option>
-							<option value="154">— Kassir</option>
-							<option value="155">— İqtisadçı</option>
-							<option value="129">— Digər</option>
-							<option value="37">Marketinq</option>
-							<option value="64">— Marketinq menecment</option>
-							<option value="61">— İctimayətlə əlaqələr</option>
-							<option value="62">— Reklam</option>
-							<option value="60">— Kopiraytinq</option>
-							<option value="38">İnformasiya texnologiyaları</option>
-							<option value="66">— Sistem idarəetməsi</option>
-							<option value="67">— Məlumat bazasının idarə edilməsi və inkişafı</option>
-							<option value="68">— İT mütəxəssisi / məsləhətçi</option>
-							<option value="69">— Proqramlaşdırma</option>
-							<option value="70">— İT layihələrin idarə edilməsi</option>
-							<option value="71">— Texniki avadanlıq mütəxəssisi</option>
-							<option value="72">— Digər</option>
-							<option value="44">İnzibati</option>
-							<option value="105">— İnzibati dəstək</option>
-							<option value="108">— Menecment</option>
-							<option value="110">— Ofis menecmenti</option>
-							<option value="112">— Katibə / Resepşn</option>
-							<option value="143">— Heyətin idarəolunması</option>
-							<option value="113">— Digər</option>
-							<option value="40">Satış</option>
-							<option value="83">— Daşınmaz əmlak agenti / makler</option>
-							<option value="86">— Satış üzrə mütəxəssis</option>
-							<option value="43">Dizayn</option>
-							<option value="159">— Veb-dizayn</option>
-							<option value="97">— Memar / İnteryer dizaynı</option>
-							<option value="99">— Geyim dizaynı</option>
-							<option value="101">— Rəssam</option>
-							<option value="104">— Digər</option>
-							<option value="39">Hüquqşünaslıq</option>
-							<option value="73">— Vəkil</option>
-							<option value="74">— Cinayət hüququ</option>
-							<option value="79">— Hüquqşünas</option>
-							<option value="151">— Digər</option>
-							<option value="46">Təhsil və elm</option>
-							<option value="119">— Məktəb tədrisi</option>
-							<option value="120">— Universitet tədrisi</option>
-							<option value="121">— Repetitor</option>
-							<option value="122">— Xüsusi təhsil/ Təlim</option>
-							<option value="145">— Digər</option>
-							<option value="42">Sənaye və kənd təsərrüfatı</option>
-							<option value="91">— Avtomatlaşdırılmış idarəetmə</option>
-							<option value="92">— Tikinti</option>
-							<option value="95">— Kənd təsərrüfatı</option>
-							<option value="93">— Mühəndis</option>
-							<option value="94">— Geologiya və ətraf mühit</option>
-							<option value="96">— Digər</option>
-							<option value="133">Xidmət</option>
-							<option value="156">— Kuryer</option>
-							<option value="193">— SPA və gözəllik</option>
-							<option value="157">— Xadimə</option>
-							<option value="158">— Anbardar</option>
-							<option value="134">— Restoran işi</option>
-							<option value="135">— Sürücü</option>
-							<option value="136">— Dayə</option>
-							<option value="137">— Fəhlə</option>
-							<option value="142">— Turizm və mehmanxana işi</option>
-							<option value="144">— Tərcüməçi</option>
-							<option value="153">— Mühafizə xidməti</option>
-							<option value="149">— Digər</option>
-							<option value="138">Tibb və əczaçılıq</option>
-							<option value="139">— Həkim</option>
-							<option value="140">— Tibbi personal</option>
-							<option value="141">— Tibb təmsilçisi</option>
-							<option value="146">Müxtəlif</option>
-							<option value="148">— Jurnalistika</option>
-							<option value="160">— Tələbələr üçün</option>
+							@foreach($categories as $category)
+								<option value="{{$category->id}}">{{$category->cat_name}}</option>
+								@foreach($category->subcategories as $subcategory)
+									<option value="{{$subcategory->id}}">— {{$subcategory->subcat_name}}</option>
+								@endforeach
+							@endforeach
 						</select>
 						<span>Təhsil</span>
 						<select class="select" id="education" name="education">
@@ -262,7 +191,7 @@
 
 @section('content')
 		<!-- # vacancies -->
-	
+
 	<section id="allVac">
 
 		<div class="container pBottom">
@@ -277,124 +206,110 @@
 
 
 			<div class="row">
+				@foreach($vacancies as $vac_table)
+					<div class="col-md-6 " >
+						<div class="card-lar ">
+							<div class="card card-block">
+								<h3 class="card-title"  >{{$vac_table->vac_position}}</h3>
+								<a href="#">{{$vac_table->vac_company_name}}</a>
+								<div class="imqiymet">
+									<div class="qiymet"><span>{{$vac_table->vac_min_salary}}-{{$vac_table->vac_max_salary}} AZN</span></div>
+									<div class="qiymetLink">
+										<a href="{{url('vacancies',$vac_table->id)}}">Ətraflı</a>
+										<i class="fa fa-angle-right"></i>
+									</div>
 
-			  <div class="col-md-6">
-					<div class="card-lar">
-					   	<div class="card card-block">
-					      <h3 class="card-title">TƏLİMLƏRİN TƏŞKİLİ ÜZRƏ KİÇİK MÜTƏXƏSSİS</h3>
-					      <a href="#">ALSA GROUP</a>
-						   <div class="imqiymet">
-					              <div class="qiymet"><span>700-1000 AZN</span></div>
-					              <div class="qiymetLink">
-						               <a href="#">Ətraflı</a>
-						               <i class="fa fa-angle-right"></i>
-					              </div>
-
-           				     </div>
+								</div>
 
 
-					              <p >
-					              - Şirkət istehsalatla məşğuldur
-					              <br>
-					              - Şirkətin məhsullarının korporativ və pərakəndə satışı
-					              <br>
-					              - 6 günlük iş rejimi
-					              <br>
-					              - Yemək və avtomobilin xərcləri şirkət tərəfindən ödəniləcək
-					              <br>
-					              - Əmək haqqı satış həcminə görə daha çox ola bilər
+								<p class="col_inner_height">
+									{{$vac_table->vac_job_description}}
+								</p>
 
-					              </p>
+								<div class="cardFooter">
+									<span>{{$vac_table->city['city_name']}}</span>
+									<i class="fa fa-circle"></i>
+									<a href="#" >{{$vac_table->subcategories->categories['cat_name']}} </a>
+									/
+									<a href="#" >{{$vac_table->subcategories['subcat_name']}}</a>
+								</div>
 
-					              <div class="cardFooter">
-						            <span>Bakı</span>
-						              <i class="fa fa-circle"></i>
-						              <a href="#" >Satış </a>
-						                /
-						              <a href="#" > Satış üzrə mütəxəssis</a>
-		            			</div>
-														
-					   	</div>
-						
-						 
+							</div>
 
+
+
+						</div >
 					</div>
-			    </div>
 
 
-			    
-			  <div class="col-md-6">
-					<div class="card-lar">
-					   	<div class="card card-block">
-					      <h3 class="card-title">TƏLİMLƏRİN TƏŞKİLİ ÜZRƏ KİÇİK MÜTƏXƏSSİS</h3>
-					      <a href="#">ALSA GROUP</a>
-						   <div class="imqiymet">
-					              <div class="qiymet"><span>700-1000 AZN</span></div>
-					              <div class="qiymetLink">
-						               <a href="#">Ətraflı</a>
-						               <i class="fa fa-angle-right"></i>
-					              </div>
-
-           				     </div>
 
 
-					              <p >
-					              - Şirkət istehsalatla məşğuldur
-					              <br>
-					              - Şirkətin məhsullarının korporativ və pərakəndə satışı
-					              <br>
-					              - 6 günlük iş rejimi
-					              <br>
-					              - Yemək və avtomobilin xərcləri şirkət tərəfindən ödəniləcək
-					              <br>
-					              - Əmək haqqı satış həcminə görə daha çox ola bilər
 
-					              </p>
 
-					              <div class="cardFooter">
-						            <span>Bakı</span>
-						              <i class="fa fa-circle"></i>
-						              <a href="#" >Satış </a>
-						                /
-						              <a href="#" > Satış üzrə mütəxəssis</a>
-		            			</div>
-														
-					   	</div>
-						
-						 
+				@endforeach
 
-					</div>
-			  	</div>
 
-					<nav>
-					  <ul class="pagination">
-					    <li class="page-item disabled">
-					      <a class="page-link" href="#" aria-label="Previous">
-					        <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
-					        <span class="sr-only">Previous</span>
-					      </a>
-					    </li>
-					    <li class="page-item active">
-					      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-					    </li>
-					    <li class="page-item"><a class="page-link" href="#">2</a></li>
-					    <li class="page-item"><a class="page-link" href="#">3</a></li>
-					    <li class="page-item"><a class="page-link" href="#">4</a></li>
-					    <li class="page-item"><a class="page-link" href="#">5</a></li>
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Next">
-					        <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
-					        <span class="sr-only">Next</span>
-					      </a>
-					    </li>
-					  </ul>
+
+				<script type="text/javascript">
+							function equalHeight(group) {
+								var tallest = 0;
+								var b=$('.col_inner_height:odd');
+								var c=$('.col_inner_height:even');
+
+								group.each(function() {
+									var thisHeight = $(this).height();
+									if(thisHeight > tallest) {
+										tallest = thisHeight;
+									}
+								});
+								group.height(tallest);
+							}
+
+					$(document).ready(function() {
+						var b = {!! json_encode($roles) !!}
+
+						for(i=0; i < b.length; i++) {
+							equalHeight($(".col_inner_height"));
+						};
+					});
+
+				</script>
+
+
+
+
+
+
+				<nav>
+					<ul class="pagination">
+						<li class="page-item disabled">
+							<a class="page-link" href="#" aria-label="Previous">
+								<span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
+								<span class="sr-only">Previous</span>
+							</a>
+						</li>
+						<li class="page-item active">
+							<a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">4</a></li>
+						<li class="page-item"><a class="page-link" href="#">5</a></li>
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Next">
+								<span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</li>
+					</ul>
 				</nav>
 			</div>
 
 
 		</div>
 	</section>
-	
+
+
 
 
 	<!-- # vacancies end -->

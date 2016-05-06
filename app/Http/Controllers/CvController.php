@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 // Default Modeller
-use Request;
 use Carbon\Carbon;
-use App\Http\Requests;
+use App\Http\Requests\CvRequest;
 use Illuminate\Support\Facedes\Input;
 Use App\Http\Controllers\Controller;
+use DB;
 
 // Bizim Modeller
 use App\AddCv;
@@ -24,9 +24,10 @@ class CvController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
+            $categories = CategoryModel::with('subcategories')->get();
             $resumes = AddCv::all();
-            return view('resumes', compact('resumes'));
+            return view('resumes', compact('resumes','categories'));
     }
 
     /**
@@ -46,13 +47,13 @@ class CvController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CvRequest|\Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CvRequest $request)
     {
-        AddCv::create(Request::all());
-        return redirect('resumes');
+        AddCv::create($request->all());
+        return redirect("resumes");
     }
 
     /**
@@ -63,8 +64,8 @@ class CvController extends Controller
      */
     public function show($id)
     {
-        $resumes = AddCv::findOrFail($id)->with('subcategories','education','experience','city')->get();
-        return view('resumes/show', compact('resumes')); 
+        $cv = AddCv::findOrFail($id);
+        return view('resumes/show', compact('cv','subcategories','education','experience','city'));
 
     }
 

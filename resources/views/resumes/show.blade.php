@@ -8,18 +8,18 @@
 			</div>
 			<div class="catNav">
 				<div class="pageVacancies">
-					<a class="active" href="#viewVacancies">İş elanları</a>
+					<a href="/">İş elanları</a>
 				</div>
 				<div class="pageResumes">
-					<a href="#viewCv">İş axtaranlar</a>
+					<a class="active" href="/categories/resumes">İş axtaranlar</a>
 				</div>
 			</div>
 			<div class="otherNav">
 				<div class="pageAbout">
-					<a href="#resumes">Haqqımızda</a>
+					<a href="/pages/about">Haqqımızda</a>
 				</div>
 				<div class="add">
-					<button>Elan yerləşdirin</button>
+					<button><a href="/vacancies/new">Elan yerləşdirin</a></button>
 				</div>
 			</div>
 			<div class="lang-select">
@@ -42,7 +42,6 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row">
-						@foreach($resumes as $cv)
 							<div class="card-i-header">
 								<div class="card-i-header-link">
 									<a href="#">{{$cv->subcategories->categories['cat_name']}}</a> /
@@ -145,7 +144,6 @@
 
 								
 							</div>
-						@endforeach
 						  <div class="elanlar">
 							<div class="col-md-12">
 								<div class="col-md-12-elan">

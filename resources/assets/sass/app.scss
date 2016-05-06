@@ -8,7 +8,7 @@
 /*  ================             BOOTSTRAP              ===============*/
 
 // Color Variables
-$bgcolor: #555; // Header Reklamların arxa fonu
+$bgcolor: #555; // Header Reklamlarınc arxa fonu
 $navbarColor: #F8CB1C; // Logo ve Navbarın arxa fonu
 $navbarLinkHover: #ffdf80; // Navbar Link Hover
 $categoriesBgColor: #F9D54B; // İş elanları kategoriyaların arxa fonu
@@ -22,9 +22,9 @@ $contentBgColor: #f4f4f4; // Content Containerin arxa fonu
 $contentLinkTextColor: #979797; // content linkleri ve textlerin rengi
 $secondTextColor:#333;
 // Font
-
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700&subset=latin,cyrillic,latin-ext,cyrillic-ext);
 html, body {
-	font-family: Tahoma;
+	font-family: 'Noto Sans';
 }
 // Əlavələar
 .disabledDiv {
@@ -257,9 +257,8 @@ div.show{
 	}
 }
 // Vakansiyalara Baxmaq ve CV-lərə baxmaq
-#viewVacancies .container, #viewCv .container{
+#viewVacancies .container{
 	background: $categoriesBgColor;
-	display: none;
 	.row {
 		padding: 15px 25px;
 		.col-md-4{
@@ -527,10 +526,11 @@ div.show{
 					border: 1px solid #e8e8e8;
 					border-radius: 5px 5px 0 0;
 					.col-md-4 {
+                      min-height: 300px;
 						.catList {
 							border-right: 2px solid #e8e8e8;
 							li {
-								margin-bottom: 8px;
+								margin-bottom: 5px;
 								a {
 									font-size: 15px;
 									text-decoration: none;
@@ -555,6 +555,12 @@ div.show{
 							border-right:none;
 						}
 					}
+                   .col-md-4:nth-child(4),.col-md-4:nth-child(5),.col-md-4:nth-child(6){
+                     min-height:150px;
+                   }
+                  .col-md-4:nth-child(7),.col-md-4:nth-child(8),.col-md-4:nth-child(9){
+                    min-height:200px;
+                  }
 				}
 			}
 		}
@@ -614,8 +620,14 @@ div.show{
 
 	.row{
 		.col-md-6{
+			padding-top: 0;
+			padding-bottom: 20px;
+			card {
+				padding: 0;
+			}
 			.card-lar{
 				.card-block{
+					border-radius: 5px;
 					padding: 10px 20px;
 					padding-bottom: 20px;
 					background-color: $textColor;
@@ -692,9 +704,7 @@ div.show{
 							background: #f9f3d9;
 						}
 					}
-
 					p{
-						min-height: 100px;
 						font-size: 15px;
 					}
 
@@ -1182,6 +1192,9 @@ div.show{
 					.col-md-12 {
 						background: #fff;
 						border-radius: 5px;
+						p.text-danger {
+							font-size: 12px;
+						}
 						.row{
 							.col-md-8 {
 								h4 {
@@ -1268,6 +1281,7 @@ div.show{
 					.col-md-12 {
 						.row {
 							.col-md-12 {
+
 								h4 {
 									font-size: 24px;
 									font-weight: 700;
@@ -1379,8 +1393,7 @@ div.show{
 }
 // About Page Tab
 #aboutP, #aboutA {
-	.bgCol{ 
-		display: none;
+	.bgCol{
 		background: #f4f4f4;
 		.borderCol{
 			border-radius: 5px;

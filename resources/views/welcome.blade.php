@@ -8,18 +8,18 @@
 			</div>
 			<div class="catNav">
 				<div class="vacancies">
-					<a class="active" href="#viewVacancies">İş elanları</a>
+					<a class="active" href="/">İş elanları</a>
 				</div>
 				<div class="resumes">
-					<a href="#viewCv">İş axtaranlar</a>
+					<a href="/categories/resumes">İş axtaranlar</a>
 				</div>
 			</div>
 			<div class="otherNav">
 				<div class="about">
-					<a href="#resumes">Haqqımızda</a>
+					<a href="/pages/about">Haqqımızda</a>
 				</div>
 				<div class="add">
-					<button><a href="addvac.php">Elan yerləşdirin</a></button>
+					<button><a href="/vacancies/new">Elan yerləşdirin</a></button>
 				</div>
 			</div>
 			<div class="lang-select">
@@ -40,7 +40,7 @@
 
 	<!-- View Vacancies -->
 	<section id="viewVacancies">
-		<div class="container show">
+		<div class="container">
 				<div class="row">
 				<div class="col-md-4 col-sm-4">
 					<div class="row">
@@ -102,66 +102,7 @@
 	<!-- # View Vacancies end -->
 
 	<!-- View CV -->
-	<section id="viewCv">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-sm-4">
-					<div class="row">
-						<div class="vacCount" >312</div>
-						<a href="#maliyye">Maliyyə</a>
-					</div>
-					<div class="row">
-						<div class="vacCount" >117</div>
-						<a href="#markettinq">Markettinq</a>
-					</div>
-					<div class="row">
-						<div class="vacCount" >24</div>
-						<a class="vacLink" href="#it">İnformasiya Texnologiyaları</a>
-					</div>
-					<div class="row">
-						<div class="vacCount" >18</div>
-						<a href="#inzibati">İnzibati</a>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="row">
-						<div class="vacCount" >46</div>
-						<a href="#maliyye">Satış</a>
-					</div>
-					<div class="row">
-						<div class="vacCount" >34</div>
-						<a href="#markettinq">Dizayn</a>
-					</div>
-					<div class="row">
-						<div class="vacCount" >333</div>
-						<a href="#it">Hüquqşunaslıq</a>
-					</div>
-					<div class="row">
-						<div class="vacCount" >10</div>
-						<a href="#inzibati">Təhsil və Elm</a>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="row">
-						<div class="vacCount" >7</div>
-						<a href="#maliyye">Senaye və kənd təsərrüfatı</a>
-					</div>
-					<div class="row">
-						<div class="vacCount" >24</div>
-						<a href="#markettinq">Xidmət</a>
-					</div>
-					<div class="row">
-						<div class="vacCount" >2</div>
-						<a href="#it">Tibb və əczaçılıq</a>
-					</div>
-					<div class="row">
-						<div class="vacCount" >2</div>
-						<a href="#inzibati">Müxtəlif</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+		<!-- Səhifəyə görə dəyişir-->
 	<!-- # View CV end -->
 
 	<!-- # Vacancies End -->
@@ -416,7 +357,7 @@
 			<div class="headListLastVac">
 				<div class="leftHead">
 					<h1>SON İŞ ELANLARI</h1>
-					<a href="">Hamısını göstər</a>
+					<a href="/vacancies">Hamısını göstər</a>
 				</div>
 				<div class="rightHead pull-right">
 					<span>7 gün - <a href="">14</a>, ay - <a href="">132</a> yeni elan</span>
@@ -591,35 +532,16 @@
 					</div>
 				 <div id="tab-categories" class="show">
 					<div class="row">
-		    			<div class="col-md-4">
-		    				<ul class="catList">
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    				</ul>
-		    			</div>
-		    			<div class="col-md-4">
-		    				<ul class="catList">
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    				</ul>
-		    			</div>
-		    			<div class="col-md-4">
-		    				<ul class="catList last">
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Kredit Mütəxəssisi</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    					<li class="catListItem"><a href="">Maliyyə</a></li>
-		    				</ul>
-		    			</div>
+						@foreach($categories as $cat)
+                            <div class="col-md-4">
+                                <ul class="catList">
+                                    <li class="catListItem"><a href="">{{$cat->cat_name}}</a></li>
+                                    @foreach($cat->subcategories as $scat)
+                                        <li class="catListItem"><a href="">{{$scat->subcat_name}}</a></li>
+                                        @endforeach
+                                </ul>
+                            </div>
+							@endforeach
 			    	</div><!-- Row -->
 				</div>
 				<!-- tab companies-->
@@ -706,20 +628,7 @@
 		})
 	});
 	// Tab menu (Vakansiyalar və CV-lər)
-	var thisAttr; 
-
-	$(document).ready(function() {
-
-    $(".catNav div a").click(function(){
-    	$(".active").removeClass("active");
-    	$(this).addClass("active");
-    	thisAttr = $(this).attr("href");
-    	$(".show").removeClass("show");
-    	$(thisAttr+"> .container").addClass("show");
-    	return false;
-    });
-
-    });
+		// Səhifəyə görə oldu
 		
 
 

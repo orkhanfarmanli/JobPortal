@@ -1,215 +1,375 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Bootstrap Admin Template</title>
-    <!-- BOOTSTRAP STYLES-->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
-    <!-- FONTAWESOME ICONS STYLES-->
-    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" />
-    <!--CUSTOM STYLES-->
-    <link href="{{asset('css/style.css')}}" rel="stylesheet" />
-      <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-    <div id="wrapper">
-        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand">
-					
-                </a>
-            </div>
+@extends('admin.a-layout')      
+    @section('content')
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
 
-            <div class="notifications-wrapper">
-                <ul class="nav">
-               
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-tasks">
-                                <li>
-                                    <a href="#">
-                                        <div>
-                                            <p>
-                                                <strong>Task 1</strong>
-                                                <span class="pull-right text-muted">60% Complete</span>
-                                            </p>
-                                            <div class="progress progress-striped active">
-                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                                    <span class="sr-only">60% Complete (danger)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="#">
-                                        <div>
-                                            <p>
-                                                <strong>Task 2</strong>
-                                                <span class="pull-right text-muted">30% Complete</span>
-                                            </p>
-                                            <div class="progress progress-striped active">
-                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                                    <span class="sr-only">30% Complete</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="#">
-                                        <div>
-                                            <p>
-                                                <strong>Task 3</strong>
-                                                <span class="pull-right text-muted">80% Complete</span>
-                                            </p>
-                                            <div class="progress progress-striped active">
-                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                    <span class="sr-only">80% Complete (warning)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="#">
-                                        <div>
-                                            <p>
-                                                <strong>Task 4</strong>
-                                                <span class="pull-right text-muted">90% Complete</span>
-                                            </p>
-                                            <div class="progress progress-striped active">
-                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                                    <span class="sr-only">90% Complete (success)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a class="text-center" href="#">
-                                        <strong>See Tasks List + </strong>
-                                    </a>
-                                </li>
-                            </ul>
-                </li>
-              
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user-plus"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user-plus"></i> My Profile</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-               
-            </div>
-        </nav>
-        <!-- /. NAV TOP  -->
-        <nav  class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <!-- <li>
-                        <div class="user-img-div">
-                            <img src="assets/img/user.jpg" class="img-circle" />
-
-                           
+              <div class="row">
+                  <div class="col-lg-9 main-chart">
+                  
+                    <div class="row mtbox">
+                      <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+                        <div class="box1">
+                  <span class="li_heart"></span>
+                  <h3>933</h3>
                         </div>
-
-                    </li> -->
-                    <!--  <li>
-                        <a  href="#"> <strong> Romelia Alexendra </strong></a>
-                    </li> -->
-
-                    <li>
-                        <a class="active-menu"  href="index.html"><i class="fa fa-dashboard "></i>Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="ui.html"><i class="fa fa-venus "></i>UI Elements </a>
-                        
-                    </li>
+                  <p>933 People liked your page the last 24hs. Whoohoo!</p>
+                      </div>
+                      <div class="col-md-2 col-sm-2 box0">
+                        <div class="box1">
+                  <span class="li_cloud"></span>
+                  <h3>+48</h3>
+                        </div>
+                  <p>48 New files were added in your cloud storage.</p>
+                      </div>
+                      <div class="col-md-2 col-sm-2 box0">
+                        <div class="box1">
+                  <span class="li_stack"></span>
+                  <h3>23</h3>
+                        </div>
+                  <p>You have 23 unread messages in your inbox.</p>
+                      </div>
+                      <div class="col-md-2 col-sm-2 box0">
+                        <div class="box1">
+                  <span class="li_news"></span>
+                  <h3>+10</h3>
+                        </div>
+                  <p>More than 10 news were added in your reader.</p>
+                      </div>
+                      <div class="col-md-2 col-sm-2 box0">
+                        <div class="box1">
+                  <span class="li_data"></span>
+                  <h3>OK!</h3>
+                        </div>
+                  <p>Your server is working perfectly. Relax & enjoy.</p>
+                      </div>
                     
-                    <li>
-                        <a href="table.html"><i class="fa fa-bolt "></i>Data Tables </a>
+                    </div><!-- /row mt -->  
+                  
+                      
+                      <div class="row mt">
+                      <!-- SERVER STATUS PANELS -->
+                        <div class="col-md-4 col-sm-4 mb">
+                          <div class="white-panel pn donut-chart">
+                            <div class="white-header">
+                    <h5>SERVER LOAD</h5>
+                            </div>
+                <div class="row">
+                  <div class="col-sm-6 col-xs-6 goleft">
+                    <p><i class="fa fa-database"></i> 70%</p>
+                  </div>
+                            </div>
+                <canvas id="serverstatus01" height="120" width="120"></canvas>
+                <script>
+                  var doughnutData = [
+                      {
+                        value: 70,
+                        color:"#68dff0"
+                      },
+                      {
+                        value : 30,
+                        color : "#fdfdfd"
+                      }
+                    ];
+                    var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
+                </script>
+                          </div><! --/grey-panel -->
+                        </div><!-- /col-md-4-->
                         
-                    </li>
-                   
-                     
-                     <li>
-                        <a href="forms.html"><i class="fa fa-code "></i>Forms</a>
-                    </li>
-                   
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap "></i>Multilevel Link <span class="fa arrow"></span></a>
-                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#"><i class="fa fa-cogs "></i>Second  Link</a>
-                            </li>
-                             <li>
-                                <a href="#"><i class="fa fa-bullhorn "></i>Second Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third  Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Link</a>
-                                    </li>
 
-                                </ul>
+                        <div class="col-md-4 col-sm-4 mb">
+                          <div class="white-panel pn">
+                            <div class="white-header">
+                    <h5>TOP PRODUCT</h5>
+                            </div>
+                <div class="row">
+                  <div class="col-sm-6 col-xs-6 goleft">
+                    <p><i class="fa fa-heart"></i> 122</p>
+                  </div>
+                  <div class="col-sm-6 col-xs-6"></div>
+                            </div>
+                            <div class="centered">
+                    <img src="assets/img/product.png" width="120">
+                            </div>
+                          </div>
+                        </div><!-- /col-md-4 -->
+                        
+            <div class="col-md-4 mb">
+              <!-- WHITE PANEL - TOP USER -->
+              <div class="white-panel pn">
+                <div class="white-header">
+                  <h5>TOP USER</h5>
+                </div>
+                <p><img src="assets/img/ui-zac.jpg" class="img-circle" width="80"></p>
+                <p><b>Zac Snider</b></p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="small mt">MEMBER SINCE</p>
+                    <p>2012</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="small mt">TOTAL SPEND</p>
+                    <p>$ 47,60</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /col-md-4 -->
+                        
 
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="blank.html"><i class="fa fa-dashcube "></i>Blank Page</a>
-                    </li>
-                   
-                </ul>
-            </div>
+                    </div><!-- /row -->
+                    
+                            
+          <div class="row">
+            <!-- TWITTER PANEL -->
+            <div class="col-md-4 mb">
+                          <div class="darkblue-panel pn">
+                            <div class="darkblue-header">
+                    <h5>DROPBOX STATICS</h5>
+                            </div>
+                <canvas id="serverstatus02" height="120" width="120"></canvas>
+                <script>
+                  var doughnutData = [
+                      {
+                        value: 60,
+                        color:"#68dff0"
+                      },
+                      {
+                        value : 40,
+                        color : "#444c57"
+                      }
+                    ];
+                    var myDoughnut = new Chart(document.getElementById("serverstatus02").getContext("2d")).Doughnut(doughnutData);
+                </script>
+                <p>April 17, 2014</p>
+                <footer>
+                  <div class="pull-left">
+                    <h5><i class="fa fa-hdd-o"></i> 17 GB</h5>
+                  </div>
+                  <div class="pull-right">
+                    <h5>60% Used</h5>
+                  </div>
+                </footer>
+                          </div><! -- /darkblue panel -->
+            </div><!-- /col-md-4 -->
+            
+            
+            <div class="col-md-4 mb">
+              <!-- INSTAGRAM PANEL -->
+              <div class="instagram-panel pn">
+                <i class="fa fa-instagram fa-4x"></i>
+                <p>@THISISYOU<br/>
+                  5 min. ago
+                </p>
+                <p><i class="fa fa-comment"></i> 18 | <i class="fa fa-heart"></i> 49</p>
+              </div>
+            </div><!-- /col-md-4 -->
+            
+            <div class="col-md-4 col-sm-4 mb">
+              <!-- REVENUE PANEL -->
+              <div class="darkblue-panel pn">
+                <div class="darkblue-header">
+                  <h5>REVENUE</h5>
+                </div>
+                <div class="chart mt">
+                  <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
+                </div>
+                <p class="mt"><b>$ 17,980</b><br/>Month Income</p>
+              </div>
+            </div><!-- /col-md-4 -->
+            
+          </div><!-- /row -->
+          
+          <div class="row mt">
+                      <!--CUSTOM CHART START -->
+                      <div class="border-head">
+                          <h3>VISITS</h3>
+                      </div>
+                      <div class="custom-bar-chart">
+                          <ul class="y-axis">
+                              <li><span>10.000</span></li>
+                              <li><span>8.000</span></li>
+                              <li><span>6.000</span></li>
+                              <li><span>4.000</span></li>
+                              <li><span>2.000</span></li>
+                              <li><span>0</span></li>
+                          </ul>
+                          <div class="bar">
+                              <div class="title">JAN</div>
+                              <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip" data-placement="top">85%</div>
+                          </div>
+                          <div class="bar ">
+                              <div class="title">FEB</div>
+                              <div class="value tooltips" data-original-title="5.000" data-toggle="tooltip" data-placement="top">50%</div>
+                          </div>
+                          <div class="bar ">
+                              <div class="title">MAR</div>
+                              <div class="value tooltips" data-original-title="6.000" data-toggle="tooltip" data-placement="top">60%</div>
+                          </div>
+                          <div class="bar ">
+                              <div class="title">APR</div>
+                              <div class="value tooltips" data-original-title="4.500" data-toggle="tooltip" data-placement="top">45%</div>
+                          </div>
+                          <div class="bar">
+                              <div class="title">MAY</div>
+                              <div class="value tooltips" data-original-title="3.200" data-toggle="tooltip" data-placement="top">32%</div>
+                          </div>
+                          <div class="bar ">
+                              <div class="title">JUN</div>
+                              <div class="value tooltips" data-original-title="6.200" data-toggle="tooltip" data-placement="top">62%</div>
+                          </div>
+                          <div class="bar">
+                              <div class="title">JUL</div>
+                              <div class="value tooltips" data-original-title="7.500" data-toggle="tooltip" data-placement="top">75%</div>
+                          </div>
+                      </div>
+                      <!--custom chart end-->
+          </div><!-- /row --> 
+          
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
+    @stop
 
-        </nav>
+    @section('r-sidebar')
+      <!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->                  
+                  
+                  <div class="col-lg-3 ds">
+                    <!--COMPLETED ACTIONS DONUTS CHART-->
+            <h3>NOTIFICATIONS</h3>
+                                        
+                      <!-- First Action -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                        </div>
+                        <div class="details">
+                          <p><muted>2 Minutes Ago</muted><br/>
+                             <a href="#">James Brown</a> subscribed to your newsletter.<br/>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Second Action -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                        </div>
+                        <div class="details">
+                          <p><muted>3 Hours Ago</muted><br/>
+                             <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Third Action -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                        </div>
+                        <div class="details">
+                          <p><muted>7 Hours Ago</muted><br/>
+                             <a href="#">Brandon Page</a> purchased a year subscription.<br/>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Fourth Action -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                        </div>
+                        <div class="details">
+                          <p><muted>11 Hours Ago</muted><br/>
+                             <a href="#">Mark Twain</a> commented your post.<br/>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Fifth Action -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                        </div>
+                        <div class="details">
+                          <p><muted>18 Hours Ago</muted><br/>
+                             <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
+                          </p>
+                        </div>
+                      </div>
 
-		@yield('content');
+                       <!-- USERS ONLINE SECTION -->
+            <h3>TEAM MEMBERS</h3>
+                      <!-- First Member -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
+                        </div>
+                        <div class="details">
+                          <p><a href="#">DIVYA MANIAN</a><br/>
+                             <muted>Available</muted>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Second Member -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <img class="img-circle" src="assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
+                        </div>
+                        <div class="details">
+                          <p><a href="#">DJ SHERMAN</a><br/>
+                             <muted>I am Busy</muted>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Third Member -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <img class="img-circle" src="assets/img/ui-danro.jpg" width="35px" height="35px" align="">
+                        </div>
+                        <div class="details">
+                          <p><a href="#">DAN ROGERS</a><br/>
+                             <muted>Available</muted>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Fourth Member -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
+                        </div>
+                        <div class="details">
+                          <p><a href="#">Zac Sniders</a><br/>
+                             <muted>Available</muted>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Fifth Member -->
+                      <div class="desc">
+                        <div class="thumb">
+                          <img class="img-circle" src="assets/img/ui-sam.jpg" width="35px" height="35px" align="">
+                        </div>
+                        <div class="details">
+                          <p><a href="#">Marcel Newman</a><br/>
+                             <muted>Available</muted>
+                          </p>
+                        </div>
+                      </div>
 
-		 <footer >
-        &copy; 2015 YourCompany | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a>
-    </footer>
-    <!-- /. FOOTER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="{{asset('js/bootstrap.js')}}"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="{{asset('js/jquery.metisMenu.js')}}"></script>
-    <!-- CUSTOM SCRIPTS -->
-    <script src="{{asset('js/custom.js')}}"></script>
-
-
-</body>
-</html>
+                        <!-- CALENDAR-->
+                        <div id="calendar" class="mb">
+                            <div class="panel green-panel no-margin">
+                                <div class="panel-body">
+                                    <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+                                        <div class="arrow"></div>
+                                        <h3 class="popover-title" style="disadding: none;"></h3>
+                                        <div id="date-popover-content" class="popover-content"></div>
+                                    </div>
+                                    <div id="my-calendar"></div>
+                                </div>
+                            </div>
+                        </div><!-- / calendar -->
+                      
+                  </div><!-- /col-lg-3 -->
+              </div><! --/row -->
+          </section>
+      </section>
+    @stop

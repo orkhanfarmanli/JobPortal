@@ -8,18 +8,18 @@
 			</div>
 			<div class="catNav">
 				<div class="pageVacancies">
-					<a class="active" href="#viewVacancies">İş elanları</a>
+					<a href="/">İş elanları</a>
 				</div>
 				<div class="pageResumes">
-					<a href="#viewCv">İş axtaranlar</a>
+					<a class="active" href="/categories/resumes">İş axtaranlar</a>
 				</div>
 			</div>
 			<div class="otherNav">
 				<div class="pageAbout">
-					<a href="#resumes">Haqqımızda</a>
+					<a href="/pages/about">Haqqımızda</a>
 				</div>
 				<div class="add">
-					<button>Elan yerləşdirin</button>
+					<button><a href="/vacancies/new">Elan yerləşdirin</a></button>
 				</div>
 			</div>
 			<div class="lang-select">
@@ -42,11 +42,11 @@
 			<div class="row">
 				<div class="col-md-7">
 					<div class="row">
-						<div class="col-md-8">
+						<div class="col-md-7">
 							<h1>İŞ ELANI YERLƏŞDİRİN</h1>
 						</div>
-						<div class="col-md-4">
-							<button><a href="addcv.php">CV yerləşdirin</a></button>
+						<div class="col-md-5">
+							<button><a href="/resumes/new">CV yerləşdirin</a></button>
 						</div>
 					</div>
 					<div class="vacForm">
@@ -58,25 +58,20 @@
 										<fieldset class="form-group">
 										    {!! Form::open(array('url' => 'vacancies')) !!}
 											{!!Form::label('vac_email', 'E-mail');!!}	
-						{!! Form::email('vac_email',null, array_merge(['class' => 'form-control'])) !!}
-										    
+											{!! Form::email('vac_email',null, array_merge(['class' => 'form-control'])) !!}	    
 										</fieldset>
 									</div>
 									<div class="col-md-4"></div>
 								</div>
 								<div class="row phoneForm">
 									<div class="col-md-8">
-										<fieldset id="addInput" class="form-group">
-										   
-					{!!Form::label('vac_phone', 'Telefonlar')!!}
-					
-					{!! Form::text('vac_phone',null, array_merge(['class' => 'phoneNum form-control','placeholder'=>'Məsələn: (011) 222-33-44'])) !!}
-					
-					{!! Form::text('vac_phone',null, array_merge(['class' => 'form-control'])) !!}					    
-					{!! Form::text('vac_phone',null, array_merge(['class' => 'form-control'])) !!}	
-
+										<fieldset id="addInput" class="form-group">   
+											{!!Form::label('vac_phone', 'Telefonlar')!!}
+											{!! Form::text('vac_phone',null, array_merge(['class' => 'phoneNum form-control','placeholder'=>'Məsələn: (011) 222-33-44'])) !!}	
+											{!! Form::text('vac_phone1',null, array_merge(['class' => 'form-control'])) !!}
+											{!! Form::text('vac_phone2',null, array_merge(['class' => 'form-control'])) !!}
 										</fieldset>
-										<a onclick="yarat()">Nömrə əlavə etmək</a>
+										<a>Nömrə əlavə etmək</a>
 									</div>
 									<div class="col-md-4">
 										<div class="row">
@@ -87,9 +82,10 @@
 							</div>
 						</div>
 						<!-- Disabled btn -->
+
 						<div class="rowBtn" id="disabledBtn">
 							<div class="col-md-12">
-								<button type="submit" class="btn box-sh" name="submit"><i class="fa fa-chevron-down" ></i> Davam etmək</button>
+								<button id="davam" class="btn box-sh"><i class="fa fa-chevron-down" ></i> Davam etmək</button>
 							</div>
 						</div>
 						<!-- Disabled btn -->
@@ -99,155 +95,34 @@
 									<div class="col-md-12">
 										<h4 class="card-title">ELAN</h4>
 										<fieldset class="form-group">
-										    <label for="vac_category_id">Kategoriyalar</label>
-										    <select class="grouped_collection optional form-control" id="ad_category_id" name="vac_category_id">
-											    <option value=""></option>
-												<optgroup label="Maliyyə">
-													<option value="48">Kredit mütəxəssisi</option>
-													<option value="49">Sığorta</option>
-													<option value="51">Audit</option>
-													<option value="52">Mühasibat</option>
-													<option value="57">Maliyyə analiz</option>
-													<option value="150">Bank xidməti</option>
-													<option value="154">Kassir</option>
-													<option value="155">İqtisadçı</option>
-													<option value="129">Digər</option>
-												</optgroup>
-												<optgroup label="Marketinq"><option value="64">Marketinq menecment</option>
-													<option value="61">İctimayətlə əlaqələr</option>
-													<option value="62">Reklam</option>
-													<option value="60">Kopiraytinq</option>
-												</optgroup>
-												<optgroup label="İnformasiya texnologiyaları">
-													<option value="66">Sistem idarəetməsi</option>
-													<option value="67">Məlumat bazasının idarə edilməsi və inkişafı</option>
-													<option value="68">İT mütəxəssisi / məsləhətçi</option>
-													<option value="69">Proqramlaşdırma</option>
-													<option value="70">İT layihələrin idarə edilməsi</option>
-													<option value="71">Texniki avadanlıq mütəxəssisi</option>
-													<option value="72">Digər</option>
-												</optgroup>
-												<optgroup label="İnzibati">
-													<option value="105">İnzibati dəstək</option>
-													<option value="108">Menecment</option>
-													<option value="110">Ofis menecmenti</option>
-													<option value="112">Katibə / Resepşn</option>
-													<option value="143">Heyətin idarəolunması</option>
-													<option value="113">Digər</option>
-												</optgroup>
-												<optgroup label="Satış">
-													<option value="83">Daşınmaz əmlak agenti / makler</option>
-													<option value="86">Satış üzrə mütəxəssis</option></optgroup>
-													<optgroup label="Dizayn"><option value="159">Veb-dizayn</option>
-													<option value="97">Memar / İnteryer dizaynı</option>
-													<option value="99">Geyim dizaynı</option>
-													<option value="101">Rəssam</option>
-													<option value="104">Digər</option>
-												</optgroup>
-												<optgroup label="Hüquqşünaslıq">
-													<option value="73">Vəkil</option>
-													<option value="74">Cinayət hüququ</option>
-													<option value="79">Hüquqşünas</option>
-													<option value="151">Digər</option>
-												</optgroup>
-												<optgroup label="Təhsil və elm">
-													<option value="119">Məktəb tədrisi</option>
-													<option value="120">Universitet tədrisi</option>
-													<option value="121">Repetitor</option>
-													<option value="122">Xüsusi təhsil/ Təlim</option>
-													<option value="145">Digər</option>
-												</optgroup>
-												<optgroup label="Sənaye və kənd təsərrüfatı">
-													<option value="91">Avtomatlaşdırılmış idarəetmə</option>
-													<option value="92">Tikinti</option>
-													<option value="95">Kənd təsərrüfatı</option>
-													<option value="93">Mühəndis</option>
-													<option value="94">Geologiya və ətraf mühit</option>
-													<option value="96">Digər</option>
-												</optgroup>
-												<optgroup label="Xidmət">
-													<option value="157">Xadimə</option>
-													<option value="158">Anbardar</option>
-													<option value="134">Restoran işi</option>
-													<option value="135">Sürücü</option>
-													<option value="136">Dayə</option>
-													<option value="137">Fəhlə</option>
-													<option value="142">Turizm və mehmanxana işi</option>
-													<option value="144">Tərcüməçi</option>
-													<option value="153">Mühafizə xidməti</option>
-													<option value="149">Digər</option>
-													<option value="193">SPA və gözəllik</option>
-													<option value="156">Kuryer</option>
-												</optgroup>
-												<optgroup label="Tibb və əczaçılıq">
-													<option value="139">Həkim</option>
-													<option value="140">Tibbi personal</option>
-													<option value="141">Tibb təmsilçisi</option>
-												</optgroup>
-												<optgroup label="Müxtəlif">
-													<option value="148">Jurnalistika</option>
-													<option value="160">Tələbələr üçün</option>
-												</optgroup>
+											<label for="vac_category_id">Kategoriyalar</label>
+											<select class="grouped_collection optional form-control" id="vac_category_id" name="vac_category_id">
+												<option value=""></option>
+
+												@foreach($categories as $category)
+
+													<optgroup label="{{$category->cat_name}}">
+														@foreach($category->subcategories as $subcategory)
+															<option value="{{$subcategory->id}}"> {{$subcategory->subcat_name}}</option>
+														@endforeach
+													</optgroup>
+												@endforeach
+
 											</select>
 										</fieldset>
 										<fieldset class="form-group">
-					{!!Form::label('vac_position', 'Vəzifə')!!}
-					{!! Form::text('vac_position',null, array_merge(['class' => ' form-control'])) !!}
+											{!!Form::label('vac_position', 'Vəzifə')!!}
+											{!! Form::text('vac_position',null, array_merge(['class' => ' form-control'])) !!}
 										 </fieldset>
 										<fieldset class="form-group">
-										    <label for="vac_city_id">Şəhər</label>
-										    <select class="select optional form-control" id="vac_city_id" name="vac_city_id">
-										    	<option value=""></option>
-												<option value="28">Ağcabədi</option>
-												<option value="12">Ağdam</option>
-												<option value="83">Ağdaş</option>
-												<option value="34">Ağsu</option>
-												<option value="1">Bakı</option>
-												<option value="73">Balakən</option>
-												<option value="30">Beyləqan</option>
-												<option value="26">Biləsuvar</option>
-												<option value="31">Bərdə</option>
-												<option value="72">Cəlilabad</option>
-												<option value="23">Füzuli </option>
-												<option value="81">Goranboy</option>
-												<option value="29">Göyçay</option>
-												<option value="4">Gəncə</option>
-												<option value="27">Kürdəmir</option>
-												<option value="82">Lerik</option>
-												<option value="11">Lənkaran</option>
-												<option value="16">Masallı</option>
-												<option value="6">Mingəçevir</option>
-												<option value="14">Naftalan</option>
-												<option value="8">Naxçıvan</option>
-												<option value="39">Qaradağ</option>
-												<option value="38">Qax</option>
-												<option value="15">Qazax</option>
-												<option value="18">Quba</option>
-												<option value="19">Qusar</option>
-												<option value="76">Qəbələ</option>
-												<option value="33">Saatlı</option>
-												<option value="24">Sabirabad</option>
-												<option value="22">Salyan</option>
-												<option value="35">Samux</option>
-												<option value="74">Siyəzən</option>
-												<option value="5">Sumqayıt</option>
-												<option value="17">Tovuz</option>
-												<option value="32">Tərtər</option>
-												<option value="20">Xaçmaz</option>
-												<option value="75">Xırdalan</option>
-												<option value="37">Xızı</option>
-												<option value="77">Yardımlı</option>
-												<option value="10">Yevlax</option>
-												<option value="2">Zaqatala</option>
-												<option value="25">İmişli</option>
-												<option value="3">İsmayıllı</option>
-												<option value="80">Şabran</option>
-												<option value="21">Şamaxı</option>
-												<option value="78">Şirvan</option>
-												<option value="9">Şəki</option>
-												<option value="13">Şəmkir</option>
-												<option value="79">Şərur</option>
-												<option value="7">Əli-Bayramlı</option>
+											<label for="vac_city_id">Şəhər</label>
+											<select class="select optional form-control" id="vac_city_id" name="vac_city_id">
+												<option value=""></option>
+												@foreach($city as $cities)
+													<option value="{{$cities->id}}">
+														{{$cities->city_name}}
+													</option>
+												@endforeach
 											</select>
 										</fieldset>
 										<fieldset class="form-group">
@@ -260,7 +135,7 @@
 														<label for="vac_min_salary" class="control-label">minimum </label>
 													</div>
 													<div class="col-md-6">
-														<select class="select optional form-control" id="ad_salary_from" name="vac_min_salary">
+														<select class="select optional form-control" id="vac_min_salary" name="vac_min_salary">
 															<option value=""></option>
 															<option value="100">100</option>
 															<option value="200">200</option>
@@ -318,7 +193,7 @@
 														<label for="vac_mak_salary" class="control-label">maks. </label>
 													</div>
 													<div class="col-md-6">
-														<select class="select optional form-control salary_to" id="ad_salary_to" name="vac_max_salary">    <option value=""></option>
+														<select class="select optional form-control salary_to" id="vac_max_salary" name="vac_max_salary">    <option value=""></option>
 															<option value="100">100</option>
 															<option value="200">200</option>
 															<option value="300">300</option>
@@ -371,21 +246,21 @@
 													</div>
 												</div>
 												<div class="col-md-1">
-													<label for="exampleInputEmail1" class="control-label">AZN </label>
+													<label for="vac_max_salary" class="control-label">AZN </label>
 												</div>
 											</div>
 										</fieldset>
 										<fieldset class="form-group">
 											<div class="row yasForm">
 												<div class="col-md-3">
-													<label for="exampleInputEmail1">Yaş *</label>
+													<label for="vac_min_age">Yaş *</label>
 												</div>
 												<div class="col-md-4">
 													<div class="col-md-6">
 														<label for="vac_min_age" class="control-label">minimum </label>
 													</div>
 													<div class="col-md-6">
-														<select class="select optional form-control" id="ad_salary_from" name="vac_min_age">
+														<select class="select optional form-control" id="vac_min_age" name="vac_min_age">
 															<option value=""></option>
 															<option value="18">18</option>
 															<option value="19">19</option>
@@ -443,7 +318,7 @@
 														<label for="vac_max_age" class="control-label">maks. </label>
 													</div>
 													<div class="col-md-6">
-														<select class="select optional form-control salary_to" id="ad_salary_to" name="vac_max_age">    <option value=""></option>
+														<select class="select optional form-control salary_to" id="vac_max_age" name="vac_max_age">    <option value=""></option>
 															<option value="18">18</option>
 															<option value="19">19</option>
 															<option value="20">20</option>
@@ -496,7 +371,7 @@
 													</div>
 												</div>
 												<div class="col-md-1">
-													<label for="exampleInputEmail1" class="control-label">il </label>
+													<label for="vac_max_age" class="control-label">il </label>
 												</div>
 											</div>
 										</fieldset>
@@ -504,58 +379,51 @@
 											<div class="row eduForm">
 												<div class="col-md-7">
 													<label for="vac_education_id">Təhsil</label>
-													<select class="select optional form-control" id="ad_education_id" name="vac_education_id">
+													<select class="select optional form-control" id="vac_education_id" name="vac_education_id">
 														<option value=""></option>
-														<option value="1">Elmi dərəcə</option>
-														<option value="2">Ali</option>
-														<option value="3">Natamam ali</option>
-														<option value="4">Orta texniki</option>
-														<option value="5">Orta xüsusi</option>
-														<option value="6">Orta</option>
-														<option value="7">-</option>
+														@foreach($education as $edu)
+															<option value="{{$edu->id}}">
+																{{$edu->edu_name}}
+															</option>
+														@endforeach
 													</select>
 												</div>
 												<div class="col-md-5">
 													<label for="vac_experience_id">İş təcrübəsi</label>
 													<select class="select optional form-control" id="ad_experience_id" name="vac_experience_id">
 														<option value=""></option>
-														<option value="1">1 ildən aşağı</option>
-														<option value="2">1 ildən 3 ilə qədər</option>
-														<option value="3">3 ildən 5 ilə qədər</option>
-														<option value="4">5 ildən artıq</option>
+														@foreach($experience as $exp)
+															<option value="{{$exp->id}}">
+																{{$exp->exp_name}}
+															</option>
+														@endforeach
 													</select>
 												</div>
 											</div>
 										</fieldset>
 										<fieldset class="form-group">
-					
-			{!!Form::label('vac_requirements', 'Namizədə tələblər')!!}
-			{!! Form::textarea('vac_requirements',null, array_merge(['class' => ' form-control'])) !!}								
+											{!!Form::label('vac_requirements', 'Namizədə tələblər')!!}
+											{!! Form::textarea('vac_requirements',null, array_merge(['class' => ' form-control'])) !!}								
 										</fieldset>
 										<fieldset class="form-group">
-
-		{!!Form::label('vac_job_description', 'İş barədə məlumat')!!}
-		{!! Form::textarea('vac_job_description',null, array_merge(['class' => ' form-control'])) !!}							
+											{!!Form::label('vac_job_description', 'İş barədə məlumat')!!}
+											{!! Form::textarea('vac_job_description',null, array_merge(['class' => ' form-control'])) !!}							
 										</fieldset>
 										<fieldset class="form-group">
-
-		{!!Form::label('vac_company_name', 'Şirkətin adı')!!}
-		{!! Form::text('vac_company_name',null, array_merge(['class' => ' form-control'])) !!}
-
+											{!!Form::label('vac_company_name', 'Şirkətin adı')!!}
+											{!! Form::text('vac_company_name',null, array_merge(['class' => ' form-control'])) !!}
 										</fieldset>
 										<fieldset class="form-group">
-		{!!Form::label('vac_contact', 'Əlaqədar şəxs')!!}
-		{!! Form::text('vac_contact',null, array_merge(['class' => ' form-control'])) !!}							
+											{!!Form::label('vac_contact', 'Əlaqədar şəxs')!!}
+											{!! Form::text('vac_contact',null, array_merge(['class' => ' form-control'])) !!}
 										</fieldset>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="addBtn">
+						<div class="addBtn" id="addBtn">
 							<div class="col-md-12">
-							<input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
-								<button type="submit" class="btn box-sh" name="submit">Yerləşdirin</button >
-							
+								<button type="submit" class="btn box-sh" name="submit">Yerləşdirin</button>
 							{!! Form::close() !!}
 							</div>
 						</div>
@@ -596,4 +464,8 @@
 		
 	</section>
 	<!-- Add Vacancies and Add CV End-->
+	<script type="text/javascript">
+
+
+	</script>
 @stop

@@ -8,18 +8,18 @@
 			</div>
 			<div class="catNav">
 				<div class="pageVacancies">
-					<a class="active" href="#viewVacancies">İş elanları</a>
+					<a href="/">İş elanları</a>
 				</div>
 				<div class="pageResumes">
-					<a href="#viewCv">İş axtaranlar</a>
+					<a class="active" href="/categories/resumes">İş axtaranlar</a>
 				</div>
 			</div>
 			<div class="otherNav">
 				<div class="pageAbout">
-					<a href="#resumes">Haqqımızda</a>
+					<a href="/pages/about">Haqqımızda</a>
 				</div>
 				<div class="add">
-					<button>Elan yerləşdirin</button>
+					<button><a href="/vacancies/new">Elan yerləşdirin</a></button>
 				</div>
 			</div>
 			<div class="lang-select">
@@ -280,7 +280,7 @@
 			  <div class="col-md-6">
 					<div class="card-lar">
 					   	<div class="card card-block">
-					      <h3 class="card-title">{{$cv->cv_position_name}}</h3>
+					      <h3 class="card-title">{{strtoupper($cv->cv_position_name)}}</h3>
 						   <div class="imqiymet">
 					              <div class="qiymet"><span>{{$cv->cv_min_salary}}</span></div>
 					              <div class="qiymetLink">
@@ -291,7 +291,7 @@
            				     </div>
 
 
-					             <p>{{$cv->cv_name}} {{$cv->cv_surname}}, {{$cv->cv_age}} yaş, təhsil {{$cv->cv_education_id}}, iş təcrübəsi {{$cv->cv_experience_id}}, yaşadığım şəhər - {{$cv->cv_city_id}}, {{$cv->cv_min_salary}} məbləğdən az olmayan maaşa iddialıyam</p>
+					             <p>{{$cv->cv_name}} {{$cv->cv_surname}}, {{$cv->cv_age}} yaş, təhsil {{$cv->education['edu_name']}}, iş təcrübəsi {{$cv->experience['exp_name']}}, yaşadığım şəhər - {{$cv->city['city_name']}}, {{$cv->cv_min_salary}} məbləğdən az olmayan maaşa iddialıyam</p>
 
 					              <div class="cardFooter">
 						            <span>Bakı</span>
