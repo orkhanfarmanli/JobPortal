@@ -40,7 +40,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<span>Kategoriya</span>
-						<select class="select" id="category" name="category">
+						<select class="select" id="category" name="vac_category_id">
 							<option value="">Bütün kateqoriyalar</option>
 							@foreach($categories as $category)
 								<option value="{{$category->id}}">{{$category->cat_name}}</option>
@@ -50,7 +50,7 @@
 							@endforeach
 						</select>
 						<span>Təhsil</span>
-						<select class="select" id="education" name="education">
+						<select class="select" id="education" name="vac_education_id">
 							<option value="">Vacib deyil</option>
 							<option value="1">Elmi dərəcə</option>
 							<option value="2">Ali</option>
@@ -63,7 +63,7 @@
 					</div>
 					<div class="col-md-4">
 						<span>Şəhər</span>
-						<select class="select" id="city" name="city">
+						<select class="select" id="city" name="vac_city_id">
 							<option value="">Bütun şəhərlər</option>
 							<option value="28">Ağcabədi</option>
 							<option value="12">Ağdam</option>
@@ -117,7 +117,7 @@
 							<option value="7">Əli-Bayramlı</option>
 						</select>
 						<span>İş təcrübəsi</span>
-						<select class="select" id="experience" name="experience">
+						<select class="select" id="experience" name="vac_experience">
 							<option value="">Vacib deyil</option>
 							<option value="1">1 ildən aşağı</option>
 							<option value="2">1 ildən 3 ilə qədər</option>
@@ -198,7 +198,7 @@
 			<div class="row">
 				<!-- vacancies header -->
 				<div class="allVacHeader">
-					<h3>AXTARIŞ NƏTİCƏLƏRİ :<span>161 İŞ ELANI</span></h3>
+					<h3>AXTARIŞ NƏTİCƏLƏRİ :<span>{{$vacancies->count()}} İŞ ELANI</span></h3>
 
 				</div>
 				<!-- vacancies header end-->
@@ -208,23 +208,25 @@
 			<div class="row">
 				@foreach($vacancies as $vac_table)
 					<div class="col-md-6 " >
-						<div class="card-lar ">
+						<div class="cards">
 							<div class="card card-block">
-								<h3 class="card-title"  >{{$vac_table->vac_position}}</h3>
-								<a href="#">{{$vac_table->vac_company_name}}</a>
-								<div class="imqiymet">
-									<div class="qiymet"><span>{{$vac_table->vac_min_salary}}-{{$vac_table->vac_max_salary}} AZN</span></div>
-									<div class="qiymetLink">
-										<a href="{{url('vacancies',$vac_table->id)}}">Ətraflı</a>
-										<i class="fa fa-angle-right"></i>
+								<div class="cardHeader">
+									<h3 class="card-title"  >{{$vac_table->vac_position}}</h3>
+									<a href="#">{{$vac_table->vac_company_name}}</a>
+									<div class="imqiymet">
+										<div class="qiymet"><span>{{$vac_table->vac_min_salary}}-{{$vac_table->vac_max_salary}} AZN</span></div>
+										<div class="qiymetLink">
+											<a href="{{url('vacancies',$vac_table->id)}}">Ətraflı</a>
+											<i class="fa fa-angle-right"></i>
+										</div>
 									</div>
-
 								</div>
 
-
-								<p class="col_inner_height">
-									{{$vac_table->vac_job_description}}
-								</p>
+								<div class="cardContent">
+									<p class="description">
+										{{$vac_table->vac_job_description}}
+									</p>
+								</div>
 
 								<div class="cardFooter">
 									<span>{{$vac_table->city['city_name']}}</span>
@@ -241,67 +243,10 @@
 						</div >
 					</div>
 
-
-
-
-
-
 				@endforeach
 
-
-
-				<script type="text/javascript">
-							function equalHeight(group) {
-								var tallest = 0;
-								var b=$('.col_inner_height:odd');
-								var c=$('.col_inner_height:even');
-
-								group.each(function() {
-									var thisHeight = $(this).height();
-									if(thisHeight > tallest) {
-										tallest = thisHeight;
-									}
-								});
-								group.height(tallest);
-							}
-
-					$(document).ready(function() {
-						var b = {!! json_encode($roles) !!}
-
-						for(i=0; i < b.length; i++) {
-							equalHeight($(".col_inner_height"));
-						};
-					});
-
-				</script>
-
-
-
-
-
-
 				<nav>
-					<ul class="pagination">
-						<li class="page-item disabled">
-							<a class="page-link" href="#" aria-label="Previous">
-								<span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
-								<span class="sr-only">Previous</span>
-							</a>
-						</li>
-						<li class="page-item active">
-							<a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item"><a class="page-link" href="#">5</a></li>
-						<li class="page-item">
-							<a class="page-link" href="#" aria-label="Next">
-								<span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</li>
-					</ul>
+					{{$vacancies->links()}}
 				</nav>
 			</div>
 

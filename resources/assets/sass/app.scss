@@ -433,6 +433,11 @@ div.show{
 						color: $contentLinkTextColor;
 						display: block;
 					}
+					span.cvName {
+						font-size: 12px;
+						color: $contentLinkTextColor;
+						display: block;
+					}
 					.priceVac {
 						display: inline-block;
 						background: $navbarColor;
@@ -622,90 +627,95 @@ div.show{
 		.col-md-6{
 			padding-top: 0;
 			padding-bottom: 20px;
-			card {
+			.card{
 				padding: 0;
 			}
-			.card-lar{
+			.cards{
 				.card-block{
 					border-radius: 5px;
 					padding: 10px 20px;
 					padding-bottom: 20px;
 					background-color: $textColor;
-					h3{
-						font-size: 20px;
-						font-weight: 700;
-						color:$footerLinkColor;
-					}
-
-					a{
-						font-size: 15px;
-						font-weight: 700;
-						color: #666;
-						text-decoration: none;
-					}
-
-					a:hover{
-						color: #a98705;
-					}
-
-					.imqiymet{
-						height: 50px;
-						margin-top: 10px;
-
-						.qiymet{
-							width: 110px;
-							height: 37px;
-							background: #f8cb1c;
-							border-radius: 6px;
-							line-height: 37px;
-							margin-top: -0.5px;
-							color: #333;
-							border: 1px solid #f8cb1c;
-							text-align: center;
-							float: left;
-							position: relative;
-							z-index: 1;
+					.cardHeader {
+						h3{
+							font-size: 20px;
+							font-weight: 700;
+							color:$footerLinkColor;
 						}
 
-						.qiymetLink{
-							box-sizing: border-box;
-							width: 90px;
-							height: 36px;
-							float: left;
-							text-align: center;
-							margin-left: -14px;
-							border-radius: 6px;
-							border: 1px solid #d8d8d8;
-							border-left: none;
-							position: relative;
-							z-index: 0;
-							line-height: 36px;
-							display: flex;
-							justify-content: center;
-							align-items: center;
+						a{
+							font-size: 15px;
+							font-weight: 700;
+							color: #666;
+							text-decoration: none;
+						}
 
-							a{
-								text-decoration: underline;
-								color: #555;
-								font-size: 16px;
-								margin-left: 14px;
-								padding: 0 5px;
-								font-weight: 400;
+						a:hover{
+							color: #a98705;
+						}
+						.imqiymet{
+							height: 50px;
+							margin-top: 10px;
+
+							.qiymet{
+								width: 110px;
+								height: 37px;
+								background: #f8cb1c;
+								border-radius: 6px;
+								line-height: 37px;
+								margin-top: -0.5px;
+								color: #333;
+								border: 1px solid #f8cb1c;
+								text-align: center;
+								float: left;
+								position: relative;
+								z-index: 1;
 							}
 
-							i{
-								font-size: 26px;
-								padding-right: 5px;
+							.qiymetLink{
+								box-sizing: border-box;
+								width: 90px;
+								height: 36px;
+								float: left;
+								text-align: center;
+								margin-left: -14px;
+								border-radius: 6px;
+								border: 1px solid #d8d8d8;
+								border-left: none;
+								position: relative;
+								z-index: 0;
+								line-height: 36px;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+
+								a{
+									text-decoration: underline;
+									color: #555;
+									font-size: 16px;
+									margin-left: 14px;
+									padding: 0 5px;
+									font-weight: 400;
+								}
+
+								i{
+									font-size: 26px;
+									padding-right: 5px;
+								}
+
 							}
 
-						}
-
-						.qiymetLink:hover{
-							background: #f9f3d9;
+							.qiymetLink:hover{
+								background: #f9f3d9;
+							}
 						}
 					}
-					p{
-						font-size: 15px;
+
+					
+					.cardContent {
+						p{
+							font-size: 15px;
+						}
 					}
 
 					.cardFooter{
@@ -754,12 +764,21 @@ div.show{
 				font-size: 15px;
 				font-weight: 700;
 				li.active{
-					a{
-					background: $navbarColor !important;
-					} 
+					a, span{
+						padding: 10px 16px;
+						border: 1px solid $navbarColor;
+						background: $navbarColor !important;
+					}
+				}
+				li.disabled {
+					a, span{
+						padding: 10px 16px;
+					}
 				}
 				li{
+					span , a{
 
+					}
 					a{
 						padding: 10px 16px;
 						color: $mainTextColor;

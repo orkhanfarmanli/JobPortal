@@ -19,5 +19,5 @@ Route::get('/vacancies/{id}', 'VacController@show'); // id yə görə cv göstə
 //Cv və Vakansiya əlavə etmə
 Route::post('resumes', 'CvController@store'); // cv yarat 
 Route::post('vacancies', 'VacController@store'); // vacansiya elave etme
-
+Route::get('vacancies', 'VacController@index');
 

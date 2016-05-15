@@ -145,22 +145,4 @@
 		})
 	});
 
-	// Elan yerləşdir input yaratma
-//	var fieldset = document.getElementById("addInput");
-//	function yarat(){
-//		var input = document.createElement("input");
-//		input.type="text";
-//		input.className="form-control";
-//		input.name="vac_phone";
-//		input.id="vac_phone";
-//		fieldset.appendChild(input);
-//	}
-
-		// seyfeleme pagination
-
-	$(document).ready(function() {
-		$(".pagination").bootstrapPaginator();
-	});
-	// seyfeleme pagination end
-
 </script>

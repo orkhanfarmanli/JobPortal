@@ -365,89 +365,15 @@
         </div>
         <div class="listLastVac clearFix">
             <div class="row">
-                <div class="col-md-4">
-                    <a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-                    <div class="priceVac">
-                        <span class="minPrice">300</span>
-                        <span> - </span>
-                        <span class="maxPrice">500 AZN</span>
+                @foreach($resumes as $cv)
+                    <div class="col-md-4">
+                        <a href="#vac" class="nameVac">{{$cv->cv_position_name}}</a>
+                        <div class="priceVac">
+                            <span class="minPrice">{{$cv->cv_min_salary}}</span>
+                        </div>
+                        <span class="cvName">{{$cv->cv_name}}</a>
                     </div>
-                    <a href="#company" class="companyName">Caspian Telecom MMC</a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-                    <div class="priceVac">
-                        <span class="minPrice">300</span>
-                        <span> - </span>
-                        <span class="maxPrice">500 AZN</span>
-                    </div>
-                    <a href="#company" class="companyName">Caspian Telecom MMC</a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-                    <div class="priceVac">
-                        <span class="minPrice">300</span>
-                        <span> - </span>
-                        <span class="maxPrice">500 AZN</span>
-                    </div>
-                    <a href="#company" class="companyName">Caspian Telecom MMC</a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-                    <div class="priceVac">
-                        <span class="minPrice">300</span>
-                        <span> - </span>
-                        <span class="maxPrice">500 AZN</span>
-                    </div>
-                    <a href="#company" class="companyName">Caspian Telecom MMC</a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-                    <div class="priceVac">
-                        <span class="minPrice">300</span>
-                        <span> - </span>
-                        <span class="maxPrice">500 AZN</span>
-                    </div>
-                    <a href="#company" class="companyName">Caspian Telecom MMC</a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-                    <div class="priceVac">
-                        <span class="minPrice">300</span>
-                        <span> - </span>
-                        <span class="maxPrice">500 AZN</span>
-                    </div>
-                    <a href="#company" class="companyName">Caspian Telecom MMC</a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-                    <div class="priceVac">
-                        <span class="minPrice">300</span>
-                        <span> - </span>
-                        <span class="maxPrice">500 AZN</span>
-                    </div>
-                    <a href="#company" class="companyName">Caspian Telecom MMC</a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-                    <div class="priceVac">
-                        <span class="minPrice">300</span>
-                        <span> - </span>
-                        <span class="maxPrice">500 AZN</span>
-                    </div>
-                    <a href="#company" class="companyName">Caspian Telecom MMC</a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-                    <div class="priceVac">
-                        <span class="minPrice">300</span>
-                        <span> - </span>
-                        <span class="maxPrice">1000 AZN</span>
-                    </div>
-                    <a href="#company" class="companyName">Caspian Telecom MMC</a>
-                </div>
+                @endforeach
             </div>
         </div>
 

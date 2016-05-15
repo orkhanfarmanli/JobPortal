@@ -119,169 +119,47 @@
 		</div>
 	</section>
 	<section id="search">
+		{!!Form::open(['url' => 'vacancies', 'method' => 'GET'])!!}
 		<div class="container">
 				<div class="row">
 					<div class="col-md-4">
 						<span>Kategoriya</span>
-						<select class="select" id="category" name="category">
-							<option value="">Bütün kateqoriyalar</option>
-							<option value="36">Maliyyə</option>
-							<option value="48">— Kredit mütəxəssisi</option>
-							<option value="49">— Sığorta</option>
-							<option value="51">— Audit</option>
-							<option value="52">— Mühasibat</option>
-							<option value="57">— Maliyyə analiz</option>
-							<option value="150">— Bank xidməti</option>
-							<option value="154">— Kassir</option>
-							<option value="155">— İqtisadçı</option>
-							<option value="129">— Digər</option>
-							<option value="37">Marketinq</option>
-							<option value="64">— Marketinq menecment</option>
-							<option value="61">— İctimayətlə əlaqələr</option>
-							<option value="62">— Reklam</option>
-							<option value="60">— Kopiraytinq</option>
-							<option value="38">İnformasiya texnologiyaları</option>
-							<option value="66">— Sistem idarəetməsi</option>
-							<option value="67">— Məlumat bazasının idarə edilməsi və inkişafı</option>
-							<option value="68">— İT mütəxəssisi / məsləhətçi</option>
-							<option value="69">— Proqramlaşdırma</option>
-							<option value="70">— İT layihələrin idarə edilməsi</option>
-							<option value="71">— Texniki avadanlıq mütəxəssisi</option>
-							<option value="72">— Digər</option>
-							<option value="44">İnzibati</option>
-							<option value="105">— İnzibati dəstək</option>
-							<option value="108">— Menecment</option>
-							<option value="110">— Ofis menecmenti</option>
-							<option value="112">— Katibə / Resepşn</option>
-							<option value="143">— Heyətin idarəolunması</option>
-							<option value="113">— Digər</option>
-							<option value="40">Satış</option>
-							<option value="83">— Daşınmaz əmlak agenti / makler</option>
-							<option value="86">— Satış üzrə mütəxəssis</option>
-							<option value="43">Dizayn</option>
-							<option value="159">— Veb-dizayn</option>
-							<option value="97">— Memar / İnteryer dizaynı</option>
-							<option value="99">— Geyim dizaynı</option>
-							<option value="101">— Rəssam</option>
-							<option value="104">— Digər</option>
-							<option value="39">Hüquqşünaslıq</option>
-							<option value="73">— Vəkil</option>
-							<option value="74">— Cinayət hüququ</option>
-							<option value="79">— Hüquqşünas</option>
-							<option value="151">— Digər</option>
-							<option value="46">Təhsil və elm</option>
-							<option value="119">— Məktəb tədrisi</option>
-							<option value="120">— Universitet tədrisi</option>
-							<option value="121">— Repetitor</option>
-							<option value="122">— Xüsusi təhsil/ Təlim</option>
-							<option value="145">— Digər</option>
-							<option value="42">Sənaye və kənd təsərrüfatı</option>
-							<option value="91">— Avtomatlaşdırılmış idarəetmə</option>
-							<option value="92">— Tikinti</option>
-							<option value="95">— Kənd təsərrüfatı</option>
-							<option value="93">— Mühəndis</option>
-							<option value="94">— Geologiya və ətraf mühit</option>
-							<option value="96">— Digər</option>
-							<option value="133">Xidmət</option>
-							<option value="156">— Kuryer</option>
-							<option value="193">— SPA və gözəllik</option>
-							<option value="157">— Xadimə</option>
-							<option value="158">— Anbardar</option>
-							<option value="134">— Restoran işi</option>
-							<option value="135">— Sürücü</option>
-							<option value="136">— Dayə</option>
-							<option value="137">— Fəhlə</option>
-							<option value="142">— Turizm və mehmanxana işi</option>
-							<option value="144">— Tərcüməçi</option>
-							<option value="153">— Mühafizə xidməti</option>
-							<option value="149">— Digər</option>
-							<option value="138">Tibb və əczaçılıq</option>
-							<option value="139">— Həkim</option>
-							<option value="140">— Tibbi personal</option>
-							<option value="141">— Tibb təmsilçisi</option>
-							<option value="146">Müxtəlif</option>
-							<option value="148">— Jurnalistika</option>
-							<option value="160">— Tələbələr üçün</option>
+						<select class="select" id="category" name="vac_category_id">
+						<option value>Bütün Kategoriyalar</option>
+						@foreach($categories as $category)
+							<option value="{{$category->id}}">{{$category->cat_name}}</option>
+							@foreach($category->subcategories as $subcategory)
+								<option value="{{$subcategory->id}}">— {{$subcategory->subcat_name}}</option>
+							@endforeach
+						@endforeach
 						</select>
 						<span>Təhsil</span>
-						<select class="select" id="education" name="education">
-							<option value="">Vacib deyil</option>
-							<option value="1">Elmi dərəcə</option>
-							<option value="2">Ali</option>
-							<option value="3">Natamam ali</option>
-							<option value="4">Orta texniki</option>
-							<option value="5">Orta xüsusi</option>
-							<option value="6">Orta</option>
-							<option value="7">-</option>
+						<select class="select" id="education" name="vac_education_id">
+							<option value=>Vacib deyil</option>
+							@foreach($education as $edu)
+								<option value="{{$edu->id}}">{{$edu->edu_name}}</option>
+							@endforeach
 						</select>
 					</div>
 					<div class="col-md-4">
 						<span>Şəhər</span>
-						<select class="select" id="city" name="city">
-							<option value="">Bütun şəhərlər</option>
-							<option value="28">Ağcabədi</option>
-							<option value="12">Ağdam</option>
-							<option value="83">Ağdaş</option>
-							<option value="34">Ağsu</option>
-							<option value="1">Bakı</option>
-							<option value="73">Balakən</option>
-							<option value="30">Beyləqan</option>
-							<option value="26">Biləsuvar</option>
-							<option value="31">Bərdə</option>
-							<option value="72">Cəlilabad</option>
-							<option value="23">Füzuli </option>
-							<option value="81">Goranboy</option>
-							<option value="29">Göyçay</option>
-							<option value="4">Gəncə</option>
-							<option value="27">Kürdəmir</option>
-							<option value="82">Lerik</option>
-							<option value="11">Lənkaran</option>
-							<option value="16">Masallı</option>
-							<option value="6">Mingəçevir</option>
-							<option value="14">Naftalan</option>
-							<option value="8">Naxçıvan</option>
-							<option value="39">Qaradağ</option>
-							<option value="38">Qax</option>
-							<option value="15">Qazax</option>
-							<option value="18">Quba</option>
-							<option value="19">Qusar</option>
-							<option value="76">Qəbələ</option>
-							<option value="33">Saatlı</option>
-							<option value="24">Sabirabad</option>
-							<option value="22">Salyan</option>
-							<option value="35">Samux</option>
-							<option value="74">Siyəzən</option>
-							<option value="5">Sumqayıt</option>
-							<option value="17">Tovuz</option>
-							<option value="32">Tərtər</option>
-							<option value="20">Xaçmaz</option>
-							<option value="75">Xırdalan</option>
-							<option value="37">Xızı</option>
-							<option value="77">Yardımlı</option>
-							<option value="10">Yevlax</option>
-							<option value="2">Zaqatala</option>
-							<option value="25">İmişli</option>
-							<option value="3">İsmayıllı</option>
-							<option value="80">Şabran</option>
-							<option value="21">Şamaxı</option>
-							<option value="78">Şirvan</option>
-							<option value="9">Şəki</option>
-							<option value="13">Şəmkir</option>
-							<option value="79">Şərur</option>
-							<option value="7">Əli-Bayramlı</option>
+						<select class="select" id="city" name="vac_city_id">
+							<option value>Vacib deyil</option>
+							@foreach($cities as $city)
+								<option value="{{$city->id}}">{{$city->city_name}}</option>
+							@endforeach
 						</select>
 						<span>İş təcrübəsi</span>
-						<select class="select" id="experience" name="experience">
-							<option value="">Vacib deyil</option>
-							<option value="1">1 ildən aşağı</option>
-							<option value="2">1 ildən 3 ilə qədər</option>
-							<option value="3">3 ildən 5 ilə qədər</option>
-							<option value="4">5 ildən artıq</option>
+						<select class="select" id="experience" name="vac_experience_id">
+							<option value>Vacib deyil</option>
+							@foreach($experience as $exp)
+								<option value="{{$exp->id}}">{{$exp->exp_name}}</option>
+							@endforeach
 						</select>
 					</div>
 					<div class="col-md-4">
 						<span>Əmək haqqı</span>
-						<select class="select" id="salary" name="salary">
+						<select class="select" id="salary" name="vac_min_salary">
 							<option value="">Vacib deyil</option>
 							<option value="100">minimum 100 AZN</option>
 							<option value="200">minimum 200 AZN</option>
@@ -333,13 +211,14 @@
 							<option value="12000">minimum 12000 AZN</option>
 						</select>
 						<span>Açar sözləri</span>
-						<input class="select" id="keyword" name="keyword" type="text">
+						{!!Form::text('term', Request::get('term'), array('class' => 'select'))!!}
 					</div>
 				</div>
 				<div class="btnSearch">
 					<input class="btn btn btn_load-more" name="commit" type="submit" value="Axtar">
 				</div>
 			</div>
+	{{Form::close()}}
 	</section>
 
 	<!-- # Search end -->
@@ -365,89 +244,17 @@
 			</div>
 			<div class="listLastVac clearFix">
 				<div class="row">
-					<div class="col-md-4">
-						<a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-						<div class="priceVac">
-							<span class="minPrice">300</span>
-							<span> - </span>
-							<span class="maxPrice">500 AZN</span>
+					@foreach($vacancies as $vacancy)
+						<div class="col-md-4">
+							<a href="vacancies/{{$vacancy->id}}" class="nameVac">{{$vacancy->vac_position}}</a>
+							<div class="priceVac">
+								<span class="minPrice">{{$vacancy->vac_min_salary}}</span>
+								<span> - </span>
+								<span class="maxPrice">{{$vacancy->vac_max_salary}}</span>
+							</div>
+							<a href="" class="companyName">{{$vacancy->vac_company_name}}</a>
 						</div>
-						<a href="#company" class="companyName">Caspian Telecom MMC</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-						<div class="priceVac">
-							<span class="minPrice">300</span>
-							<span> - </span>
-							<span class="maxPrice">500 AZN</span>
-						</div>
-						<a href="#company" class="companyName">Caspian Telecom MMC</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-						<div class="priceVac">
-							<span class="minPrice">300</span>
-							<span> - </span>
-							<span class="maxPrice">500 AZN</span>
-						</div>
-						<a href="#company" class="companyName">Caspian Telecom MMC</a>
-					</div>
-
-					<div class="col-md-4">
-						<a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-						<div class="priceVac">
-							<span class="minPrice">300</span>
-							<span> - </span>
-							<span class="maxPrice">500 AZN</span>
-						</div>
-						<a href="#company" class="companyName">Caspian Telecom MMC</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-						<div class="priceVac">
-							<span class="minPrice">300</span>
-							<span> - </span>
-							<span class="maxPrice">500 AZN</span>
-						</div>
-						<a href="#company" class="companyName">Caspian Telecom MMC</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-						<div class="priceVac">
-							<span class="minPrice">300</span>
-							<span> - </span>
-							<span class="maxPrice">500 AZN</span>
-						</div>
-						<a href="#company" class="companyName">Caspian Telecom MMC</a>
-					</div>
-
-					<div class="col-md-4">
-						<a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-						<div class="priceVac">
-							<span class="minPrice">300</span>
-							<span> - </span>
-							<span class="maxPrice">500 AZN</span>
-						</div>
-						<a href="#company" class="companyName">Caspian Telecom MMC</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-						<div class="priceVac">
-							<span class="minPrice">300</span>
-							<span> - </span>
-							<span class="maxPrice">500 AZN</span>
-						</div>
-						<a href="#company" class="companyName">Caspian Telecom MMC</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#vac" class="nameVac">Satış Təmsilçisi</a>
-						<div class="priceVac">
-							<span class="minPrice">300</span>
-							<span> - </span>
-							<span class="maxPrice">1000 AZN</span>
-						</div>
-						<a href="#company" class="companyName">Caspian Telecom MMC</a>
-					</div>
+					@endforeach
 				</div>
 			</div>
 

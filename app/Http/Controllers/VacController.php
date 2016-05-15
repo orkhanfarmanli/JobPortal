@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 // Default Modeller
-use Request;
 use Carbon\Carbon;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 
 // Bizim Modeller
 use App\AddVac;
@@ -23,12 +23,29 @@ class VacController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $categories = CategoryModel::with('subcategories')->get();
-        $vacancies = AddVac::with('subcategories','education','experience','city')->get();
-        $roles = DB::table('vacancy')->pluck('id');
-        return view('vacancies', compact('vacancies','roles','categories'));
+        $experience = ExperienceModel::all();
+        $education = EducationModel::all();
+        $city = CityModel::all();
+        $vacancies = AddVac::where(function($query) use ($request){
+            $category = $request->input('vac_category_id');
+            $education = $request->input('vac_education_id');
+            $experience = $request->input('vac_experience_id');
+            $city = $request->input('vac_city_id');
+            $salary = $request->input('vac_min_salary');
+            $term = $request->input('term');
+            if($category){
+                $query->where('vac_category_id','LIKE', '%'.$category.'%' )
+                        ->orWhere('vac_education_id','LIKE', '%'.$education.'%')
+                        ->orWhere('vac_experience_id','LIKE', '%'.$experience.'%')
+                        ->orWhere('vac_city_id','LIKE', '%'.$city.'%')
+                        ->orWhere('vac_min_salary','LIKE', '%'.$salary.'%')
+                        ->orWhere('vac_position','LIKE','%'.$term.'%');
+            }
+        })->paginate(6);
+        return view('vacancies', compact('vacancies','categories','experience','education','city'));
 
     }
 
@@ -54,12 +71,10 @@ class VacController extends Controller
      */
     public function store(Request $request)
     {
-
-        AddVac::create(Request::all());
+        AddVac::create($request->all());
         $request->updated_at = Carbon::now();
         return redirect('vacancies');
     }
-
     /**
      * Display the specified resource.
      *
@@ -67,7 +82,7 @@ class VacController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {   
 
         $vac = AddVac::findOrFail($id);
         return view('vacancies/show', compact('vac','subcategories','education','experience','city'));

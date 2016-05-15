@@ -20,6 +20,8 @@ class AddCv extends Model
     	'cv_avatar',
     	'cv_edu_detail',
     	'cv_exp_detail',
+        'cv_min_salary',
+        'cv_position_name',
     	'cv_skills_detail',
         'vac_personal_info',
     	'cv_category_id',

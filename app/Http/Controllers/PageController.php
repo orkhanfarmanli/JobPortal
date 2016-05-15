@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\CategoryModel;
+use App\EducationModel;
+use App\ExperienceModel;
+use App\CityModel;
 Use App\Http\Controllers\Controller;
+Use App\AddVac;
+USe App\AddCv;
 
 class PageController extends Controller
 {
@@ -13,7 +18,11 @@ class PageController extends Controller
      */
     public function home(){
         $categories = CategoryModel::with('subcategories')->get();
-    	return view('welcome',compact('categories'));
+        $education  = EducationModel::all();
+        $experience = ExperienceModel::all();
+        $cities     = CityModel::all();
+        $vacancies  = AddVac::orderBy('id', 'DESC')->take(9)->get();
+    	return view('welcome',compact('vacancies','categories','education','experience','cities'));
     }
 
     /**
@@ -21,7 +30,11 @@ class PageController extends Controller
      */
     public function resumesHome(){
         $categories = CategoryModel::with('subcategories')->get();
-        return view('categories/resumes', compact('categories'));
+        $education  = EducationModel::all();
+        $experience = ExperienceModel::all();
+        $cities     = CityModel::all();
+        $resumes  = AddCv::orderBy('id', 'DESC')->take(9)->get();
+        return view('categories/resumes', compact('resumes','categories','education','experience','cities'));
     }
     // Haqqında səhifəsi
     public function about(){
@@ -30,7 +43,7 @@ class PageController extends Controller
     }
     // Haqqında reklam səhifəsi
      public function advertising(){
-         $categories = CategoryModel::all();
+        $categories = CategoryModel::all();
     	return view('pages.advertising', compact('categories'));
     }
     //Admin Page
