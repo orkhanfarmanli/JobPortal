@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategoryModel extends Model
 {
-    protected $table = 'categories';
+     protected $table = 'categories';
 
-    protected $fillable = [
-    	'cat_name'
-    ];
+     protected $fillable = [
+          'cat_name',
+     ];
 
-    public function subcategories(){
-    	return $this->hasMany('App\SubCategoryModel','cat_id');
-    }
+     public function subcategories()
+     {
+          return $this->hasMany('App\SubCategoryModel', 'cat_id');
+     }
 }
